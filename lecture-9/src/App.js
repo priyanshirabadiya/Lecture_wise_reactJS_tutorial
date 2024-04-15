@@ -1,23 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import ComC from "./components/Ternary";
+import Mynew from "./components/Mynew";
+import TernaryOp from './components/Task';
 
 function App() {
+  let a = 2;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       {/* {(a==1) ? <ComC/> : <Mynew/>} */}
+
+       <TernaryOp/>
+
     </div>
   );
 }
