@@ -1,4 +1,4 @@
-import '../style.css';
+// import '../style.css';   
 import React, { useState } from 'react'
 
 export default function Textform() {

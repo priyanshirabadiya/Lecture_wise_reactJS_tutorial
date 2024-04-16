@@ -2,7 +2,7 @@ import React from "react";
 
 export default function TernaryOp() {
   let a = "👍";
-  let b = "👎" ;
+  let b = "👎";
   let c = "👍";
 
   const result =
@@ -25,7 +25,7 @@ export default function TernaryOp() {
           <p>{b}</p>
           <p>{c}</p>
         </div>
-        <div className="font-sans text-lg mt-3 text-white" >{result}</div>
+        <div className="font-sans text-lg mt-3 text-white">{result}</div>
         </div>
       </div>
     </div>

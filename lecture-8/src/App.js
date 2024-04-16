@@ -1,25 +1,53 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+// import './App.css';
+// import Props from "./components/Props";
+// import Data from './components/Data';
+// function App() {
+//   return (
+//     <div className="App">
+//       <div className="flex">
+//         {Data.map((cvalue, ind, arr) => {
+//           console.log(cvalue, "cvalue");
+//           return (
+//             <Props
+//               key={ind}
+//               name={cvalue.name}
+//               disc={cvalue.disc}
+//               // img={cvalue.img}
+//               course={cvalue.course}
+//             />
+//           );
+//         })}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+
 import './App.css';
-import Props from "./components/Props";
-import Data from './components/Data';
+import data from './components/Practice/Data'
+import PropsSec from './components/Practice/Props'
+
 function App() {
   return (
-    <div className="App">
-      <div className="flex">
-        {Data.map((cvalue, ind, arr) => {
-          console.log(cvalue, "cvalue");
-          return (
-            <Props
+    <>
+      {data.map((cvalue, ind, arr) => {
+        return (
+          <>
+            <PropsSec
               key={ind}
-              name={cvalue.name}
-              disc={cvalue.disc}
-              // img={cvalue.img}
-              course={cvalue.course}
-            />
-          );
-        })}
-      </div>
-    </div>
+              earings={cvalue.earings}
+              per={cvalue.per}
+              number={cvalue.pho}>
+            </PropsSec>
+          </>
+        )
+      })}
+    </>
   );
 }
 
