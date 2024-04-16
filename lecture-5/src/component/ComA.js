@@ -8,3 +8,4 @@ function ComA(){
 }
 
 export default ComA;
+
