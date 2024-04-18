@@ -35,18 +35,24 @@ import PropsSec from './components/Practice/Props'
 function App() {
   return (
     <>
-      {data.map((cvalue, ind, arr) => {
+      {/* {data.map((cvalue, ind, arr) => {
         return (
           <>
+          <div>
             <PropsSec
               key={ind}
               earings={cvalue.earings}
               per={cvalue.per}
-              number={cvalue.pho}>
+              pno={cvalue.pno}>
             </PropsSec>
+            </div>
           </>
         )
-      })}
+      })} */}
+      <PropsSec/>
+      <PropsSec/>
+      <PropsSec/>
+      <PropsSec/>
     </>
   );
 }
