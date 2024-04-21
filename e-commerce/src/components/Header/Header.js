@@ -10,15 +10,29 @@ export default function Header() {
         <div className='flex' >
           <div>
             <form action="#">
-              <div class="search-info p-relative">
+              <div class="search-info p-relative rounded">
                 <button class="header-search-icon">
-                  <i class="fal fa-search"></i>
+                  <i class="fa-solid fa-magnifying-glass" style={{ color: "#5d5f5f", paddingRight: "7px" }}></i>
                 </button>
-                <input placeholder="Search products..." type="search" />
+                <input placeholder="Search products..." type="text" />
               </div>
             </form>
           </div>
-          <div>sdf</div>
+          <div className='three-cart' >
+            <div className="f-selector">
+              <div class="dropdown">
+                <button class="dropbtn">Dropdown</button>
+                <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
         </div>
       </div>
     </>
