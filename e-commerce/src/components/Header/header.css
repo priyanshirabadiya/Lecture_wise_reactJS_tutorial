@@ -1,0 +1,29 @@
+.container{
+    height: 5rem;
+    /* max-width: 92rem; */
+    /* background-color: red; */
+}
+
+.logo-div{
+    /* width: 250px; */
+    background-color: aqua;
+}
+
+.search-info input[type=search]
+{
+    background-color: #eceef4 !important;
+    width: 500px;
+}
+.search-info{
+    width: 900px;
+    height: 45px;
+    background-color: #eceef4;
+    /* padding: 10px; */
+}
+
+input[type=search]:focus{
+    outline: none;
+    /* color: red; */
+
+}
+
