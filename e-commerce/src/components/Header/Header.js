@@ -14,7 +14,7 @@ export default function Header() {
             <i className="fa-solid fa-bars  absolute fa-lg top-14 "></i>
           </div>
           <div>
-            <img src={logo} alt="" className='absolute ms-6 top-9' />
+            <img src={logo} alt="" className='absolute top-9' />
           </div>
         </div>
         <div className='flex' >
