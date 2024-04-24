@@ -8,7 +8,6 @@ export default function Header() {
   return (
     <>
       <div className='container grid-cols-2 gap-5 pt-7 grid-rows-1 mx-auto flex justify-between px-7'>
-
         <div className='logo-div flex justify-between'>
           <div className='side-icon'>
             <i className="fa-solid fa-bars  absolute fa-lg top-14 "></i>
@@ -29,8 +28,8 @@ export default function Header() {
 
           <div className='three-cart flex' >
             <div className="dropdown ms-9 border rounded">
-              <button className="dropbtn rounded-md flex"> <img src={flag} alt="" /><b>English</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#858585" }}></i></button>
-              <div className="dropdown-content">
+              <button className="dropbtn rounded-md flex"> <img src={flag} alt="" /><b>English</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
+              <div className="dropdown-content z-10">
                 <a href="#">Arabin</a>
                 <a href="#">Spanish</a>
                 <a href="#">Mandrain</a>
@@ -38,8 +37,8 @@ export default function Header() {
             </div>
             <div className="s-selector">
               <select className='border h-12 rounded ms-3' >
-                <option>USD</option>
-                <option>YEAN</option>
+                <option style={{padding:"50px"}}>USD</option>
+                <option style={{padding:"50px"}}>YEAN</option>
                 <option>EURO</option>
               </select>
             </div>

@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 import './style.css'
-import './responsive.css'
 export default function Cate() {
-    const [menuVisible, setMenuVisible] = useState(false);
+    const [menuVisible, setMenuVisible] = useState(true);
 
     const toggleMenu = () => {
         setMenuVisible(!menuVisible);
     };
     return (
         <>
-            <div className='container px-7 mt-5'>
+            <div className='container ps-7 mt-5'>
                 <div className="main-catagorie" tabIndex="0" onClick={toggleMenu}>
                     <div className="flex ps-5 pt-3 cursor-pointer">
                         <i className="fa-solid fa-bars pe-3 pt-1" style={{ color: "#ffffff" }}></i>

@@ -1,0 +1,49 @@
+.main{
+    /* width: 1500px; */
+}
+.swiper-div {
+    width: 850px;
+    height: auto;
+    z-index: -2;
+    margin: 20px;
+    margin-top: 0px;
+}
+
+.slider {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-button-prev {
+    display: none !important;
+    
+}
+
+.swiper-button-next {
+    display: none !important;
+}
+
+.swiper-pagination-bullet {
+    border-radius: 5px !important;
+    height: 4px !important;
+    width: 25px !important;
+    background-color: rgb(101, 101, 101) !important;
+    cursor: pointer !important; 
+
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #d51243 !important;
+}
+
+/* ---------------------------------------------------------- */
+.two-box .first {
+    height: auto;
+    margin: 0px 0px 20px 20px;
+}
+
+
+.two-box .sec {
+    height: auto;
+    margin: 30px 0px 20px 20px !important;
+}

@@ -1,4 +1,4 @@
-@media (max-width:1486px) {
+@media (max-width:1500px) {
     .container {
         max-width: 1500px;
     }
@@ -29,8 +29,18 @@
         display: none;
     }
 
+    .dropdown {
+        display: none;
+        border: none !important;
+
+    }
+    .dropbtn {
+        display: none;
+        border: none !important;
+    }
     .side-icon {
         display: block !important;
+        margin-right: 25px;
     }
 }
 
@@ -40,7 +50,7 @@
     }
 
     .search-info {
-        width: 450px;
+        width: 430px;
     }
 
 }
@@ -73,8 +83,8 @@
     }
 }
 
-@media (max-width:420px) {
-    .ms-6 {
-        margin-inline-start: -30px !important;
+@media (max-width:430px) {
+    .logo-div {
+        width: calc(100% - 75%) !important;
     }
 }
