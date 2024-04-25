@@ -7,9 +7,9 @@ import Rendaring from "./components/Rendaring";
 function App() {
   return (
     <div className="App">
-      <Ulli></Ulli>
+      {/* <Ulli></Ulli>
       <Olli></Olli>
-      <Img/>
+      <Img/> */}
       <Rendaring/>
     </div>
   );

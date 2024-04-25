@@ -1,8 +1,6 @@
 import React , { useContext} from "react";
-import { context1 } from "../App";
-
+let name = "priyanshi"
 function ComC(){
-    const name = useContext(context1)
     return (
         <h1>hello world this is ... {name}</h1>
     )

@@ -1,5 +1,5 @@
 import React from "react";
-import Img1 from "../assets/download.jpg"
+// import Img1 from "../assets/download.jpg"
 
 export default function Img(){
 

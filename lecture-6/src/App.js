@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 // import Props from "./components/Props";
+import img from '../src/logo.svg'
+import img2 from '../src/logo.svg'
+import img3 from '../src/logo.svg'
 import Props from './components/Task1'
 
 
@@ -17,7 +20,6 @@ function App() {
         <Props name="Rose Bush" para="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates repudiandae." img={img2} ></Props>
         <Props name="Jones Gli" para="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates repudiandae." img={img3} ></Props>
       </div>
-
 
     </div>
   );

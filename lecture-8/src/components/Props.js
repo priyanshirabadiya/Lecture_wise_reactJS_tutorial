@@ -19,17 +19,34 @@ import React from "react";
 // show difference
 // De-starucring ▶ short description of props
 
-const Props = ({name,img,course,disc}) => {
+// const Props = ({name,img,course,disc}) => {
+//   return (
+//     <>
+//       <p>
+//         Name : {name} <br />
+//         course : {course} <br />
+//         disc : {disc}
+//         <p>this is included</p>
+//       </p>
+//     </>
+//   );
+// };
+
+// export default Props;
+
+
+
+const Props = ({name,disc,course}) => {
   return (
     <>
       <p>
-        Name : {name} <br />
-        <img src={img} alt="" />
-        course : {course} <br />
-        disc : {disc}
+        name is : {name}<br/>
+        discription is : {disc}<br/> 
+        course is : {course}
       </p>
     </>
-  );
-};
+  )
+}
 
 export default Props;
+

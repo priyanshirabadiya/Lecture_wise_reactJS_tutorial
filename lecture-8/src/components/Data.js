@@ -16,13 +16,13 @@ const Data = [
     {
         name : "priyanshi",
         disc : "i am livimga in surat",
-        course : "ful-stack",
+        course : "mern-stack",
         // img : img1
     },
     {
         name : "priyanshi",
         disc : "i am livimga in surat",
-        course : "ful-stack",
+        course : "grapgics",
         // img : img1
     }
 ]
