@@ -26,7 +26,7 @@
 //                   course={cvalue.course}
 //                 />
 //               </div>
-            
+
 //           );
 //         })}
 //       </div>
@@ -70,27 +70,27 @@
 
 
 
-// import React from 'react'
-// import Data from './components/Data'
-// import Props from './components/Props'
+import React from 'react'
+import Data from './components/Data'
+import Props from './components/Props'
 
-// export default function App() {
-//   return (
-//     <div className='flex w-full justify-between' >
-//       {Data.map((cvalue,ind,arr) => {
-//         return(
-//           <div key={ind} >
-//             <Props 
-//               name={cvalue.name}
-//               disc = {cvalue.disc}
-//               course = {cvalue.course}
-//             ></Props>
-//          </div>
-//         )
-//       })}
-//     </div>
-//   )
-// }
+export default function App() {
+    return (
+        <div className='flex w-full justify-between' >
+            {Data.map((cvalue, ind, arr) => {
+                return (
+                    <div key={ind} >
+                        <Props
+                            name={cvalue.name}
+                            disc={cvalue.disc}
+                            course={cvalue.course}
+                        ></Props>
+                    </div>
+                )
+            })}
+        </div>
+    )
+}
 
 
 
