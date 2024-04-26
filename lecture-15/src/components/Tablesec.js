@@ -22,7 +22,7 @@ function Tablesec() {
             <tbody>
                 {data.map((cvalue, ind) => {
                     return (
-                    <tr className=' h-10 bg-gray-400 text-white border'>
+                    <tr className='h-10 bg-gray-400 text-white border' key={ind}>
                         <td>{cvalue.id}</td>
                         <td>{cvalue.name}</td>
                         <td>{cvalue.email}</td>

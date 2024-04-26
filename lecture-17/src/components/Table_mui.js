@@ -9,8 +9,8 @@ import Paper from '@mui/material/Paper';
 import { useEffect, useState } from 'react';
 
 export default function BasicTable() {
-    const [row, setRow] = React.useState([]);
-    React.useEffect(() => {
+    const [row, setRow] = useState([]);
+    useEffect(() => {
         fetch("https://jsonplaceholder.typicode.com/users")
             .then((res) => res.json())
             // .then((data) => console.log(data,"data"))

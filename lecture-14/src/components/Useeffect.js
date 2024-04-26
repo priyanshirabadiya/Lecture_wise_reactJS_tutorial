@@ -4,13 +4,22 @@ export default function Effect(){
         const [increment , setincre] = useState(0);
         const [deincrement , setdecre] = useState(0);
 
-        useEffect(() => {
-            console.log('Use effect run depend on increment');
-        },[increment]);
+        // []                           -> only one time when page is reload
+        //                              -> onclick where we click on any button
+        // [increment] //any dependency -> any dependancy example [increment] works when we click on increment burron
 
         // useEffect(() => {
         //     console.log('Use effect run depend on decrement');
         // },[deincrement]);
+
+        // Reload time
+        // useEffect(() => {
+        //     console.log('Use effect run depend on decrement');
+        // },[]);
+
+        useEffect(() => {
+            console.log('Use effect run depend on increment');
+        });
 
         const increfun = () => {
             // console.log('incre');

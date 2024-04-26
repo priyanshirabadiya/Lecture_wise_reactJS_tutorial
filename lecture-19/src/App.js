@@ -1,28 +1,81 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+// import React, { useReducer } from 'react'
+// import './App.css';
+
+// let initialArg = 0;
+
+// const reducer = (statefirst, action) => {
+//   console.log(statefirst, action, "statefirst", "action");
+//   if (action.type == "increment") {
+//     return statefirst + 1;
+//   }
+//   if (action.type == "decrement") {
+//     return statefirst - 1;
+//   }
+// }
+
+// function App() {
+//   const [state, dispatch] = useReducer(reducer, initialArg);
+//   return (
+//     <div className="App">
+//       {state}<br />
+//       <button onClick={() => { dispatch({ type: "increment" }) }} >increment</button>
+//       <button onClick={() => { dispatch({ type: "decrement" }) }} >decrement</button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
 import React, { useReducer } from 'react'
-import './App.css';
+let intialstate = 0;
 
-let initialArg = 0;
-
-const reducer = (state, action) => {
-  console.log(state, action, "state", "action");
-  if (action.type == "increment") {
-    return state + 1;
+const reducer = (fstate, action) => {
+  if (action.type == "incre") {
+    return fstate + 1
   }
-  if (action.type == "decrement") {
-    return state - 1;
+  else {
+    return fstate - 1;
   }
 }
+export default function App() {
 
-function App() {
-  const [state, dispatch] = useReducer(reducer, initialArg);
+  const [state, dispatch] = useReducer(reducer, intialstate);
+
   return (
-    <div className="App">
+    <div>
       {state}<br />
-      <button onClick={() => { dispatch({ type: "increment" }) }} >increment</button>
-      <button onClick={() => { dispatch({ type: "decrement" }) }} >decrement</button>
+      <button onClick={() => dispatch({ type: "incre" })} >click here</button>
+      <button onClick={() => dispatch({ type: "decre" })} >decre</button>
+    </div>
+  )
+}
+
+
+
+
+
+
+
+
+/**
+ import React, { useState } from 'react'
+export default function UseState() {
+
+  const [count, setCount] = useState(0)
+
+  const myFun = () => {
+    console.log('Click');
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <h3>{count}</h3>
+      <button onClick={myFun} >Click me</button>
     </div>
   );
 }
 
-export default App;
+
+ */
