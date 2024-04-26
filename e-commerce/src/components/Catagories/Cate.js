@@ -48,19 +48,19 @@ export default function Cate() {
                             <span className='text-sm ps-4'>Gift Sets</span>
                         </li>
                         <li className='list-none ps-4 pt-5 cursor-pointer'>
-                            <span class="material-symbols-outlined icon">footprint</span>
+                            <span className="material-symbols-outlined icon">footprint</span>
                             <span className='text-sm ps-2 leading-6 mb-10 absolute'>Plastic Gifts</span>
                         </li>
                         <li className='list-none ps-5 pt-4 cursor-pointer'>
-                            <i class="fa-solid fa-futbol" style={{ color: "#d03966" }}></i>
+                            <i className="fa-solid fa-futbol" style={{ color: "#d03966" }}></i>
                             <span className='text-sm ps-4'>Handy Cream</span>
                         </li>
                         <li className='list-none ps-5 pt-4 cursor-pointer'>
-                            <i class="fa-solid fa-crown" style={{ color: "#d03966" }}></i>
+                            <i className="fa-solid fa-crown" style={{ color: "#d03966" }}></i>
                             <span className='text-sm ps-3'>Cosmetics</span>
                         </li>
                         <li className='list-none ps-5 pt-4 cursor-pointer'>
-                            <i class="fa-solid fa-gift" style={{ color: "#d03966" }}></i>
+                            <i className="fa-solid fa-gift" style={{ color: "#d03966" }}></i>
                             <span className='text-sm ps-3'>Silk Accessories</span>
                         </li>
                     </ul>
