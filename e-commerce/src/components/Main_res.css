@@ -1,5 +1,26 @@
+@media (max-width:1490px) {
+    main{
+        padding: 70px;
+        padding-top: 0 !important;
+    }
+}
+
 @media (max-width:1280px) {
+    main{
+        padding: 0px;
+        padding-top: 0 !important;
+    }
+    .sec-nav{
+        display: none !important;
+    }
+}
+
+@media (max-width:992px) {
     .sec-nav{
         display: none;
+    }
+    .wrap-div{
+        display: flex;
+        flex-wrap: wrap !important;
     }
 }

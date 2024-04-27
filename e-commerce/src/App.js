@@ -10,9 +10,10 @@ import TwoB from './components/TwoB/TwoB';
 function App() {
   return (
     <>
+    <main className='mb-96' >
       <Header />
       <div className=" flex ">
-        <div className='sec-nav' >
+        <div className='sec-nav z-40' >
           <Cate />
         </div>
         <div className='mt-3 w-full '>
@@ -20,17 +21,14 @@ function App() {
             <div className='sec-nav'><Dropdown /></div>
             <div className='sec-nav'><Number /></div>
           </div>
-          <div className='flex justify-between' >
+          <div className='flex  wrap-div ' >
             <div className=' mt-2 '> <Slider /></div>
             <div className=' mt-2 '> <TwoB/></div>
           </div>
         </div>
       </div>
+      </main>
 
-
-      {/* <div className='lg:px-0 relative lg:right-0 slider -mt-10 -ms-5 sm:px-7 '> */}
-      {/* <Slider /> */}
-      {/* </div> */}
     </>
   );
 }

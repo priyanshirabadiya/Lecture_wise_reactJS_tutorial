@@ -1,22 +1,19 @@
-.main{
-    /* width: 1500px; */
-}
 .swiper-div {
-    width: 850px;
-    height: auto;
+    max-width: 850px;
+    width: 100%;
     z-index: -2;
-    margin: 20px;
-    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 0;
+    object-fit: cover !important;
 }
 
 .slider {
     width: 100%;
-    height: auto;
+    height: 433px;
 }
 
 .swiper-button-prev {
     display: none !important;
-    
 }
 
 .swiper-button-next {
@@ -28,7 +25,7 @@
     height: 4px !important;
     width: 25px !important;
     background-color: rgb(101, 101, 101) !important;
-    cursor: pointer !important; 
+    cursor: pointer !important;
 
 }
 
@@ -36,14 +33,18 @@
     background-color: #d51243 !important;
 }
 
-/* ---------------------------------------------------------- */
-.two-box .first {
-    height: auto;
-    margin: 0px 0px 20px 20px;
+/* -------------------------slider texts--------------------------------- */
+
+.fonts-1{
+    font-size: medium;
+    letter-spacing: 1px;
 }
 
-
-.two-box .sec {
-    height: auto;
-    margin: 30px 0px 20px 20px !important;
+.redC{
+    color: #d51243;
 }
+.res-font{
+    font-size: calc(45px - 10% );
+    font-weight: bold;
+}
+

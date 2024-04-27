@@ -33,7 +33,7 @@ export default function Cate() {
                                     <i className="fa-solid fa-arrow-right fa-sm"></i>
                                 </div>
                             </button>
-                            <div className="dropdown-content side-dropdown-content">
+                            <div className="dropdown-content z-50 side-dropdown-content">
                                 <a href="#">Chair</a>
                                 <a href="#">Table</a>
                                 <a href="#">Wooden</a>

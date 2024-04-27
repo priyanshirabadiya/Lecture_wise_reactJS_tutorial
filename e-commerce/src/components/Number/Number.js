@@ -8,7 +8,7 @@ export default function Number() {
                 <span className="font-medium text-sm mt-1">908.408.501.89</span>    
                 </div>
                 <div className="flex">
-                <i class="fa-solid fa-location-dot ms-7 me-2 mt-1" style={{ color: "#d71d1d" }}></i>
+                <i className="fa-solid fa-location-dot ms-7 me-2 mt-1" style={{ color: "#d71d1d" }}></i>
                 <span className="font-medium text-sm mt-1">Find Store</span>
                 </div>
             </div>

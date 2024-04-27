@@ -5,12 +5,12 @@ import './style.css'
 export default function TwoB() {
   return (
     <div>
-       <div className="two-box me-10">
-          <div className="first  ">
-            <img src={img4} className='rounded object-cover' alt="" />
+       <div className="two-box  lg:me-0 xl:me-5">
+          <div className="first ms-3 ">
+            <img src={img4} className='rounded object-cover size' alt="" />
           </div>
-          <div className="sec">
-            <img src={img5} className='rounded object-cover' alt="" />
+          <div className="sec ms-3">
+            <img src={img5} className='rounded object-cover size' alt="" />
           </div>
         </div>
     </div>
