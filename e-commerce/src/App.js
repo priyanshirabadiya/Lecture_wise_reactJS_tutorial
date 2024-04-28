@@ -21,8 +21,8 @@ function App() {
             <div className='sec-nav'><Dropdown /></div>
             <div className='sec-nav'><Number /></div>
           </div>
-          <div className='flex  wrap-div ' >
-            <div className=' mt-2 '> <Slider /></div>
+          <div className='flex central wrap-div lg:flex-nowrap md:flex-wrap ' >
+            <div className=' mt-2 f-s'> <Slider /></div>
             <div className=' mt-2 '> <TwoB/></div>
           </div>
         </div>

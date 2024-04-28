@@ -21,12 +21,22 @@
     .slider {
         top: 70px !important;
     }
+    .swiper-div{
+        max-width: calc(80vw - 200px);
+        object-fit: contain !important;
+        width: 100%;
+        margin-left: 0 !important;
+    }
 }
 
 @media (max-width: 992px) {
     .swiper-div{
-        width: 650px;
+        max-width: calc(90vw);
+        object-fit: contain !important;
+        width: 100%;
+    }
+    .swiper-div img{
+        max-width: 100%;
+        height: auto;
     }
 }
-
-@media (max-width: 720px) {}
