@@ -1,0 +1,129 @@
+.TC{
+    color: #d51243;
+    font-weight: 100!important;
+}
+
+.f-main{
+    width: 200px;
+    text-align: center;
+    font-weight: 500;    
+    letter-spacing: 0.3px;
+    /* border-left: 5px solid #969696; */
+}
+.texts{
+    font-size: 16.5px;
+}
+.tpcategory__title a {
+    background-image: linear-gradient(#969696,#969696),linear-gradient(#969696,#969696);
+    display: inline;
+    background-size: 0 1px,0 1px;
+    background-position: 100% 100%,0 83%;
+    background-repeat: no-repeat;
+    transition: background-size .5s linear;
+    line-height: 1.4px;
+}
+
+.tpcategory__title a:hover {
+    cursor: pointer;
+    background-size: 0 1px,100% 1px
+}
+
+.f-bg {
+    height: 130px;
+    width: 130px;
+    line-height: 130px;
+    border-radius: 50%;
+    background-color: hsla(0,0%,97%,.5);
+    margin: auto auto 25px;
+    transition: all .3s ease-out 0s;
+    position: relative;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.f-bg img {
+    position: absolute;
+  
+}
+
+.f-bg span {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #d51243;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    transition: all .3s ease-out 0s;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,.06)
+}
+
+.f-bg:hover span{
+    background-color: #d51243;   
+    color: white;
+}
+
+.ani{
+    position: relative;
+}
+.ani img{
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    z-index: -1;  
+    animation: section-animation 2s infinite;
+
+}
+
+
+@keyframes section-animation {
+    0% {
+        width: 0;
+    }
+    15% {
+        width: 100%;
+    }
+    85%{
+        opacity: 1;
+    }
+    90%{
+        width: 100%;
+        opacity: 0;
+    }
+    100%{
+        width: 0;
+        opacity: 0 ;
+    }
+}
+
+@media (max-width: 767px) {
+    .f-bg {
+        height:130px;
+        width: 110px;
+        line-height: 110px
+    }
+    .line{
+        display: none;
+    }
+}
+
+@media (max-width:456px) {
+    .top-cata{
+        justify-content: center;
+    }
+}
+
+
+.line{
+    position: absolute;
+    top: 10px;
+    right: -65px;
+}

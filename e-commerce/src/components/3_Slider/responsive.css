@@ -40,3 +40,35 @@
         height: auto;
     }
 }
+
+@media screen and (max-width:768px) {
+    .res-font{
+        font-size: 26px !important;
+        line-height: 30px;
+    }
+}
+
+@media screen and (max-width:630px) {
+    .texts{
+        top: calc(15vh);
+    }
+    .shop{
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width:530px) {
+    .texts{
+        top: calc(8vh);
+    }
+    .shop{
+        margin-top: 10px;
+    }
+}
+
+
+@media screen and (max-width:450px) {
+    .texts{
+        top: 10px !important;
+        left: 10px !important;
+    }
+}

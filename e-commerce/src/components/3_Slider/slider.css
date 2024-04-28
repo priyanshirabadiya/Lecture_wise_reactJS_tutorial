@@ -1,3 +1,4 @@
+
 .swiper-div {
     max-width: 850px;
     width: 100%;
@@ -44,7 +45,29 @@
     color: #d51243;
 }
 .res-font{
-    font-size: calc(45px - 10% );
+    font-size: 50px;
     font-weight: bold;
+    line-height: 60px;
 }
 
+.accesories{
+    font-weight: 500;
+}
+
+.shop{
+    font-size: small;
+    font-weight: bold;
+    letter-spacing:0px;
+    background-color: white;
+    padding: 15px 32px 15px 32px;
+}
+
+.shop:hover{
+    background-color: #d51243;
+    transition: 0.5s ease-in-out;
+    color: white;
+}
+.shop:hover i{
+    color: white !important;
+    transform: translateX(5px);
+}

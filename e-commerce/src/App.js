@@ -1,16 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header/Header'
-import Cate from './components/Catagories/Cate';
-import Dropdown from './components/Cat_nav/Dropdown';
-import Number from './components/Number/Number';
+import Header from './components/1_Header/Header'
+import Cate from './components/2_Catagories/Cate';
+import Dropdown from './components/2_Cat_nav/Dropdown';
+import Number from './components/2_Number/Number';
 import './components/Main_res.css'
-import Slider from './components/Slider/Slider';
-import TwoB from './components/TwoB/TwoB';
+import Slider from './components/3_Slider/Slider';
+import TwoB from './components/3_TwoB/TwoB';
+import Top_catagories from './components/4_Top catagories/Top_catagories'
 function App() {
   return (
     <>
-    <main className='mb-96' >
+    <main className='mb-96 align-middle flex justify-center'>
+      <div>
       <Header />
       <div className=" flex ">
         <div className='sec-nav z-40' >
@@ -25,6 +27,10 @@ function App() {
             <div className=' mt-2 f-s'> <Slider /></div>
             <div className=' mt-2 '> <TwoB/></div>
           </div>
+        </div>
+      </div>
+        <div className="mt-0 mx-7 ">
+          <Top_catagories></Top_catagories>
         </div>
       </div>
       </main>
