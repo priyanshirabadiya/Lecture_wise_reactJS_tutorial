@@ -1,0 +1,60 @@
+.size-2 {
+    height: 500px;
+    width: 100%;
+    background-color: #F8F8F8;
+}
+
+.rd {
+    font-size: 20px;
+    font-weight: 600;
+    color: #d51243;
+}
+
+.tpdealcontact__price del {
+    font-size: 20px;
+    font-weight: 600;
+    color: #adadad;
+}
+
+.para p {
+    max-width: 750px;
+    color: #777;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    line-height: 1.66;
+}
+
+.tpdealcontact__title {
+    font-size: 50px;
+    color: #040404;
+    font-weight: 600;
+    line-height: 0.5;
+    letter-spacing: -1.5px;
+}
+
+.progress-bar{
+    position: relative;
+    max-width: 800px;
+    height: 5px;
+    background-color: #ffff;
+}
+
+.sr-only{
+    position: absolute;
+    max-width: 500px;
+    height: 5px;
+    background-color: #D51243;
+
+}
+
+
+@media (max-width:768px) {
+    .para p {
+        line-height: 1.66;
+    }
+
+    .tpdealcontact__title {
+        line-height: 1;
+    }
+
+}

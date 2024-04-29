@@ -21,21 +21,19 @@ export default function Top_catagories() {
                 </div>
             </div>
             <div className='flex top-cata justify-between mt-5 flex-wrap' >
-                {data.map((cvalue, ind, arr) => {
-                    return (<>
-                        <div>
-                            <div className='f-main' >
-                                <div className="f-bg relative">
-                                    <img src={cvalue.img} alt="" className='fn__svg' />
-                                    <span>{cvalue.id}</span>
-                                    <div className="line sm:hidden md:hidden lg:hidden xl:flex ">{cvalue.line}</div>
-                                </div>
-                                <div className="texts">
-                                    <h5 className="tpcategory__title"><a href="/shop">{cvalue.fname} <br />{cvalue.lname}</a></h5>
-                                </div>
+                {data.map((cvalue, ind) => {
+                    return (
+                        <div className='f-main' key={ind} >
+                            <div className="f-bg relative">
+                                <img src={cvalue.img} alt="" className='fn__svg' />
+                                <span>{cvalue.id}</span>
+                                <div className="line sm:hidden md:hidden lg:hidden xl:flex ">{cvalue.line}</div>
+                            </div>
+                            <div className="texts">
+                                <h5 className="tpcategory__title"><a href="/shop">{cvalue.fname} <br />{cvalue.lname}</a></h5>
                             </div>
                         </div>
-                    </>)
+                    )
                 })}
             </div>
         </div>
