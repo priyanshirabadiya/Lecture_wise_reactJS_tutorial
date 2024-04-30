@@ -71,6 +71,58 @@ const data2 = [
         img3: i10,
         simg : s5,
     },
+    // ------------------------------------------------------------------------
+    {
+        name: "Evelyn Patton",
+        name2: "Terry Byrd",
+        price: "$60.00",
+        price2: "$100.00",
+        img: i6,
+        img2: s1,
+        img3: i10,
+        simg : s5,
+    },
+    {
+        name: "Sally Ray",
+        name2: "Terry Byrd",
+        price: "$70.00",
+        price2: "$100.00",
+        img: i7,
+        img2: s2,
+        img3: i10,
+        simg : s5,
+    },
+    {
+        name: "Ora Bowman",
+        name2: "Terry Byrd",
+        price: "$80.00",
+        price2: "$100.00",
+        img: i8,
+        img2: s3,
+        img3: i10,
+        simg : s5,
+    },
+    {
+        name: "Effie Rios",
+        name2: "Terry Byrd",
+        price: "$90.00",
+        price2: "$100.00",
+        img: i9,
+        img2: s4,
+        img3: i10,
+        simg : s5,
+    },
+    {
+        name: "Terry Byrd",
+        name2: "Terry Byrd",
+        price: "$100.00",
+        price2: "$100.00",
+        img: i10,
+        img2: s5,
+        img3: i10,
+        simg : s5,
+    },
+    
 
 ]
 

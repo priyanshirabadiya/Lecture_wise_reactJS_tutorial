@@ -48,12 +48,13 @@ ul li a {
 }
 
 .incre {
-    z-index: 45;
+    /* z-index: 150 !important; */
     background-color: white !important;
     padding: 15px;
 }
 
 .incre:hover {
+    /* z-index: 1000 !important; */
     transition: 0.5s ease-in-out;
     height: 445px;
     padding: 15px;
@@ -148,18 +149,18 @@ ul li a {
     margin-top: 10px;
 }
 
-.n-div ul li a i{
+.n-div ul li a i {
     font-size: 10px;
     color: #d51243;
 }
 
-.hoverable{
+.hoverable {
     display: flex;
     justify-content: space-between;
     opacity: 0;
 }
 
-.incre:hover .hoverable{
+.incre:hover .hoverable {
     opacity: 1;
     display: flex;
     justify-content: space-between;
@@ -199,18 +200,13 @@ ul li span {
 
 /* ------------------------------------------------------------------------------------------------------ */
 
-.give-h{
-    height: 400px;
-    z-index: 50;
-    background-color: white;
+.give-h {
+    height: 420px;
+    /* z-index: 2000 !important; */
 }
-.give-h2{
-    height: 400px;
-    z-index: 40;
-}
-.twond{
+
+.twond {
     margin-top: 10px !important;
-    /* position: absolute !important; */
 }
 
 @media (max-width:576px) {

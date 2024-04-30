@@ -32,13 +32,13 @@ export default function Popular_p() {
         </div>
       </div>
       <div className='grid-rows-1' >
-        <div className="relative give-h ">
+        <div className="relative  ">
           <div className='f-1 flex justify-between flex-wrap cen com-1' >
             {data2.map((cvalue, ind) => {
               return (
-                <div key={ind}>
-                  <div className="incre">
-                    <div className='' >
+                <div key={ind} className='give-h' >
+                  <div className="incre z-10">
+                    <div className=''>
                       <div className='outer'>
                         <img src={cvalue.img} className='rounded' alt="" />
                         <div className='inner'>
@@ -48,7 +48,7 @@ export default function Popular_p() {
                       <h3 className='mt-5'><a href="" className='gray-t'>{cvalue.name}</a></h3>
                       <h3 className='s-line'>{cvalue.price}</h3>
                     </div>
-                    <div className="hoverable">
+                    <div className="hoverable Z-0 ">
                       <div className="tpproduct__thumb-bg">
                         <div className="tpproductactionbg">
                           <a href='#' className="add-to-cart"><i className="fa-solid fa-basket-shopping" style={{ color: "#c2c2c2" }}></i></a>
@@ -80,11 +80,11 @@ export default function Popular_p() {
             })}
           </div>
         </div>
-        <div className="relative give-h2">
+        {/* <div className="relative">
           <div className='f-1  flex justify-between flex-wrap cen twond com-1' >
             {data2.map((cvalue, ind) => {
               return (
-                <div key={ind}>
+                <div key={ind} className=' give-h2'>
                   <div className="incre">
                     <div className='' >
                       <div className='outer'>
@@ -127,7 +127,7 @@ export default function Popular_p() {
               )
             })}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

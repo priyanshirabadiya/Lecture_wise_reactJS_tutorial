@@ -1,3 +1,9 @@
+::selection {
+    background:#d51243;
+    color: white;
+    text-shadow: none;
+}
+
 @media (max-width:1490px) {
     main {
         padding: 70px;
