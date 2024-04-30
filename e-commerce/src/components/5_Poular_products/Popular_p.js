@@ -1,70 +1,58 @@
-import React, { useState, useEffect } from 'react'
-import './style.css';
-import I1 from '../assets/shape.jpg'
-import Data2 from './Data2'
+import React from "react";
+import data from "./Data2";
+import "./style.css";
 
-export default function Popular_p() {
-
-  const [data2, stdata] = useState(Data2);
-
-  useEffect(() => {
-    stdata(Data2)
-  }, [])
-
+const Popular_p = () => {
   return (
-    <div>
-      <div className='flex justify-between mt-14 flex-wrap'>
-        <div className='flex' >
-          <h4 className='text-2xl font-bold'>Popular</h4>
-          <div>
-            <span className='text-2xl leading-8 ms-2 TC ani' >Products
-              <span className='mt-3'><img src={I1} alt="" className='' /></span>
-            </span>
-          </div>
-        </div>
-        <div>
-          <ul className='flex justify-between wid w-96'>
-            <li><a href="" style={{ color: "#d51243", borderBottom: "2px solid #d51243" }} >All</a></li>
-            <li><a href="">Popular</a></li>
-            <li><a href="">On sale</a></li>
-            <li><a href="">Best Rated</a></li>
-          </ul>
-        </div>
+    <div className="my-10">
+      <div className="flex justify-between flex-wrap mx-5 ">
+        <h1 className="text-2xl font-semibold">
+          Popular <span className="font-normal text-red-600">Product</span>
+        </h1>
+        <ul className="flex font-semibold  justify-between flex-wrap max-w-[500px] w-full ">
+          <li><a href="#" className="text-red-600 underline">All</a></li>
+          <li><a href="#">Popular</a></li>
+          <li><a href="#">On Sale</a></li>
+          <li><a href="#">Best Rated</a></li>
+        </ul>
       </div>
-      <div className='grid-rows-1' >
-        <div className="relative  ">
-          <div className='f-1 flex justify-between flex-wrap cen com-1' >
-            {data2.map((cvalue, ind) => {
-              return (
-                <div key={ind} className='give-h' >
-                  <div className="incre z-10">
-                    <div className=''>
-                      <div className='outer'>
-                        <img src={cvalue.img} className='rounded' alt="" />
-                        <div className='inner'>
-                          <img src={cvalue.img2} className='rounded' alt="" />
-                        </div>
+      <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-5 top-class mt-10 w-full px-4">
+        {data.map((value, ind, array) => {
+          return (
+            <div className="sm:h-[25rem] md:h-[24rem] lg:h-[26rem] w-[18.5rem] main-data relative">
+              <div className="img-data p-4 absolute bg-white rounded-lg">
+                <div className="hover:rounded-lg ">
+                  <img src={value.img} alt="Image1" className="rounded-lg" />
+                  <div className="sec-img p-4">
+                    <img
+                      src={value.img2}
+                      alt="Image1"
+                      className="rounded-lg"
+                    />
+                  </div>
+                  <div className="text-left mt-4">
+                    <h1 className="text-gray-500">{value.name}</h1>
+                    <p className="font-semibold">{value.price}</p>
+                  </div>
+                  <div className="mt-4 opacity-0 dots">
+                    <div className="tpproduct__thumb-bg">
+                      <div className="tpproductactionbg">
+                        <a href='#' className="add-to-cart"><i className="fa-solid fa-basket-shopping" style={{ color: "#c2c2c2" }}></i></a>
+                        <a href="#"><i className="fa-solid fa-arrow-right-arrow-left" style={{ color: "#c2c2c2" }}></i></a>
+                        <a href="#"><i className="fa-regular fa-eye" style={{ color: "#c2c2c2" }}></i></a>
+                        <a href='#' className="wishlist"><i className="fa-regular fa-heart" style={{ color: "#c2c2c2" }}></i></a>
                       </div>
-                      <h3 className='mt-5'><a href="" className='gray-t'>{cvalue.name}</a></h3>
-                      <h3 className='s-line'>{cvalue.price}</h3>
                     </div>
-                    <div className="hoverable Z-0 ">
-                      <div className="tpproduct__thumb-bg">
-                        <div className="tpproductactionbg">
-                          <a href='#' className="add-to-cart"><i className="fa-solid fa-basket-shopping" style={{ color: "#c2c2c2" }}></i></a>
-                          <a href="#"><i className="fa-solid fa-arrow-right-arrow-left" style={{ color: "#c2c2c2" }}></i></a>
-                          <a href="#"><i className="fa-regular fa-eye" style={{ color: "#c2c2c2" }}></i></a>
-                          <a href='#' className="wishlist"><i className="fa-regular fa-heart" style={{ color: "#c2c2c2" }}></i></a>
-                        </div>
-                      </div>
-                      <div className='flex  ' >
-                        <a href="" className='blue'></a>
-                        <a href="" className='red' ></a>
-                        <a href="" className='orange' ></a>
-                        <a href="" className='purple' ></a>
+                    <div className="flex justify-between ">
+                      <div className="flex">
+                        <a href="" className="blue"></a>
+                        <a href="" className="red"></a>
+                        <a href="" className="orange"></a>
+                        <a href="" className="purple"></a>
                       </div>
                       <div className='n-div' >
-                        <ul className='flex ' ><li>
+                        <ul className='flex -mt-1'>
+                          <li>
                           <a href="#"><i className="fas fa-star"></i></a>
                           <a href="#"><i className="fas fa-star"></i></a>
                           <a href="#"><i className="fas fa-star"></i></a>
@@ -76,59 +64,13 @@ export default function Popular_p() {
                     </div>
                   </div>
                 </div>
-              )
-            })}
-          </div>
-        </div>
-        {/* <div className="relative">
-          <div className='f-1  flex justify-between flex-wrap cen twond com-1' >
-            {data2.map((cvalue, ind) => {
-              return (
-                <div key={ind} className=' give-h2'>
-                  <div className="incre">
-                    <div className='' >
-                      <div className='outer'>
-                        <img src={cvalue.img3} className='rounded' alt="" />
-                        <div className='inner'>
-                          <img src={cvalue.simg} className='rounded' alt="" />
-                        </div>
-                      </div>
-                      <h3 className='mt-5'><a href="" className='gray-t'>{cvalue.name}</a></h3>
-                      <h3 className='s-line'>{cvalue.price}</h3>
-                    </div>
-                    <div className="hoverable">
-                      <div className="tpproduct__thumb-bg">
-                        <div className="tpproductactionbg">
-                          <a href='#' className="add-to-cart"><i className="fa-solid fa-basket-shopping" style={{ color: "#c2c2c2" }}></i></a>
-                          <a href="#"><i className="fa-solid fa-arrow-right-arrow-left" style={{ color: "#c2c2c2" }}></i></a>
-                          <a href="#"><i className="fa-regular fa-eye" style={{ color: "#c2c2c2" }}></i></a>
-                          <a href='#' className="wishlist"><i className="fa-regular fa-heart" style={{ color: "#c2c2c2" }}></i></a>
-                        </div>
-                      </div>
-                      <div className='flex  ' >
-                        <a href="" className='blue'></a>
-                        <a href="" className='red' ></a>
-                        <a href="" className='orange' ></a>
-                        <a href="" className='purple' ></a>
-                      </div>
-                      <div className='n-div' >
-                        <ul className='flex ' ><li>
-                          <a href="#"><i className="fas fa-star"></i></a>
-                          <a href="#"><i className="fas fa-star"></i></a>
-                          <a href="#"><i className="fas fa-star"></i></a>
-                          <a href="#"><i className="fas fa-star"></i></a>
-                          <a href="#"><i className="far fa-star"></i></a></li>
-                          <li><span>(81)</span></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div> */}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default Popular_p;

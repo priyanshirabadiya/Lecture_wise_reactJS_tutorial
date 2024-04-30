@@ -7,14 +7,6 @@
   'opsz' 24
 }
 
-.main-catagorie{
-    height: 50px;
-    width: 215px;
-    background-color: #d51243;
-    border-radius: 5px 5px 0 0;
-    color: white;
-    cursor: pointer;
-}
 
 
 .category-menu{
@@ -124,4 +116,15 @@ ul li:hover ,ul li:hover .right i{
 
 .category-menu-on {
     display: block;
+}
+
+
+.main-c{
+    height: 50px;
+    width: 215px;
+    background-color: #d51243;
+    border: 1px solid #d51243;
+    border-radius: 5px 5px 0 0!important;
+    color: white;
+    cursor: pointer;
 }

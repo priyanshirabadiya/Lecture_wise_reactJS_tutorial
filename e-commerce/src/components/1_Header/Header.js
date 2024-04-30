@@ -7,14 +7,17 @@ import './responsive.css'
 export default function Header() {
   return (
     <>
-      <div className='container grid-cols-2 gap-5 pt-7 grid-rows-1 mx-auto flex justify-between px-7'>
-        <div className='logo-div flex justify-between mt-5'>
+      <div className='relative flex justify-between mt-5 mx-10 '>
+        <div className='logo-div mt-5 flex'>
           <div className='side-icon'>
-            <i className="fa-solid fa-bars  absolute fa-lg top-14 "></i>
+            <i className="fa-solid fa-bars  fa-lg  "></i>
           </div>
-          <div>
-            <img src={logo} alt="" className='absolute top-9' />
+          <div className='f-icon -mt-1'>
+            <img src={logo} alt="" className='top-0 left-0' />
           </div>
+        </div>
+        <div className='s-icon mt-3'>
+          <img src={logo} alt="" className='top-0 left-0' />
         </div>
         <div className='flex' >
           <form action="#">

@@ -11,6 +11,11 @@
     color: #d51243;
 }
 
+.nw-img img{
+    max-width: 100%;
+    height: auto;
+}
+
 .tpdealcontact__price del {
     font-size: 20px;
     font-weight: 600;
@@ -26,11 +31,20 @@
 }
 
 .tpdealcontact__title {
-    font-size: 50px;
+    font-size: calc(3vw);
     color: #040404;
     font-weight: 600;
     line-height: 0.5;
     letter-spacing: -1.5px;
+}
+@media (max-width:576px){
+    .tpdealcontact__title {
+        font-size: calc(5vw) !important;
+        color: #040404;
+        font-weight: 600;
+        line-height: 0 !important;
+        letter-spacing: 1.5px;
+    }
 }
 
 .tpdealcontact__title-2 {
@@ -66,6 +80,10 @@
     width: 500px;
     height: 5px;
     background-color: #D51243;
+
+}
+
+.tpdealcontact__title{
 
 }
 

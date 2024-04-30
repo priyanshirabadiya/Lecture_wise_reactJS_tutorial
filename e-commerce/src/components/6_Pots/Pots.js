@@ -11,7 +11,7 @@ export default function Pots() {
   return (
     <div>
       <div className="size-2 flex justify-center items-center flex-wrap ">
-        <div className=''><img src={pot} alt="image not show" /></div>
+        <div className='nw-img'><img src={pot} alt="image not show" /></div>
         <div className='lg:ms-14 para' >
           <div class="tpdealcontact__price mb-5 ">
             <span className='rd'>$49.00</span>
@@ -22,7 +22,7 @@ export default function Pots() {
           <div className="progress mt-3 ">
             <div className="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
-          <div className="for-flex flex w-full mt-5">
+          <div className="for-flex flex-wrap  flex  justify-center lg:justify-start w-full mt-5">
             <div className="box-1 sm:me-4 md:me-5">
               <h1 className='tpdealcontact__title-2' >-131</h1>
               <h6 className='mt-2 ms-4 absolute' >Days</h6>
@@ -51,13 +51,13 @@ export default function Pots() {
           <h4 class="tpsectionarea__title">
             <i class="fab fa-instagram"></i> ninico-shop</h4>
         </div>
-        <div className="flex justify-between frapable mt-4 flex-wrap">
-          <a href="" className='p-3' > <img className='rounded n-img ' src={l1} alt="" /></a>
-          <a href="" className='p-3' > <img className='rounded n-img ' src={l2} alt="" /></a>
-          <a href="" className='p-3' > <img className='rounded n-img ' src={l3} alt="" /></a>
-          <a href="" className='p-3' > <img className='rounded n-img ' src={l4} alt="" /></a>
-          <a href="" className='p-3' > <img className='rounded n-img ' src={l5} alt="" /></a>
-          <a href="" className='p-3' > <img className='rounded n-img ' src={l6} alt="" /></a>
+        <div className="flex justify-between frapable mt-4 mx-14 flex-wrap">
+          <a href="" className='pe-1' > <img className='rounded n-img ' src={l1} alt="" /></a>
+          <a href="" className='pe-1' > <img className='rounded n-img ' src={l2} alt="" /></a>
+          <a href="" className='pe-1' > <img className='rounded n-img ' src={l3} alt="" /></a>
+          <a href="" className='pe-1' > <img className='rounded n-img ' src={l4} alt="" /></a>
+          <a href="" className='pe-1' > <img className='rounded n-img ' src={l5} alt="" /></a>
+          <a href="" className='' > <img className='rounded n-img ' src={l6} alt="" /></a>
         </div>
       </div>
 

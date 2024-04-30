@@ -12,10 +12,12 @@ import Popular_p from './components/5_Poular_products/Popular_p';
 import Pots from './components/6_Pots/Pots';
 import Footer from './components/Footer/Footer';
 import Errorpage from './components/7_Error_page/Errorpage'
+import Home from './components/0_Home/Home';
+import Header2 from './components/2_Header2/Header2';
 function App() {
   return (
     <>
-      { <main className='align-middle flex justify-center'>
+      {/* <main className='align-middle flex justify-center'>
       <div>
           <Header />
           <div className=" flex ">
@@ -23,7 +25,7 @@ function App() {
               <Cate />
             </div>
             <div className='mt-3 w-full '>
-              <div className='flex justify-between '>
+              <div className='flex justify-between pe-7'>
                 <div className='sec-nav'><Dropdown /></div>
                 <div className='sec-nav'><Number /></div>
               </div>
@@ -33,21 +35,25 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="mt-0 mx-7 ">
+          <div className="mt-0 ">
             <Top_catagories ></Top_catagories><hr className='mt-24' ></hr>
             <div className='mt-10 relative  ' ><Popular_p /></div>
             <div className="mt-24 relative "><Pots /></div>
           </div>
           <div className="mt-24 relative "><Footer /></div>
         </div> 
-      </main>
-      }
+      </main> */}
+
       {/* <div>
         <Errorpage />
       </div> */}
+
+
+      <Header />
+      <Home />
+
     </>
   );
 }
 
 export default App;
- 
