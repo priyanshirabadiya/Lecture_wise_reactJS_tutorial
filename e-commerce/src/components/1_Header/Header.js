@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <>
       <div className='container grid-cols-2 gap-5 pt-7 grid-rows-1 mx-auto flex justify-between px-7'>
-        <div className='logo-div flex justify-between'>
+        <div className='logo-div flex justify-between mt-5'>
           <div className='side-icon'>
             <i className="fa-solid fa-bars  absolute fa-lg top-14 "></i>
           </div>
@@ -37,8 +37,8 @@ export default function Header() {
             </div>
             <div className="s-selector">
               <select className='border h-12 rounded ms-3' >
-                <option style={{padding:"50px"}}>USD</option>
-                <option style={{padding:"50px"}}>YEAN</option>
+                <option style={{ padding: "50px" }}>USD</option>
+                <option style={{ padding: "50px" }}>YEAN</option>
                 <option>EURO</option>
               </select>
             </div>

@@ -48,16 +48,16 @@ ul li a {
 }
 
 .incre {
-    /* z-index: 150 !important; */
     background-color: white !important;
     padding: 15px;
+    z-index: 1;
 }
 
 .incre:hover {
-    /* z-index: 1000 !important; */
     transition: 0.5s ease-in-out;
     height: 445px;
     padding: 15px;
+    z-index:10 !important;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 3px;
 }
 
@@ -202,7 +202,6 @@ ul li span {
 
 .give-h {
     height: 420px;
-    /* z-index: 2000 !important; */
 }
 
 .twond {
