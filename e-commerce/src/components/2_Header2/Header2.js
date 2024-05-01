@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Dropdown from '../2_Cat_nav/Dropdown'
-import Number from '../2_Number/Number'
-import Cate from '../7_Catagories_Ndropdown/Cate'
+import Dropdown from './2_Dropdowns/Dropdown'
+import Number from './2_Number/Number'
+import Cate from './2_Newcatagories/Cate'
 export default function Header2() {
   return (
     <div>

@@ -4,7 +4,7 @@ import "./style.css";
 
 const Popular_p = () => {
   return (
-    <div className="my-10">
+    <div className="my-10 mx-1">
       <div className="flex justify-between flex-wrap mx-5 ">
         <h1 className="text-2xl font-semibold">
           Popular <span className="font-normal text-red-600">Product</span>

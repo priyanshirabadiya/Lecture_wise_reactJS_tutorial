@@ -8,7 +8,7 @@ import './style.css'
 
 function Footer() {
     return (
-        <footer className="footer-wrapper m-auto bg-[#F8F8F8]">
+        <footer className="footer-wrapper m-auto bg-[#F8F8F8] mt-14">
             <div className="sm:container py-10 mx-auto">
                 <div className="mb-8 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 justify-stretch gap-[3rem]">
                     <div className="lg:col-span-2 ms-3">

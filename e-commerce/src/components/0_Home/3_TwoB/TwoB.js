@@ -1,6 +1,6 @@
 import React from 'react'
-import img4 from '../assets/banner-4.jpg'
-import img5 from '../assets/banner-5.jpg'
+import img4 from '../../assets/banner-4.jpg'
+import img5 from '../../assets/banner-5.jpg'
 import './style.css'
 export default function TwoB() {
   return (

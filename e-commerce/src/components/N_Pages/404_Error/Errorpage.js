@@ -1,26 +1,13 @@
 import React from 'react'
 import './style.css'
-import Header from '../1_Header/Header'
-import Ncate from '../7_Catagories_Ndropdown/Cate';
-import Dropdown from '../2_Cat_nav/Dropdown';
-import Number from '../2_Number/Number';
+import Header2 from '../2_Header2/Header2'
 import e from '../assets/e-logo.png'
-import Footer from '../Footer/Footer';
 export default function Errorpage() {
   return (
     <div>
       <div className='' >
-        <Header />
         <div className=" flex ">
-          <div className='sec-nav z-40' >
-            <Ncate />
-          </div>
-          <div className='mt-3 w-full'>
-            <div className='flex justify-between '>
-              <div className='sec-nav'><Dropdown /></div>
-              <div className='sec-nav'><Number /></div>
-            </div>
-          </div>
+          <Header2/>
         </div>
         <div className="bg-img pb-60 -mt-8 w-full  bg-no-repeat relative">
           <div className='flex flex-wrap w-40 justify-between top-10 absolute left-10' >
@@ -44,7 +31,6 @@ export default function Errorpage() {
             Back to Home
           </button>
         </div>
-        <Footer />
       </div>
     </div>
   )

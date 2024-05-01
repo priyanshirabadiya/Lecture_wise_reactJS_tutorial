@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './style.css'
-import c1 from '../assets/c1.svg'
+import c1 from '../../assets/c1.svg'
 import Data from './Data'
-import I1 from '../assets/shape.jpg'
+import I1 from '../../assets/shape.jpg'
 
 export default function Top_catagories() {
     const [data, setData] = useState(Data);
@@ -11,7 +11,7 @@ export default function Top_catagories() {
         setData(Data)
     }, [])
     return (
-        <div>
+        <div className='mx-5' >
             <div className='flex  mt-14'>
                 <h4 className='text-2xl font-bold'>Top</h4>
                 <div>
@@ -36,6 +36,7 @@ export default function Top_catagories() {
                     )
                 })}
             </div>
+            <hr className='mt-14' />
         </div>
     )
 }

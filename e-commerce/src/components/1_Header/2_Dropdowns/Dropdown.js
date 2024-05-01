@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-
+import {Link} from 'react-router-dom'
 export default function Dropdown() {
     return (
         <div className='flex last-one'>
@@ -50,7 +50,7 @@ export default function Dropdown() {
                     <div className='flex justify-between'>
                         <a href="" className='w-36 h-1'>Shop sidebar</a>
                         <a href="" className='w-36'>Checkout</a>
-                        <a href="">404/error</a>
+                        <Link to="/error" >404/error</Link>
                     </div>
                     <div className='flex justify-between'>
                         <a href="" className='w-36 h-1'>Shop Right sidebar</a>

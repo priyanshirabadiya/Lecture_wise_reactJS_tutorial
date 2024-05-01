@@ -1,15 +1,15 @@
 import React from 'react'
-import pot from '../assets/lpot.png'
-import l1 from '../assets/l1.jpg'
-import l2 from '../assets/l2.jpg'
-import l3 from '../assets/l3.jpg'
-import l4 from '../assets/l4.jpg'
-import l5 from '../assets/l5.jpg'
-import l6 from '../assets/l6.jpg'
+import pot from '../../assets/lpot.png'
+import l1 from '../../assets/l1.jpg'
+import l2 from '../../assets/l2.jpg'
+import l3 from '../../assets/l3.jpg'
+import l4 from '../../assets/l4.jpg'
+import l5 from '../../assets/l5.jpg'
+import l6 from '../../assets/l6.jpg'
 import './style.css'
 export default function Pots() {
   return (
-    <div>
+    <div className=' mx-9' >
       <div className="size-2 flex justify-center items-center flex-wrap ">
         <div className='nw-img'><img src={pot} alt="image not show" /></div>
         <div className='lg:ms-14 para' >
@@ -51,7 +51,7 @@ export default function Pots() {
           <h4 class="tpsectionarea__title">
             <i class="fab fa-instagram"></i> ninico-shop</h4>
         </div>
-        <div className="flex justify-between frapable mt-4 mx-14 flex-wrap">
+        <div className="flex justify-between frapable mt-4  flex-wrap">
           <a href="" className='pe-1' > <img className='rounded n-img ' src={l1} alt="" /></a>
           <a href="" className='pe-1' > <img className='rounded n-img ' src={l2} alt="" /></a>
           <a href="" className='pe-1' > <img className='rounded n-img ' src={l3} alt="" /></a>

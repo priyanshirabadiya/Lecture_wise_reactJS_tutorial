@@ -5,9 +5,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './slider.css'
 import './responsive.css'
-import img1 from '../assets/banner-1.jpg'
-import img2 from '../assets/banner-2.jpg'
-import img3 from '../assets/banner-3.jpg'
+import img1 from '../../assets/banner-1.jpg'
+import img2 from '../../assets/banner-2.jpg'
+import img3 from '../../assets/banner-3.jpg'
 
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
