@@ -1,5 +1,5 @@
 .bg-img{
-    background-image: url(../assets/error-bg.jpg);
+    background-image: url(../../assets/error-bg.jpg);
     background-size: 100% 100%;
     object-fit: cover;
 }
@@ -22,42 +22,42 @@
 }
 
 .btn:before {
-    position: absolute;
+    /* position: absolute;
     content: "";
     background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.2));
     left: -10%;
     top: 0;
     height: 100%;
-    width: 10%
+    width: 10% */
 }
 
-.btn:hover:before {
-    animation: lightwhite .8s
-}
 
 .btn:hover i {
     animation: iconarrow .4s linear
 }
 
+@keyframes iconarrow {
+    49%{
+        transform: translateX(30%);
+    }
+    50%{
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+    51%{
+        opacity: 1;
+    }
+}
 
-@keyframes lightwhite {
+/* .btn:hover:before {
+    animation: lightwhite .8s
+} */
+
+
+
+/* @keyframes lightwhite {
     to {
         left: 100%
     }
-}
+} */
 
-
-@keyframes iconarrow {
-    49% {
-        transform: translateX(30%)
-    }
-
-    50% {
-        opacity: 0;
-        transform: translateX(-30%)
-    }
-
-    51% {
-        opacity: 1
-    }
-}

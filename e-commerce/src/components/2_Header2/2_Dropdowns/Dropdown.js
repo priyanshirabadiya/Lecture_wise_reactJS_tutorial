@@ -7,7 +7,7 @@ export default function Dropdown() {
             <div className="dropdown first ms-4 rounded">
                 <button className="dropbtn rounded-md flex"><b>Home</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
                 <div className="dropdown-content font-bold">
-                    <a href="#">Wooden Home</a>
+                    <Link to="/">Wooden Home</Link>
                     <a href="#">Fashion Home</a>
                     <a href="#">Furniture Home</a>
                     <a href="#">Cosmetics Home</a>
@@ -17,8 +17,8 @@ export default function Dropdown() {
             <div className="dropdown ms-9 rounded">
                 <button className="dropbtn rounded-md flex"><b>Shop</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
                 <div className="dropdown-content font-bold">
-                    <a href="#">Shop</a>
-                    <a href="#">Shop 2</a>
+                    <Link to="/shop">Shop</Link>
+                    <Link to="/shop">Shop 2</Link>
                     <a href="#">Shop Details </a>
                     <a href="#">Shop Details 2</a>
                     <a href="#">Shop Location</a>
@@ -73,7 +73,7 @@ export default function Dropdown() {
                 </div>
             </div>
             <div className="dropdown ms-9 rounded">
-                <button className="dropbtn rounded-md flex"><b>Contact</b></button>
+                <button className="dropbtn rounded-md flex"><b> <Link to="/contact" href="">Contact</Link> </b></button>
             </div>
         </div>
     )
