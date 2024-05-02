@@ -51,14 +51,4 @@
 input[type="checkbox"] {
     accent-color: black;
   }
-
-  .input-range {
-    height: 1rem;
-    position: relative;
-    width: 100%;
-}
-
-input[type="range"] {
-    accent-color: #BB2D3B;
-  }
-
+  

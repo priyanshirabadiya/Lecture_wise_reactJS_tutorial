@@ -16,10 +16,10 @@ const Popular_p = () => {
           <li><a href="#">Best Rated</a></li>
         </ul>
       </div>
-      <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-5 top-class mt-10 w-full px-4">
+      <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-4 top-class mt-10 w-full px-4">
         {data.map((value, ind, array) => {
           return (
-            <div className="sm:h-[25rem] md:h-[24rem] lg:h-[26rem] w-[18.5rem] main-data relative"  key={ind}>
+            <div className="sm:h-[25rem] md:h-[24rem] lg:h-[26rem] w-[18.5rem] main-data relative" key={ind} >
               <div className="img-data p-4 absolute bg-white rounded-lg">
                 <div className="hover:rounded-lg ">
                   <img src={value.img} alt="Image1" className="rounded-lg" />

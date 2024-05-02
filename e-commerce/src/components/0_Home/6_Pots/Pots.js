@@ -13,11 +13,11 @@ export default function Pots() {
       <div className="size-2 flex justify-center items-center flex-wrap ">
         <div className='nw-img'><img src={pot} alt="image not show" /></div>
         <div className='lg:ms-14 para' >
-          <div class="tpdealcontact__price mb-5 ">
+          <div className="tpdealcontact__price mb-5 ">
             <span className='rd'>$49.00</span>
             <del className='ms-1' >$59.00</del>
           </div>
-          <h4 class="tpdealcontact__title mb-10"><a href="/shop-details">Pro2 Abstract Folded Pots</a></h4>
+          <h4 className="tpdealcontact__title mb-10"><a href="/shop-details">Pro2 Abstract Folded Pots</a></h4>
           <p className='' >Elegant pink origami design three-dimensional view and decoration co-exist. Great for adding a decorative touch to any room’s decor. Wonderful accent piece for coffee tables or side tables.</p>
           <div className="progress mt-3 ">
             <div className="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
@@ -47,9 +47,9 @@ export default function Pots() {
       </div>
       <div className="mt-12">
         <div className='align-middle text-center'>
-          <h5 class="tpsectionarea__subtitle">Follow On</h5>
-          <h4 class="tpsectionarea__title">
-            <i class="fab fa-instagram"></i> ninico-shop</h4>
+          <h5 className="tpsectionarea__subtitle">Follow On</h5>
+          <h4 className="tpsectionarea__title">
+            <i className="fab fa-instagram"></i> ninico-shop</h4>
         </div>
         <div className="flex justify-between frapable mt-4  flex-wrap">
           <a href="" className='pe-1' > <img className='rounded n-img ' src={l1} alt="" /></a>

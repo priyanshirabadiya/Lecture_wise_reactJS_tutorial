@@ -9,7 +9,7 @@ export default function Header() {
     <>
     <div className='hooter-line h-10 bg-[#F3EEE7] flex items-center'>
     <p className='px-7 text-sm font-bold tracking-[0.5px] '>Welcome to our international shop! Enjoy free shipping on orders $100 up</p>
-    <a href="/shop" className='text-sm font-bold text-[#d51243] -ms-4 ' >Shop Now <i class="fa-solid fa-arrow-right" style={{color:"#d51243"}}></i> </a>
+    <a href="/shop" className='text-sm font-bold text-[#d51243] -ms-4 ' >Shop Now <i className="fa-solid fa-arrow-right" style={{color:"#d51243"}}></i> </a>
     </div>
       <div className='relative flex justify-between mt-5 mx-10 '>
         <div className='logo-div mt-5 flex'>

@@ -5,21 +5,11 @@ import "./style.css";
 const Popular_p = () => {
   return (
     <div className="my-10 mx-1">
-      <div className="flex justify-between flex-wrap mx-5 ">
-        <h1 className="text-2xl font-semibold">
-          Popular <span className="font-normal text-red-600">Product</span>
-        </h1>
-        <ul className="flex font-semibold  justify-between flex-wrap max-w-[500px] w-full ">
-          <li><a href="#" className="text-red-600 underline">All</a></li>
-          <li><a href="#">Popular</a></li>
-          <li><a href="#">On Sale</a></li>
-          <li><a href="#">Best Rated</a></li>
-        </ul>
-      </div>
-      <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-5 top-class mt-10 w-full px-4">
+      
+      <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-4 top-class mt-10 w-full px-4">
         {data.map((value, ind, array) => {
           return (
-            <div className="sm:h-[25rem] md:h-[24rem] lg:h-[26rem] w-[18.5rem] main-data relative"  key={ind}>
+            <div className="sm:h-[25rem] md:h-[24rem] lg:h-[26rem] w-[22.5rem] mb-20 main-data relative" key={ind}>
               <div className="img-data p-4 absolute bg-white rounded-lg">
                 <div className="hover:rounded-lg ">
                   <img src={value.img} alt="Image1" className="rounded-lg" />

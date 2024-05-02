@@ -18,7 +18,7 @@ export default function Dropdown() {
                 <button className="dropbtn rounded-md flex"><b>Shop</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
                 <div className="dropdown-content font-bold">
                     <Link to="/shop">Shop</Link>
-                    <Link to="/shop">Shop 2</Link>
+                    <Link to="/shop2">Shop 2</Link>
                     <a href="#">Shop Details </a>
                     <a href="#">Shop Details 2</a>
                     <a href="#">Shop Location</a>

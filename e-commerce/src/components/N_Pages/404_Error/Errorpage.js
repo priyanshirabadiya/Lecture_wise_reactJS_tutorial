@@ -27,7 +27,7 @@ export default function Errorpage() {
         </div>
         <div className="flex justify-center mb-20">
           <button className='btn bg-[#d51243] text-sm text-white font-bold ps-9 pt-4 pe-11 pb-4 mt-20 rounded' >
-            <i class="fa-solid fa-arrow-left me-4" style={{ color: "#ffffff" }}></i>
+            <i className="fa-solid fa-arrow-left me-4" style={{ color: "#ffffff" }}></i>
             Back to Home
           </button>
         </div>

@@ -7,7 +7,8 @@ import Footer from './components/Footer/Footer';
 import Errorpage from './components/N_Pages/404_Error/Errorpage'
 import Home from './components/0_Home/Home';
 import Contact from './components/N_contact/Contact' 
-import Shop from './components/N_shop/Shop2/Shop'
+import Shop from './components/N_shop/Shop/Shop'
+import Shop2 from './components/N_shop/Shop2/Shop'
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
             <Route path="/error" element={<Errorpage />} ></Route>
             <Route path="/contact" element={<Contact/>} ></Route>
             <Route path="/shop" element={<Shop/>} ></Route>
+            <Route path="/shop2" element={<Shop2/>} ></Route>
           </Routes>
         </BrowserRouter>
         <Footer />
