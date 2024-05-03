@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 export default function Dropdown() {
     return (
         <div className='flex last-one'>
@@ -19,13 +19,13 @@ export default function Dropdown() {
                 <div className="dropdown-content font-bold">
                     <Link to="/shop">Shop</Link>
                     <Link to="/shop2">Shop 2</Link>
-                    <a href="#">Shop Details </a>
+                    <a href="#">Shop Details</a>
                     <a href="#">Shop Details 2</a>
-                    <a href="#">Shop Location</a>
+                    <Link to="/shop_details">Shop Location</Link>
                     <a href="#">Cart</a>
-                    <a href="#">Sign In</a>
+                    <Link to="/signin">Sign In</Link>
                     <a href="#">Checkout</a>
-                    <a href="#">Wishlist</a>
+                    <Link to="/wishlist">Wishlist</Link>
                     <a href="#">Product Track</a>
                 </div>
             </div>
@@ -45,7 +45,7 @@ export default function Dropdown() {
                     <div className='flex justify-between'>
                         <Link to="/shop2" className='w-36 h-1'>Shop filters v2</Link>
                         <a href="" className='w-24'>Cart</a>
-                        <a href="">Wishlist</a>
+                        <Link to="/Wishlist" >Wishlist</Link>
                     </div>
                     <div className='flex justify-between'>
                         <a href="" className='w-36 h-1'>Shop sidebar</a>
@@ -54,12 +54,12 @@ export default function Dropdown() {
                     </div>
                     <div className='flex justify-between'>
                         <a href="" className='w-36 h-1'>Shop Right sidebar</a>
-                        <a href="" className='w-24 '>Sign In</a>
+                        <Link to="/signin" className='w-24'>Sign In</Link>
                         <a href="">Coming soon</a>
                     </div>
                     <div className='flex justify-between'>
-                        <a href="" className='w-36 h-1'>Shop List view</a>
-                        <a href="" className='w-40'>Log In</a>
+                        <Link to="/shop_details" className='w-36 h-1'> Shop List view</Link>
+                        <Link to="/signin" className='w-40'>Log In</Link>
                         <a href=""></a>
                     </div>
 

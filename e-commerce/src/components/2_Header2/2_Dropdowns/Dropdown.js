@@ -19,13 +19,13 @@ export default function Dropdown() {
                 <div className="dropdown-content font-bold">
                     <Link to="/shop">Shop</Link>
                     <Link to="/shop2">Shop 2</Link>
-                    <a href="#">Shop Details </a>
-                    <a href="#">Shop Details 2</a>
-                    <a href="#">Shop Location</a>
+                    <a href="">Shop Details </a>
+                    <Link to="">Shop Details 2</Link>
+                    <Link to="/shop_details">Shop Location</Link>
                     <a href="#">Cart</a>
-                    <a href="#">Sign In</a>
+                    <Link to="/signin">Sign In</Link>
                     <a href="#">Checkout</a>
-                    <a href="#">Wishlist</a>
+                    <Link to="/Wishlist">Wishlist</Link>
                     <a href="#">Product Track</a>
                 </div>
             </div>
@@ -38,28 +38,28 @@ export default function Dropdown() {
                         <a href="#" style={{ fontWeight: "bolder" }}>Page Type</a>
                     </div>
                     <div className='flex justify-between '>
-                        <a href="" className='w-36 h-1'>Shop filters v1</a>
+                        <Link to="/shop" className='w-36 h-1'>Shop filters v1</Link>
                         <a href="" className='w-20' >About</a>
                         <a href="">Product Track</a>
                     </div>
                     <div className='flex justify-between'>
-                        <a href="" className='w-36 h-1'>Shop filters v2</a>
+                        <Link to="/shop2" className='w-36 h-1'>Shop filters v2</Link>
                         <a href="" className='w-24'>Cart</a>
-                        <a href="">Wishlist</a>
+                        <Link to="/Wishlist">Wishlist</Link>
                     </div>
                     <div className='flex justify-between'>
-                        <a href="" className='w-36 h-1'>Shop sidebar</a>
+                        <Link to="" className='w-36 h-1'>Shop sidebar</Link>
                         <a href="" className='w-36'>Checkout</a>
                         <Link to="/error" >404/error</Link>
                     </div>
                     <div className='flex justify-between'>
-                        <a href="" className='w-36 h-1'>Shop Right sidebar</a>
-                        <a href="" className='w-24 '>Sign In</a>
+                        <Link to="" className='w-36 h-1'>Shop Right sidebar</Link>
+                        <Link to="/signin" className='w-24'>Sign In</Link>
                         <a href="">Coming soon</a>
                     </div>
                     <div className='flex justify-between'>
-                        <a href="" className='w-36 h-1'>Shop List view</a>
-                        <a href="" className='w-40'>Log In</a>
+                        <Link to="/shop_details" className='w-36 h-1'>Shop List view</Link>
+                        <Link to="/signin" className='w-40'>Log In</Link>
                         <a href=""></a>
                     </div>
 
