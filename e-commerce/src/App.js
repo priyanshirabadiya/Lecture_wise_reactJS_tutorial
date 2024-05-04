@@ -12,6 +12,8 @@ import Shop2 from './components/N_shop/Shop2/Shop'
 import Sign_in from './components/N_Pages/Sign_In/Sign_in';
 import Shop_Location from './components/N_shop/ShopLocation/Shop_details';
 import Wishlist from './components/N_shop/Wishlist/Wishlist';
+import ProductTrack from './components/N_shop/ProductTrack/ProductTrack';
+import About from './components/N_Pages/About/About';
 function App() {
   return (
     <>
@@ -27,6 +29,8 @@ function App() {
             <Route path="/signin" element={<Sign_in/>} ></Route>
             <Route path="/shop_details" element={<Shop_Location/>} ></Route>
             <Route path="/wishlist" element={<Wishlist/>} ></Route>
+            <Route path="/ProductTrack" element={<ProductTrack/>} ></Route>
+            <Route path="/about" element={<About/>} ></Route>
           </Routes>
         </BrowserRouter>
         <Footer />

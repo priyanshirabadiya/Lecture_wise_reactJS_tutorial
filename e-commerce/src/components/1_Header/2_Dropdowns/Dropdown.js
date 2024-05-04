@@ -26,7 +26,7 @@ export default function Dropdown() {
                     <Link to="/signin">Sign In</Link>
                     <a href="#">Checkout</a>
                     <Link to="/wishlist">Wishlist</Link>
-                    <a href="#">Product Track</a>
+                    <Link to="/ProductTrack">Product Track</Link>
                 </div>
             </div>
             <div className="dropdown ms-9 rounded">
@@ -39,8 +39,8 @@ export default function Dropdown() {
                     </div>
                     <div className='flex justify-between '>
                         <Link to="/shop" className='w-36 h-1'>Shop filters v1</Link>
-                        <a href="" className='w-20' >About</a>
-                        <a href="">Product Track</a>
+                        <Link to="about" className='w-20' >About</Link>
+                        <Link to="/ProductTrack">Product Track</Link>
                     </div>
                     <div className='flex justify-between'>
                         <Link to="/shop2" className='w-36 h-1'>Shop filters v2</Link>
