@@ -1,7 +1,7 @@
 import React from "react";
 import data from "./Data2";
+import { Link } from 'react-router-dom'
 import "./style.css";
-
 const Popular_p = () => {
   return (
     <div className="my-10 mx-1">
@@ -19,17 +19,23 @@ const Popular_p = () => {
       <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-5 top-class mt-10 w-full px-4">
         {data.map((value, ind, array) => {
           return (
-            <div className="sm:h-[25rem] md:h-[24rem] lg:h-[26rem] w-[18.5rem] main-data relative"  key={ind}>
+            <div className="sm:h-[25rem] md:h-[24rem] lg:h-[26rem] w-[18.5rem] main-data relative" key={ind}>
               <div className="img-data p-4 absolute bg-white rounded-lg">
+
                 <div className="hover:rounded-lg ">
-                  <img src={value.img} alt="Image1" className="rounded-lg" />
-                  <div className="sec-img p-4">
-                    <img
-                      src={value.img2}
-                      alt="Image1"
-                      className="rounded-lg"
-                    />
+                  <div>
+                    <Link to={`/product/${value.id}`} >
+                      <img src={value.img} alt="Image1" className="rounded-lg" />
+                      <div className="sec-img p-4">
+                        <img
+                          src={value.img2}
+                          alt="Image1"
+                          className="rounded-lg"
+                        />
+                      </div>
+                    </Link>
                   </div>
+
                   <div className="text-left mt-4">
                     <h1 className="text-gray-500">{value.name}</h1>
                     <p className="font-semibold">{value.price}</p>
@@ -53,11 +59,11 @@ const Popular_p = () => {
                       <div className='n-div' >
                         <ul className='flex -mt-1'>
                           <li>
-                          <a href="#"><i className="fas fa-star"></i></a>
-                          <a href="#"><i className="fas fa-star"></i></a>
-                          <a href="#"><i className="fas fa-star"></i></a>
-                          <a href="#"><i className="fas fa-star"></i></a>
-                          <a href="#"><i className="far fa-star"></i></a></li>
+                            <a href="#"><i className="fas fa-star"></i></a>
+                            <a href="#"><i className="fas fa-star"></i></a>
+                            <a href="#"><i className="fas fa-star"></i></a>
+                            <a href="#"><i className="fas fa-star"></i></a>
+                            <a href="#"><i className="far fa-star"></i></a></li>
                           <li><span>(81)</span></li>
                         </ul>
                       </div>

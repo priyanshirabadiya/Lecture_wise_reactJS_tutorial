@@ -1,3 +1,5 @@
+import React from 'react'
+import Link from 'react-router-dom'
 import i1 from '../../assets/i1.jpg'
 import i2 from '../../assets/i2.jpg'
 import i3 from '../../assets/i3.jpg'
@@ -19,6 +21,8 @@ import s2 from '../../assets/s2jpg.jpg'
 import s3 from '../../assets/s3.jpg'
 import s4 from '../../assets/s4.jpg'
 import s5 from '../../assets/s5.jpg'
+import FirstData from '../../Popular_contain/FirstData'
+
 
 const data2 = [
     {
@@ -26,60 +30,70 @@ const data2 = [
         price: "$20.00",
         img: i1,
         img2: p1,
+        id : 1,
     },
     {
         name: "Allie Sharp",
         price: "$30.00",
         img: i2,
         img2: p2,
+        id : 2
     },
     {
         name: "Nathaniel Baldwin",
         price: "$40.00",
         img: i3,
         img2: p3,
+        id : 3
     },
     {
         name: "Effie Rios",
         price: "$40.00",
         img: i4,
         img2: p4,
+        id : 4
     },
     {
         name: "Carolyn Goodwin",
         price: "$50.00",
         img: i5,
         img2: p5,
+        id : 5
     },
     {
         name: "Evelyn Patton",
         price: "$60.00",
         img: i6,
         img2: s1,
+        id : 6
     },
     {
         name: "Sally Ray",
         price: "$70.00",
         img: i7,
         img2: s2,
+        id : 7
     },
     {
         name: "Ora Bowman",
         price: "$80.00",
         img: i8,
         img2: s3,
+        id : 8
     },
     {
         name: "Effie Rios",
         price: "$90.00",
         img: i9,
         img2: s4,
+        id : 9
     },
     {
         name: "Terry Byrd",
         price: "$100.00",
         img: i10,
         img2: s5,
+        id : 10
     },
     
 
