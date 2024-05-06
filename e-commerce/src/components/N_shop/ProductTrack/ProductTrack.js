@@ -1,11 +1,12 @@
 import React from 'react'
 import './style.css';
-import Header2 from '../../2_Header2/Header2';
+import Header2 from '../../Commancomponents/2_Header2/Header2'
 import { FaArrowRightLong } from "react-icons/fa6";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { FaRegAddressCard } from "react-icons/fa6";
 import { CiMail } from "react-icons/ci";
 import i from '../../assets/track.jpg'
+import Pageheading from '../../Commancomponents/Pageheading/Pageheading';
 
 
 const ProductTrack = () => {
@@ -13,16 +14,7 @@ const ProductTrack = () => {
         <div>
             <Header2 />
             <div>
-                <div className="bg-img pb-52 lg:mt-0 xl:-mt-8 w-full bg-no-repeat relative">
-                    <div className='flex flex-wrap w-40 justify-between top-10 absolute left-10' >
-                        <a href="" className='home' >Home</a>
-                        <div className='mt-3 ms-2' >
-                            <div className='w-[3vw] border-b-2 border-[#e2e2e2] -me-2' ></div>
-                        </div>
-                        <p className='text-gray-400' >Track</p>
-                    </div>
-                    <h1 className='top-20 left-10 absolute text-[42px] font-bold'>Track</h1>
-                </div>
+                <Pageheading pagename="Track" />
             </div>
 
             <div className="flex justify-center mt-14">
@@ -40,11 +32,11 @@ const ProductTrack = () => {
                                 <p className='text-[0.9rem] leading-6 mt-2 text-gray-500 w-[35vw]' >To track your order please enter your Order ID in the box below and press the "Track" button. This was given to you on your receipt and in the confirmation email you should have received.</p>
                             </div>
                             <div className=' bg-white py-1 mt-5 rounded flex -ms-12' >
-                                <FaRegAddressCard  className='m-4 me-0 text-gray-500 ' />
+                                <FaRegAddressCard className='m-4 me-0 text-gray-500 ' />
                                 <input type="text" className='px-2 pe-72 py-3 focus:border-none ' placeholder='Order ID' />
                             </div>
                             <div className=' bg-white py-1 mt-3 rounded flex -ms-12' >
-                                <CiMail  className='m-4 me-0 text-gray-500 ' />
+                                <CiMail className='m-4 me-0 text-gray-500 ' />
                                 <input type="text" className='px-2 pe-72 py-3 focus:border-none ' placeholder='Billing email' />
                             </div>
                             <div className=' bg-[#d51243] py-4 text-white rounded mt-5 flex -ms-12 hover:bg-[#b1101a]

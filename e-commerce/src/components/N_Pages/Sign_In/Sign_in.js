@@ -1,6 +1,7 @@
 import React from 'react'
 import './style.css'
-import Header2 from '../../2_Header2/Header2'
+import Header2 from '../../Commancomponents/2_Header2/Header2'
+import Pageheading from '../../Commancomponents/Pageheading/Pageheading'
 import signinI from '../../assets/signin.jpg'
 import signinI2 from '../../assets/signin-2.jpg'
 import { FiLock } from "react-icons/fi";
@@ -18,16 +19,7 @@ export default function Sign_in() {
                 <Header2 />
             </div>
             <div>
-                <div className="bg-img pb-52 lg:mt-0 xl:-mt-8 w-full bg-no-repeat relative">
-                    <div className='flex flex-wrap w-40 justify-between top-10 absolute left-10' >
-                        <a href="" className='home' >Home</a>
-                        <div className='mt-3 ms-2' >
-                            <div className='w-[3vw] border-b-2 border-[#e2e2e2] -me-2' ></div>
-                        </div>
-                        <p className='text-gray-400' >Sign In</p>
-                    </div>
-                    <h1 className='top-20 left-10 absolute text-[42px] font-bold'>Sign In</h1>
-                </div>
+                <Pageheading pagename="Sign In" />
             </div>
             <div className="flex xl:flex-nowrap justify-center xl:justify-between mb-10 flex-wrap mx-10 mt-20">
 

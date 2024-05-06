@@ -6,7 +6,7 @@ import { GoClock } from "react-icons/go";
 import { CiHeadphones } from "react-icons/ci";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { IoLocationOutline } from "react-icons/io5";
-import Header2 from '../../components/2_Header2/Header2'
+import Header2 from '../Commancomponents/2_Header2/Header2'
 import './style.css'
 
 export default function Contact() {

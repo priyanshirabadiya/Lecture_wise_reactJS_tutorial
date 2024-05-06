@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { IoListOutline } from "react-icons/io5";
 import { LiaTableSolid } from "react-icons/lia";
 import './style.css'
-import Header2 from '../../2_Header2/Header2'
+import Header2 from '../../Commancomponents/2_Header2/Header2'
 import Popular_p from './5_Poular_products/Popular_p';
+import Pageheading from '../../Commancomponents/Pageheading/Pageheading';
 
 export default function Shop() {
   return (
@@ -12,13 +13,7 @@ export default function Shop() {
       <div>
         <Header2 />
       </div>
-      <div className="bg-img pb-52 lg:mt-0 xl:-mt-8 w-full bg-no-repeat relative">
-        <div className='flex flex-wrap w-40 justify-between top-10 absolute left-10' >
-          <a href="" className='home' >Home</a>
-          <p className='text-gray-400' >Shop</p>
-        </div>
-        <h1 className='top-20 left-10 absolute text-[42px] font-bold' >Shop</h1>
-      </div>
+      <Pageheading pagename="Shop" />
       <div className="mx-7 mt-10 flex flex-wrap justify-between">
         <div className='flex' >
           <p className='font-bold text-lg'>10</p><span className='font-bold text-gray-500 m-[0.2rem] mt-[0.5px] ' >
@@ -44,7 +39,7 @@ export default function Shop() {
         </div>
       </div>
 
-      <Popular_p/>
+      <Popular_p />
 
 
 

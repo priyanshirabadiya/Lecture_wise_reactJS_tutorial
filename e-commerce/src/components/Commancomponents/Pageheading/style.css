@@ -1,0 +1,5 @@
+.bg-img {
+    background-image: url(../../assets//error-bg.jpg);
+    background-size: 100% 100%;
+    object-fit: cover;
+}
