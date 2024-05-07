@@ -35,7 +35,6 @@ const Popular_p = () => {
                       </div>
                     </Link>
                   </div>
-
                   <div className="text-left mt-4">
                     <h1 className="text-gray-500">{value.name}</h1>
                     <p className="font-semibold">{value.price}</p>
