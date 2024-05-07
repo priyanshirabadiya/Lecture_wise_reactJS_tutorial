@@ -33,7 +33,7 @@ export default function FirstData(props) {
                             <div className=' items-center text-center' >
                                 <button type='submit' className='p-0 mt-6 ms-4 px-10 bg-[#D51243] h-[3.1rem] items-center w-[10rem] text-white rounded ' >Add to cart</button>
                             </div>
-                            <div className='mt-6 p-5 py-0 ms-5 flex items-center border ' >
+                            <div className='mt-6 p-5 py-0 ms-5 flex items-center border hover:bg-[#d51243] hover:text-white rounded hover:transition-all hover:0.3s hover:ease-in cursor-pointer '>
                                 <CiHeart className='h-6 w-6 ' />
                             </div>
                         </div>

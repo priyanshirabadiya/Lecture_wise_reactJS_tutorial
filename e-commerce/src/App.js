@@ -16,6 +16,7 @@ import ProductTrack from './components/N_shop/ProductTrack/ProductTrack';
 import About from './components/N_Pages/About/About';
 import Firstline from './components/1_Header/Firstline/Firstline';
 import FirstData from './components/Popular_contain/FirstData';
+import Cart from './components/N_shop/Cart/Cart';
 function App() {
   return (
     <>
@@ -36,6 +37,7 @@ function App() {
               <Route path="/ProductTrack" element={<ProductTrack />} ></Route>
               <Route path="/about" element={<About />} ></Route>
               <Route path="/product/:id" element={<FirstData/>} ></Route>
+              <Route path="/cart" element={<Cart/>} ></Route>
             </Routes>
           </BrowserRouter>
           <Footer />
