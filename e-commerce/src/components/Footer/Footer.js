@@ -86,13 +86,9 @@ function Footer() {
                             </li>
                         </ul>
                     </div>
-
                 </div>
-
-
             </div>
             <div className="copyRight-bar">
-
                 <div className='w-[90%] grid grid-cols-1 md:grid-cols-3 justify-between p-8 mx-auto '>
                     <p className='poppins-regular md:col-span-2  mb-4 sm:mb-0 text-[1.2rem] text-[#8e8e8e]'>
                         Copyright 2024 <a href="#"> ©Ninico.</a> All rights reserved. Developed by <a href="#">AliThemes.</a>
