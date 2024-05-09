@@ -12,7 +12,7 @@ import './style.css'
 export default function Contact() {
   return (
     <div>
-      <div className=" flex relative">
+      <div className="">
         <Header2 />
       </div>
       <div className="flex flex-wrap justify-center sm:justify-center md:justify-center lg:justify-between mt-14 mx-7">

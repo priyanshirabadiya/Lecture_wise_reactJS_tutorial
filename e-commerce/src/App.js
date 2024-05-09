@@ -17,6 +17,7 @@ import About from './components/N_Pages/About/About';
 import Firstline from './components/1_Header/Firstline/Firstline';
 import FirstData from './components/Popular_contain/FirstData';
 import Cart from './components/N_shop/Cart/Cart';
+import ScrollToTop from './components/N_shop/Top_navigate/Top_navigate';
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
       <div className='xl:w-full xl:container mx-auto'>
         <div>
           <BrowserRouter>
+          <ScrollToTop/>
             <Header />
             <Routes>
               <Route path="/" element={<Home />}></Route>
