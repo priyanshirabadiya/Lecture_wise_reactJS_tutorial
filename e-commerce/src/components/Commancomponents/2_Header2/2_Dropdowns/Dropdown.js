@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 export default function Dropdown() {
     return (
         <div className='flex last-one'>
@@ -68,8 +68,8 @@ export default function Dropdown() {
             <div className="dropdown ms-9 rounded">
                 <button className="dropbtn rounded-md flex"><b>Blog</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
                 <div className="dropdown-content font-bold">
-                    <a href="#">Blog</a>
-                    <a href="#">Blog Details</a>
+                    <Link to="/about" >Blog</Link>
+                    <Link to="/about">Blog Details</Link>
                 </div>
             </div>
             <div className="dropdown ms-9 rounded">

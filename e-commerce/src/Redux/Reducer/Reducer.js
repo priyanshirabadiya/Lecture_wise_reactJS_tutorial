@@ -11,7 +11,7 @@ export const cartreducer = (state = initial_state, action) => {
             }
 
         default:
-            return state
+            return state;
     }
 }
 

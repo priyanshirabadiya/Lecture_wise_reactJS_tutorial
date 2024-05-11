@@ -8,6 +8,9 @@ import t1 from '../../assets/team-1.jpg'
 import t2 from '../../assets/team-2.jpg'
 import t3 from '../../assets/team-3.jpg'
 import t4 from '../../assets/team-4.jpg'
+import about from '../../assets/about.png'
+import about1 from '../../assets/about-img-1.jpg'
+import about2 from '../../assets/about-img-2.jpg'
 import Header2 from '../../Commancomponents/2_Header2/Header2';
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading';
 function Lastpart() {
@@ -16,6 +19,21 @@ function Lastpart() {
             <div>
                 <Header2 />
                 <Pageheading pagename="About Us" />
+            </div>
+            <div className='flexable'>
+                <div className='absolute  flex justify-center items-center mx-10 h-[0rem] -bottom-[6rem] left-0 right-0'>
+                    <div>
+                        <img src={about} alt="" />
+                    </div>
+                </div>
+                <div className='flex justify-between mx-10 mt-10 flex-wrap '>
+                    <div className='' >
+                        <img src={about1} alt="" />
+                    </div>
+                    <div className='' >
+                        <img src={about2} alt="" />
+                    </div>
+                </div>
             </div>
             <div className='text-center mt-10'>
                 <h1 className='text-4xl font-bold'>Meet with Team</h1>
