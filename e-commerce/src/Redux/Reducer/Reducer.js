@@ -15,5 +15,3 @@ export const cartreducer = (state = initial_state, action) => {
     }
 }
 
-
-

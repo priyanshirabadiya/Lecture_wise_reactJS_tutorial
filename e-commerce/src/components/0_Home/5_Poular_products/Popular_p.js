@@ -2,7 +2,13 @@ import React from "react";
 import data from "./Data2";
 import { Link } from 'react-router-dom'
 import "./style.css";
+
+import { useDispatch } from 'react-redux';
+import { ADD } from "../../../Redux/Action/Action";
+
 const Popular_p = () => {
+  const dispatch = useDispatch();
+
   return (
     <div className="my-10 mx-1">
       <div className="flex justify-between flex-wrap mx-5 ">
@@ -18,6 +24,14 @@ const Popular_p = () => {
       </div>
       <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-5 top-class mt-10 w-full px-4">
         {data.map((value, ind, array) => {
+          const product = {value}
+
+          const send = (e) => {
+            console.log(e, "eee");
+            // trriger the function
+            dispatch(ADD(e))
+          }
+
           return (
             <div className="sm:h-[25rem] md:h-[24rem] lg:h-[26rem] w-[18.5rem] main-data relative" key={ind}>
               <div className="img-data p-4 absolute bg-white rounded-lg">
@@ -42,10 +56,10 @@ const Popular_p = () => {
                   <div className="mt-4 opacity-0 dots">
                     <div className="tpproduct__thumb-bg">
                       <div className="tpproductactionbg">
-                        <a href='#' className="add-to-cart"><i className="fa-solid fa-basket-shopping" style={{ color: "#c2c2c2" }}></i></a>
-                        <a href="#"><i className="fa-solid fa-arrow-right-arrow-left" style={{ color: "#c2c2c2" }}></i></a>
-                        <a href="#"><i className="fa-regular fa-eye" style={{ color: "#c2c2c2" }}></i></a>
-                        <a href='#' className="wishlist"><i className="fa-regular fa-heart" style={{ color: "#c2c2c2" }}></i></a>
+                        <Link to=""  onClick={() => send(product)} className="add-to-cart"><i className="fa-solid fa-basket-shopping" style={{ color: "#c2c2c2" }}></i></Link>
+                        <a href=""><i className="fa-solid fa-arrow-right-arrow-left" style={{ color: "#c2c2c2" }}></i></a>
+                        <a href=""><i className="fa-regular fa-eye" style={{ color: "#c2c2c2" }}></i></a>
+                        <a href='' className="wishlist"><i className="fa-regular fa-heart" style={{ color: "#c2c2c2" }}></i></a>
                       </div>
                     </div>
                     <div className="flex justify-between ">
@@ -62,7 +76,8 @@ const Popular_p = () => {
                             <a href="#"><i className="fas fa-star"></i></a>
                             <a href="#"><i className="fas fa-star"></i></a>
                             <a href="#"><i className="fas fa-star"></i></a>
-                            <a href="#"><i className="far fa-star"></i></a></li>
+                            <a href="#"><i className="far fa-star"></i></a>
+                          </li>
                           <li><span>(81)</span></li>
                         </ul>
                       </div>

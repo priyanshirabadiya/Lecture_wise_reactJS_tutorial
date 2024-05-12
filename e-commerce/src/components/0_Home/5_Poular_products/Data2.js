@@ -82,7 +82,7 @@ const data2 = [
         id : 8
     },
     {
-        name: "Effie Rios",
+        name: "Frederick Valdez",
         price: "$90.00",
         img: i9,
         img2: s4,

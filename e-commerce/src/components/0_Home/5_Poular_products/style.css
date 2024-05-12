@@ -127,6 +127,12 @@ ul li span {
     color: #999;
 }
 
+.tpproduct__thumb-bg a:hover i{
+    /* background-color: black; */
+    color: black !important;
+    transition: all 0.3s linear;
+
+}
 
 @media (max-width: 1500px) {
     .top-class{

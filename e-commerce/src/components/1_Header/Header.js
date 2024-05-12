@@ -4,8 +4,17 @@ import flag from '../assets/flag.png';
 import './header.css';
 import './responsive.css';
 import Dropdown from '../1_Header/2_Dropdowns/Dropdown';
+import { Link } from 'react-router-dom';
+
+import {useSelector} from "react-redux"
+
 
 export default function Header() {
+
+  const data = useSelector((state) => state.cartreducer.carts)
+  console.log(data,"data");
+
+
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
@@ -38,14 +47,21 @@ export default function Header() {
             </div>
             <div className='flex '>
               <div className='mt-3 ms-3'>
-                <span className="material-symbols-outlined relative">shopping_cart</span>
-                <span className="tp-product-count">2</span>
+                <Link to="/cart">
+                  <span className="material-symbols-outlined relative">shopping_cart</span>
+                </Link>
+                <span className="tp-product-count">{data.length}</span>
               </div>
               <div className='ms-3 mt-3 fa-lg' >
-                <i className="fa-regular fa-user"></i>
+                <Link to="/signin" >
+                  <i className="fa-regular fa-user"></i>
+                </Link>
               </div>
               <div className='mt-3 ms-3'>
-                <i className="fa-regular fa-heart fa-lg"></i>
+                <Link to="/wishlist" >
+                  <i className="fa-regular fa-heart fa-lg"></i>
+                </Link>
+
                 <span className="tp-product-count">1</span>
               </div>
               <div>
@@ -99,14 +115,20 @@ export default function Header() {
                 </select>
               </div>
               <div className='mt-3 ms-3'>
-                <span className="material-symbols-outlined relative">shopping_cart</span>
-                <span className="tp-product-count">2</span>
+                <Link to="/cart">
+                  <span className="material-symbols-outlined relative">shopping_cart</span>
+                </Link>
+                <span className="tp-product-count">{data.length}</span>
               </div>
               <div className='ms-3 mt-3 fa-lg' >
-                <i className="fa-regular fa-user"></i>
+                <Link to="/signin" >
+                  <i className="fa-regular fa-user"></i>
+                </Link>
               </div>
               <div className='mt-3 ms-3'>
-                <i className="fa-regular fa-heart fa-lg"></i>
+                <Link to="/wishlist" >
+                  <i className="fa-regular fa-heart fa-lg"></i>
+                </Link>
                 <span className="tp-product-count">1</span>
               </div>
             </div>

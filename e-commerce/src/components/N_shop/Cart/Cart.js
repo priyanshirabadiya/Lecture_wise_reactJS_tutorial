@@ -1,12 +1,29 @@
 import React from 'react'
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading'
 import Header2 from '../../Commancomponents/2_Header2/Header2'
-
+import {useSelector} from 'react-redux'
 export default function Cart() {
+
+    const data = useSelector((state) => state.cartreducer.carts)
+    // console.log(data,"datanew");
+  
     return (
         <>
             <Header2 />
             <Pageheading pagename="Cart" />
+            <table class="table-auto mt-[3rem] mb-[3rem] overflow-x-scroll w-full">
+                <thead>
+                    <tr className='border' >
+                        <th className='border py-3' >Image</th>
+                        <th className='border py-3' >Courses</th>
+                        <th className='border py-3' >Unit Price</th>
+                        <th className='border py-3' >Quantity</th>
+                        <th className='border py-3' >Total</th>
+                        <th className='border py-3' >Add To Cart</th>
+                        <th className='border py-3' >Remove</th>
+                    </tr>
+                </thead>
+            </table>
             <form action="">
                 <div className="flex justify-between mt-[2rem] mx-10 ">
                     <div className="flex ">
