@@ -24,7 +24,7 @@ const Popular_p = () => {
       </div>
       <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-5 top-class mt-10 w-full px-4">
         {data.map((value, ind, array) => {
-          const product = {value}
+          const product = { value }
 
           const send = (e) => {
             console.log(e, "eee");
@@ -35,7 +35,6 @@ const Popular_p = () => {
           return (
             <div className="sm:h-[25rem] md:h-[24rem] lg:h-[26rem] w-[18.5rem] main-data relative" key={ind}>
               <div className="img-data p-4 absolute bg-white rounded-lg">
-
                 <div className="hover:rounded-lg ">
                   <div>
                     <Link to={`/product/${value.id}`} >
@@ -56,13 +55,13 @@ const Popular_p = () => {
                   <div className="mt-4 opacity-0 dots">
                     <div className="tpproduct__thumb-bg">
                       <div className="tpproductactionbg">
-                        <Link to=""  onClick={() => send(product)} className="add-to-cart"><i className="fa-solid fa-basket-shopping" style={{ color: "#c2c2c2" }}></i></Link>
+                        <Link to="" onClick={() => send(product)} className="add-to-cart"><i className="fa-solid fa-basket-shopping" style={{ color: "#c2c2c2" }}></i></Link>
                         <a href=""><i className="fa-solid fa-arrow-right-arrow-left" style={{ color: "#c2c2c2" }}></i></a>
                         <a href=""><i className="fa-regular fa-eye" style={{ color: "#c2c2c2" }}></i></a>
                         <a href='' className="wishlist"><i className="fa-regular fa-heart" style={{ color: "#c2c2c2" }}></i></a>
                       </div>
                     </div>
-                    <div className="flex justify-between ">
+                    <div className="flex justify-between">
                       <div className="flex">
                         <a href="" className="blue"></a>
                         <a href="" className="red"></a>

@@ -1,12 +1,12 @@
 import React from 'react'
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading'
 import Header2 from '../../Commancomponents/2_Header2/Header2'
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 export default function Cart() {
 
     const data = useSelector((state) => state.cartreducer.carts)
     // console.log(data,"datanew");
-  
+
     return (
         <>
             <Header2 />
@@ -23,6 +23,30 @@ export default function Cart() {
                         <th className='border py-3' >Remove</th>
                     </tr>
                 </thead>
+                {data.map((cvalue, ind , arr) => {
+                    return (
+                        <>
+                            <tr className='border'>
+                                <td className=' flex justify-center' >
+                                    <img src={cvalue.img} alt="" height={130} width={130} className='py-3' />
+                                </td>
+                                <td className=' border w-[10rem] text-center mx-[25rem]'>{cvalue.name}</td>
+                                <td className='border text-center' >{cvalue.price}</td>
+                                <td className='border items-center w-[12rem]' >
+                                    <div className='border py-4  mx-[4rem] flex justify-center rounded '>
+                                        <input type="number" defaultValue={1} className='outline-none border-none focus:border-none mx-2' />
+                                    </div>
+                                </td>
+                                <td className='border text-center' >{cvalue.price}</td>
+                                <td className='border items-center text-center' >
+                                    <button className='p-0 px-10 bg-[#D51243] h-[3rem] items-center w-[10rem] text-white rounded ' >Add to cart</button>
+                                </td>
+                                <td className='text-center' >Remove</td>
+                            </tr>
+                        </>
+                    )
+                })}
+
             </table>
             <form action="">
                 <div className="flex justify-between mt-[2rem] mx-10 ">
