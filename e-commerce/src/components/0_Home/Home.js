@@ -5,7 +5,7 @@ import Number from '../1_Header/2_Number/Number'
 import Slider from './3_Slider/Slider'
 import TwoB from './3_TwoB/TwoB'
 import Top_catagories from './4_Top catagories/Top_catagories'
-import Popular_p from './5_Poular_products/Popular_p'
+import Popular_p from './5_Poular_products2/Popular_p'
 import Pots from './6_Pots/Pots'
 
 

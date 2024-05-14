@@ -11,7 +11,7 @@ const Popular_p = () => {
           return (
             <div className="sm:h-[25rem] md:h-[24rem] lg:h-[26rem] w-[22.5rem] mb-20 main-data relative" key={ind}>
               <div className="img-data p-4 absolute bg-white rounded-lg">
-                <div className="hover:rounded-lg ">
+                <div className="hover:rounded-lg">
                   <img src={value.img} alt="Image1" className="rounded-lg" />
                   <div className="sec-img p-4">
                     <img

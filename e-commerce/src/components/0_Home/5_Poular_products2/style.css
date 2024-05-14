@@ -102,10 +102,10 @@ ul li span {
 
 .tpproduct__thumb-bg {
     position: absolute;
-    top: calc(150px);
-    margin-left: 50px;
+    /* top: calc(170px) !important;
+    margin-left: 80px !important;
     text-align: center;
-    transform: translateY(-50%);
+    transform: translateY(0%); */
 }
 
 .tpproductactionbg {

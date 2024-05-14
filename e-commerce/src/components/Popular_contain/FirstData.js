@@ -2,7 +2,7 @@ import React from 'react'
 import Pageheading from '../Commancomponents/Pageheading/Pageheading'
 import Header2 from '../Commancomponents/2_Header2/Header2'
 import { useParams } from 'react-router-dom';
-import data from '../0_Home/5_Poular_products/Data2';
+import data from '../0_Home/5_Poular_products2/Data2';
 import { CiHeart } from "react-icons/ci";
 
 export default function FirstData(props) {
