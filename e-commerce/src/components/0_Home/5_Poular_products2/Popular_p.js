@@ -30,16 +30,12 @@ const Popular_p = () => {
             console.log(e, "eee");
             // trriger the function
             dispatch(ADD(e))
-
-
           }
 
           const send1 = (e) => {
             console.log(e, "eee");
             // trriger the function
             dispatch(Wish(e))
-
-
           }
 
           return (

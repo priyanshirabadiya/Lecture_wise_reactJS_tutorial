@@ -4,7 +4,7 @@ const context1 = createContext();
 export default function App() {
   return (
     <div>
-      <context1.Provider value="abc" >
+      <context1.Provider value="abc">
         <ComA />
       </context1.Provider>
     </div>
