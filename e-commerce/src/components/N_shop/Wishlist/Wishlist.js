@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 
 const Wishlist = () => {
 
-    const data = useSelector((state) => state.cartreducer.carts)
+    const data = useSelector((state) => state.widhlistreducer.carts2)
     console.log(data, "datanew");
 
     return (

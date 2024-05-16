@@ -6,7 +6,7 @@ import { REMOVE } from '../../../Redux/Action/Action'
 export default function Cart() {
     const dispatch = useDispatch();
 
-    const handleRemove = (id) => {
+    const remove = (id) => {
         dispatch(REMOVE(id));
     };
 
@@ -49,9 +49,11 @@ export default function Cart() {
                                     <td className='border items-center text-center'>
                                         <button className='p-0 px-10 bg-[#D51243] h-[3rem] items-center w-[10rem] text-white rounded'>Add to cart</button>
                                     </td>
-                                    <td className='text-center'><button onClick={() => handleRemove(id)}>Remove</button></td>
+                                    <td className='text-center'>
+                                        <button onClick={() => remove(id)}>Remove</button>
+                                    </td>
                                 </tr>
-                            );  
+                            );
                         })}
                     </tbody>
                 ) :

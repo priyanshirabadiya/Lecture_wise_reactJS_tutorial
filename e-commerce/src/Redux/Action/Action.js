@@ -26,3 +26,10 @@ export const REMOVE = (id) => {
     }
 }
 
+export const Wish = (item) => {
+    return {
+        type: "Wish_list",
+        payload: item
+    }
+}
+

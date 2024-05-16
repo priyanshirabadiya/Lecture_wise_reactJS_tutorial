@@ -11,6 +11,9 @@ import {useSelector} from "react-redux"
 
 export default function Header() {
 
+  const data2 = useSelector((state) => state.widhlistreducer.carts2)
+  
+
   const data = useSelector((state) => state.cartreducer.carts)
   console.log(data,"data");
 
@@ -129,7 +132,7 @@ export default function Header() {
                 <Link to="/wishlist" >
                   <i className="fa-regular fa-heart fa-lg"></i>
                 </Link>
-                <span className="tp-product-count">1</span>
+                <span className="tp-product-count">{data2.length}</span>
               </div>
             </div>
           </div>
