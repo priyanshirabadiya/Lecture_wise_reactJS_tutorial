@@ -3,12 +3,11 @@ import Header2 from '../../Commancomponents/2_Header2/Header2'
 import i1 from '../../assets/i1.jpg'
 import i4 from '../../assets/i4.jpg'
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading'
-import { useSelector } from 'react-redux'
-
+import { useSelector , useDispatch } from 'react-redux'
+import { ADD, Wish } from '../../../Redux/Action/Action'
 const Wishlist = () => {
-
-    const data = useSelector((state) => state.widhlistreducer.carts2)
-    console.log(data, "datanew");
+    const data = useSelector((state) => state.widhlistreducer.wish)
+    // console.log(data, "datanew");
 
     return (
         <div>
@@ -32,21 +31,23 @@ const Wishlist = () => {
                         </tr>
                     </thead>
                     <tbody>
+
                         {data.map((cvalue, ind) => {
+                            const { name, price, img, id } = cvalue.value;
                             return (
                                 <>
-                                    <tr className='border'>
+                                    <tr className='border' key={id} >
                                         <td className=' flex justify-center' >
-                                            <img src={cvalue.img} alt="" height={130} width={130} className='py-3' />
+                                            <img src={img} alt="" height={130} width={130} className='py-3' />
                                         </td>
-                                        <td className=' border w-[10rem] text-center mx-[25rem]'>{cvalue.name}</td>
-                                        <td className='border text-center' >{cvalue.price}</td>
+                                        <td className=' border w-[10rem] text-center mx-[25rem]'>{name}</td>
+                                        <td className='border text-center' >{price}</td>
                                         <td className='border items-center w-[12rem]' >
                                             <div className='border py-4  mx-[4rem] flex justify-center rounded '>
                                                 <input type="number" defaultValue={1} className='outline-none border-none focus:border-none mx-2' />
                                             </div>
                                         </td>
-                                        <td className='border text-center' >{cvalue.price}</td>
+                                        <td className='border text-center' >{price}</td>
                                         <td className='border items-center text-center' >
                                             <button className='p-0 px-10 bg-[#D51243] h-[3rem] items-center w-[10rem] text-white rounded ' >Add to cart</button>
                                         </td>

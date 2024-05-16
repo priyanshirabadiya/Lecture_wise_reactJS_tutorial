@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import "./style.css";
 
 import { useDispatch } from 'react-redux';
-import { ADD } from "../../../Redux/Action/Action";
+import { ADD, Wish } from "../../../Redux/Action/Action";
 
 const Popular_p = () => {
   const dispatch = useDispatch();
@@ -30,6 +30,16 @@ const Popular_p = () => {
             console.log(e, "eee");
             // trriger the function
             dispatch(ADD(e))
+
+
+          }
+
+          const send1 = (e) => {
+            console.log(e, "eee");
+            // trriger the function
+            dispatch(Wish(e))
+
+
           }
 
           return (
@@ -58,7 +68,7 @@ const Popular_p = () => {
                         <Link to="" onClick={() => send(product)} className="add-to-cart"><i className="fa-solid fa-basket-shopping" style={{ color: "#c2c2c2" }}></i></Link>
                         <a href=""><i className="fa-solid fa-arrow-right-arrow-left" style={{ color: "#c2c2c2" }}></i></a>
                         <a href=""><i className="fa-regular fa-eye" style={{ color: "#c2c2c2" }}></i></a>
-                        <a href='' className="wishlist"><i className="fa-regular fa-heart" style={{ color: "#c2c2c2" }}></i></a>
+                        <Link to="" onClick={() => send1(product)} className="wishlist"><i className="fa-regular fa-heart" style={{ color: "#c2c2c2" }}></i></Link>
                       </div>
                     </div>
                     <div className="flex justify-between">

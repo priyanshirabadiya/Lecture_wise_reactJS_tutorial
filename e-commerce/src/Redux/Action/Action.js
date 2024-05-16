@@ -28,7 +28,7 @@ export const REMOVE = (id) => {
 
 export const Wish = (item) => {
     return {
-        type: "Wish_list",
+        type: "WISH_LIST",
         payload: item
     }
 }

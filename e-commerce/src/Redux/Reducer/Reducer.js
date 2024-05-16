@@ -1,5 +1,6 @@
 const initial_state = {
-    carts: []
+    carts: [],
+    wish : [],
 }
 
 export const cartreducer = (state = initial_state, action) => {
@@ -21,17 +22,14 @@ export const cartreducer = (state = initial_state, action) => {
     }
 }
 
-const initial_statewishl = {
-    carts2: []
-}
 
 
-export const widhlistreducer = (state = initial_statewishl , action) => {
+export const widhlistreducer = (state = initial_state , action) => {
     switch(action.type){
         case "WISH_LIST":
             return{
                 ...state,
-                carts2 : [...state.carts2 , action.payload]
+                wish : [...state.wish , action.payload]
             }
         default: 
             return state;

@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/logo.png';
-import flag from '../assets/flag.png';
+import flag from '../assets/flag.png';  
 import './header.css';
 import './responsive.css';
 import Dropdown from '../1_Header/2_Dropdowns/Dropdown';
 import { Link } from 'react-router-dom';
 
-import {useSelector} from "react-redux"
-
+import { useSelector } from "react-redux"
 
 export default function Header() {
 
-  const data2 = useSelector((state) => state.widhlistreducer.carts2)
-  
-
   const data = useSelector((state) => state.cartreducer.carts)
-  console.log(data,"data");
+  const data2 = useSelector((state) => state.widhlistreducer.wish)
+  console.log(data, "data");
 
 
   const [isSticky, setIsSticky] = useState(false);
@@ -42,7 +39,7 @@ export default function Header() {
       {isSticky ? (
         <div className='mt-3 w-full nav-1 sticky'>
           <div className='flex w-full mx-10 justify-between'>
-            <div className='flex '>
+            <div className='flex'>
               <div className='h-10 mt-2 me-20'>
                 <img src={logo} alt="" />
               </div>
@@ -64,8 +61,7 @@ export default function Header() {
                 <Link to="/wishlist" >
                   <i className="fa-regular fa-heart fa-lg"></i>
                 </Link>
-
-                <span className="tp-product-count">1</span>
+                <span className="tp-product-count">{data2.length}</span>
               </div>
               <div>
                 <div className="search-info-1 p-relative rounded border">
