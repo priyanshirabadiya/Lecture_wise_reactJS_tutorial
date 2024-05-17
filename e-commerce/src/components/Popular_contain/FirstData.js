@@ -8,7 +8,7 @@ import { CiHeart } from "react-icons/ci";
 export default function FirstData(props) {
     let { id } = useParams(); // Retrieve ID from URL
     let product = data.find((item) => item.id === parseInt(id)); // Find product by ID
-    console.log(product, "product")
+    console.log(product, "product");
     return (
         <div className='mt-[2rem] relative'>
             <Header2 />

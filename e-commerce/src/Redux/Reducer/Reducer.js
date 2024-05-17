@@ -29,11 +29,12 @@ export const widhlistreducer = (state = initial_state, action) => {
                 ...state,
                 wish: [...state.wish, action.payload]
             }
-        case "REMOVE_FROM_CART":
-            const data2 = state.wish.filter((item) => item.value.id !== action.payload);
+        case "REMOVE_FROM_WISH":
+            const data = state.wish.filter((item) => item.value.id !== action.payload);
+            console.log(data,"=====");
             return {
                 ...state,
-                wish: data2,
+                wish: data,
             };
         default:
             return state;

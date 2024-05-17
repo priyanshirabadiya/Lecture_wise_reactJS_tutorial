@@ -24,18 +24,20 @@ const Popular_p = () => {
       </div>
       <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-5 top-class mt-10 w-full px-4">
         {data.map((value, ind, array) => {
+
+          const {id , img , img2 , name , price} = value;
           const product = { value }
 
-          const send = (e) => {
-            console.log(e, "eee");
+          const send = (item) => {
+            // console.log(e, "eee");
             // trriger the function
-            dispatch(ADD(e))
+            dispatch(ADD(item))
           }
 
-          const send1 = (e) => {
-            console.log(e, "eee");
+          const send1 = (item) => {
+            // console.log(e, "eee");
             // trriger the function
-            dispatch(Wish(e))
+            dispatch(Wish(item))
           }
 
           return (
@@ -43,11 +45,11 @@ const Popular_p = () => {
               <div className="img-data p-4 absolute bg-white rounded-lg">
                 <div className="hover:rounded-lg ">
                   <div>
-                    <Link to={`/product/${value.id}`} >
-                      <img src={value.img} alt="Image1" className="rounded-lg" />
+                    <Link to={`/product/${id}`} >
+                      <img src={img} alt="Image1" className="rounded-lg" />
                       <div className="sec-img p-4">
                         <img
-                          src={value.img2}
+                          src={img2}
                           alt="Image1"
                           className="rounded-lg"
                         />
@@ -55,8 +57,8 @@ const Popular_p = () => {
                     </Link>
                   </div>
                   <div className="text-left mt-4">
-                    <h1 className="text-gray-500">{value.name}</h1>
-                    <p className="font-semibold">{value.price}</p>
+                    <h1 className="text-gray-500">{name}</h1>
+                    <p className="font-semibold">{price}</p>
                   </div>
                   <div className="mt-4 opacity-0 dots">
                     <div className="tpproduct__thumb-bg">

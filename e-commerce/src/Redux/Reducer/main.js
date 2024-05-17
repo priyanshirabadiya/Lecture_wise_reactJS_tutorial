@@ -2,8 +2,7 @@
 // (object wise)
 
 import {combineReducers} from "redux"
-import {cartreducer} from './Reducer';
-import {widhlistreducer} from './Reducer'
+import {cartreducer , widhlistreducer} from './Reducer';
 
 const rootreducer = combineReducers({
     cartreducer , widhlistreducer
