@@ -2,15 +2,29 @@ import React from "react";
 import data from "./Data2";
 import { Link } from 'react-router-dom'
 import "./style.css";
-
 import { useDispatch } from 'react-redux';
 import { ADD, Wish } from "../../../Redux/Action/Action";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Popular_p = () => {
   const dispatch = useDispatch();
 
   return (
     <div className="my-10 mx-1">
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <div className="flex justify-between flex-wrap mx-5">
         <h1 className="text-2xl font-semibold">
           Popular <span className="font-normal text-red-600">Product</span>
@@ -25,19 +39,20 @@ const Popular_p = () => {
       <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-5 top-class mt-10 w-full px-4">
         {data.map((value, ind, array) => {
 
-          const {id , img , img2 , name , price} = value;
+          const { id, img, img2, name, price } = value;
           const product = { value }
 
-          const send = (item) => {
-            // console.log(e, "eee");
+          const send = (addeditem) => {
+            console.log(addeditem, "sendaddeditem");
             // trriger the function
-            dispatch(ADD(item))
+            dispatch(ADD(addeditem))
           }
 
-          const send1 = (item) => {
-            // console.log(e, "eee");
+          const send1 = (wisheditem) => {
+            console.log(wisheditem, "wisheditem");
             // trriger the function
-            dispatch(Wish(item))
+            dispatch(Wish(wisheditem))
+          
           }
 
           return (

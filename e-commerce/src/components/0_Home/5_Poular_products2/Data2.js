@@ -30,6 +30,7 @@ const data2 = [
         img: i1,
         img2: p1,
         id : 1,
+        qun : 1
     },
     {
         name: "Allie Sharp",

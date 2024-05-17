@@ -12,7 +12,7 @@ export default function Header() {
 
   const data = useSelector((state) => state.cartreducer.carts)
   const data2 = useSelector((state) => state.widhlistreducer.wish)
-  console.log(data, "data");
+  // console.log(data, "data");
 
 
   const [isSticky, setIsSticky] = useState(false);

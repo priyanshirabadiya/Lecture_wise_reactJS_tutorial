@@ -2,23 +2,39 @@ import React from 'react'
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading'
 import Header2 from '../../Commancomponents/2_Header2/Header2'
 import { useSelector, useDispatch } from 'react-redux';
-import { REMOVE } from '../../../Redux/Action/Action'
+import { REMOVE } from '../../../Redux/Action/Action';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 export default function Cart() {
     const dispatch = useDispatch();
 
     const remove = (id) => {
         dispatch(REMOVE(id));
+        toast.error("Removed from cart!");
     };
 
     const data = useSelector((state) => state.cartreducer.carts)
     // console.log(data,"datanew");
-    
 
     return (
         <>
+
             <Header2 />
             <Pageheading pagename="Cart" />
+            <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+                />
             <table class="table-auto mt-[3rem] mb-[3rem] overflow-x-scroll w-full">
+
                 <thead>
                     <tr className='border' >
                         <th className='border py-3' >Image</th>
