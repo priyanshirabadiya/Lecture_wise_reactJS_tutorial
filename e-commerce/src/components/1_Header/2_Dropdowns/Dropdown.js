@@ -5,7 +5,7 @@ export default function Dropdown() {
     return (
         <div className='flex last-one'>
             <div className="dropdown first ms-4 rounded">
-                <button className="dropbtn rounded-md flex"><b>Home</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
+                <button className="dropbtn  rounded-md flex"><b>Home</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
                 <div className="dropdown-content font-bold">
                     <Link to="/">Wooden Home</Link>
                     <a href="#">Fashion Home</a>
