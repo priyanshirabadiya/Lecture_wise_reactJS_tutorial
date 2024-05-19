@@ -24,7 +24,7 @@ export default function Dropdown() {
                     <Link to="/shop_details">Shop Location</Link>
                     <Link to="/cart">Cart</Link>
                     <Link to="/signin">Sign In</Link>
-                    <a href="#">Checkout</a>
+                    <Link to="/checkout">Checkout</Link>
                     <Link to="/wishlist">Wishlist</Link>
                     <Link to="/ProductTrack">Product Track</Link>
                 </div>

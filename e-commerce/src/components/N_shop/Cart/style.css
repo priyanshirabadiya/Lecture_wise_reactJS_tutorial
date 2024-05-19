@@ -1,7 +1,6 @@
-
 .banner-animation {
     position: relative;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .banner-animation:before {
@@ -26,31 +25,3 @@
     transition: all .9s linear
 }
 
-
-
-.banner-animation-2 {
-    position: relative;
-    overflow: hidden;
-}
-
-.banner-animation-2:before {
-    background: hsla(0,0%,100%,.3);
-    bottom: 0;
-    content: "";
-    left: 10%;
-    position: absolute;
-    right: 10%;
-    pointer-events: none;
-    top: 0;
-    opacity: 1;
-    width: 0;
-    transition: all .9s linear
-}
-
-.banner-animation-2:hover:before {
-    left: 10%;
-    right: 0;
-    opacity: 0;
-    width: auto;
-    transition: all .9s linear
-}

@@ -4,20 +4,19 @@ import i1 from '../../assets/i1.jpg'
 import i4 from '../../assets/i4.jpg'
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading'
 import { useSelector, useDispatch } from 'react-redux'
-import { ADD, REMOVEWISH } from '../../../Redux/Action/Action'
+import { ADD, Removewish } from '../../../Redux/Action/Action';
 const Wishlist = () => {
-    const data = useSelector((state) => state.widhlistreducer.wish)
-
+    const data = useSelector((state) => state.wishlistreducer1.wish)
     const dispatch = useDispatch();
-    const remove = (id) => {
-        dispatch(REMOVEWISH(id));
-        // console.log(data, "datanew");
-    };
 
+    const remove = (id) => {
+        dispatch(Removewish(id));
+        console.log(data, "wisheddata");
+    };
 
     const send = (id,item) =>{
         dispatch(ADD(item));
-        dispatch(REMOVEWISH(id));
+        dispatch(Removewish(id));
     };
 
     return (

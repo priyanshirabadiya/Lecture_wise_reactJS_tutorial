@@ -20,6 +20,7 @@ import Firstline from './components/1_Header/Firstline/Firstline';
 import FirstData from './components/Popular_contain/FirstData';
 import Cart from './components/N_shop/Cart/Cart';
 import ScrollToTop from './components/N_shop/Top_navigate/Top_navigate';
+import Checkout from './components/N_Pages/Checkout/Checkout';
 function App() {
   return (
     <>
@@ -43,6 +44,8 @@ function App() {
                 <Route path="/about" element={<About />} ></Route>
                 <Route path="/product/:id" element={<FirstData />} ></Route>
                 <Route path="/cart" element={<Cart />} ></Route>
+                <Route path="/checkout" element={<Checkout />} ></Route>
+                
               </Routes>
             </BrowserRouter>
           </Provider>

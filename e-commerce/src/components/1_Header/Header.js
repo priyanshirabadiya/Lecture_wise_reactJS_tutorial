@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 export default function Header() {
 
   const data = useSelector((state) => state.cartreducer.carts)
-  const data2 = useSelector((state) => state.widhlistreducer.wish)
+  const data2 = useSelector((state) => state.wishlistreducer1.wish)
   // console.log(data, "data");
 
 

@@ -47,7 +47,7 @@ const data2 = [
     },
     {
         name: "Effie Rios",
-        price: 40.00,
+        price: 45.00,
         img: i4,
         img2: p4,
         id: 4
@@ -89,7 +89,7 @@ const data2 = [
     },
     {
         name: "Terry Byrd",
-        price: 100.00,
+        price: 95.00,
         img: i10,
         img2: s5,
         id: 10

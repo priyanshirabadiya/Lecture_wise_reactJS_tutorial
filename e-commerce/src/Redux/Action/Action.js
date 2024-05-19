@@ -13,15 +13,22 @@ export const REMOVE = (id) => {
 }
 
 export const Wish = (item) => {
-    return {
-        type: "WISH_LIST",
-        payload: item
+    return{
+        type : "wish_list",
+        payload : item
     }
 }
 
-export const REMOVEWISH = (id) => {
+export const Removewish = (id) => {
     return {
-        type: "REMOVE_FROM_WISH",
-        payload: id
+        type : "Remove_wish",
+        payload : id
     }
 }
+
+export const UPDATE_QUANTITY = (id , quantity) => {
+    return {
+        type : "UPDATE_QUANTITY",
+        payload : {id , quantity}
+    }
+} 
