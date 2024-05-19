@@ -25,4 +25,3 @@ export const REMOVEWISH = (id) => {
         payload: id
     }
 }
-

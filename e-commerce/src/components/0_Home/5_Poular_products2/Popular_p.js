@@ -71,7 +71,7 @@ const Popular_p = () => {
                   </div>
                   <div className="text-left mt-4">
                     <h1 className="text-gray-500">{name}</h1>
-                    <p className="font-semibold">{price}</p>
+                    <p className="font-semibold">${price}.00</p>
                   </div>
                   <div className="mt-4 opacity-0 dots">
                     <div className="tpproduct__thumb-bg">

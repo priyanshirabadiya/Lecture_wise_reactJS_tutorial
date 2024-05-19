@@ -22,7 +22,7 @@ export default function FirstData(props) {
                     {props.name}
                     <h1 className='font-bold ms-[5rem] text-[2rem] ' >{product.name}</h1>
                     {/* <del className='text-gray-500 font-bold text-[1.5rem] ms-[5rem]'>$9.28</del> */}
-                    <div className=' font-bold text-[1.5rem] ms-[5rem] text-[#d51243] '>{product.price}</div>
+                    <div className=' font-bold text-[1.5rem] ms-[5rem] text-[#d51243] '>${product.price}.00</div>
                     <p className='w-[30vw] text-gray-500 ms-[5rem] ' >Priyoshop has brought to you the Hijab 3 Pieces Combo Pack PS23. It is a completely modern design and you feel comfortable to put on this hijab. Buy it at the best price.</p>
                     <form action="">
                         <div className="flex">

@@ -26,6 +26,7 @@ export const cartreducer = (state = initial_state, action) => {
                 ...state,
                 carts: data,
             };
+        
         default:
             return state;
     }
@@ -35,11 +36,11 @@ export const widhlistreducer = (state = initial_state, action) => {
     switch (action.type) {
         case "WISH_LIST":
             const existingitem = state.wish.find((item) => item.value.id === action.payload.value.id)
-            if(existingitem){
+            if (existingitem) {
                 toast.warn('Item is already in the cart!');
                 return state;
             }
-            else{
+            else {
                 toast.success("Item added to cart!");
             }
             return {

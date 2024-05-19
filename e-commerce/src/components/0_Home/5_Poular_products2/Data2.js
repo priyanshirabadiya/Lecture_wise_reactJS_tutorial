@@ -9,7 +9,7 @@ import i6 from '../../assets/i6.jpg'
 import i7 from '../../assets/i7.jpg'
 import i8 from '../../assets/i8.jpg'
 import i9 from '../../assets/i9.jpg'
-import i10 from '../../assets/i10.jpg'  
+import i10 from '../../assets/i10.jpg'
 import p1 from '../../assets/p1.jpg'
 import p2 from '../../assets/p2.jpg'
 import p3 from '../../assets/p3.jpg'
@@ -26,76 +26,75 @@ import FirstData from '../../Popular_contain/FirstData'
 const data2 = [
     {
         name: "Bradley Burgess 2",
-        price: "$20.00",
+        price: 20.00,
         img: i1,
         img2: p1,
-        id : 1,
-        qun : 1
+        id: 1,
     },
     {
         name: "Allie Sharp",
-        price: "$30.00",
+        price: 30.00,
         img: i2,
         img2: p2,
-        id : 2
+        id: 2
     },
     {
         name: "Nathaniel Baldwin",
-        price: "$40.00",
+        price: 40.00,
         img: i3,
         img2: p3,
-        id : 3
+        id: 3
     },
     {
         name: "Effie Rios",
-        price: "$40.00",
+        price: 40.00,
         img: i4,
         img2: p4,
-        id : 4
+        id: 4
     },
     {
         name: "Carolyn Goodwin",
-        price: "$50.00",
+        price: 50.00,
         img: i5,
         img2: p5,
-        id : 5
+        id: 5
     },
     {
         name: "Evelyn Patton",
-        price: "$60.00",
+        price: 60.00,
         img: i6,
         img2: s1,
-        id : 6
+        id: 6
     },
     {
         name: "Sally Ray",
-        price: "$70.00",
+        price: 70.00,
         img: i7,
         img2: s2,
-        id : 7
+        id: 7
     },
     {
         name: "Ora Bowman",
-        price: "$80.00",
+        price: 80.00,
         img: i8,
         img2: s3,
-        id : 8
+        id: 8
     },
     {
         name: "Frederick Valdez",
-        price: "$90.00",
+        price: 90.00,
         img: i9,
         img2: s4,
-        id : 9
+        id: 9
     },
     {
         name: "Terry Byrd",
-        price: "$100.00",
+        price: 100.00,
         img: i10,
         img2: s5,
-        id : 10
+        id: 10
     },
-    
+
 
 ]
 
