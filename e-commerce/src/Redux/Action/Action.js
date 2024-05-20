@@ -25,7 +25,7 @@ export const Removewish = (id) => {
         payload : id
     }
 }
-
+// to update quantity
 export const UPDATE_QUANTITY = (id , quantity) => {
     return {
         type : "UPDATE_QUANTITY",

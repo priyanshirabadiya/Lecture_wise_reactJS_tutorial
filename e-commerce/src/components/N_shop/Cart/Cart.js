@@ -11,6 +11,7 @@ import './style.css';
 export default function Cart() {
     const data = useSelector((state) => state.cartreducer.carts);
     const quantities = useSelector((state) => state.cartreducer.quantities);
+    console.log(quantities , "quntittiessssssss");
     const dispatch = useDispatch();
 
     const remove = (id) => {
@@ -22,13 +23,15 @@ export default function Cart() {
         const quantity = parseInt(event.target.value);
         dispatch(UPDATE_QUANTITY(id, quantity));
     };
+
+
     // 2nd step
     let Subtotal = 0;
     data.forEach((item) => {
         const quantity = quantities[item.value.id] || 1;
         Subtotal += item.value.price * quantity;
     });
-    
+
     const Taxes = 9.00;
 
     return (
