@@ -2,26 +2,19 @@ import React, { useState } from 'react';
 import './style.css';
 import Header2 from '../../Commancomponents/2_Header2/Header2';
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading';
-import signinI from '../../assets/signin.jpg';
 import signinI2 from '../../assets/signin-2.jpg';
-import { FiLock } from "react-icons/fi";
 import { GoKey } from "react-icons/go";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { CiMail } from "react-icons/ci";
 import { TbShoppingBagMinus } from "react-icons/tb";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link, json } from 'react-router-dom';
-import { LuUser2 } from "react-icons/lu";
 
 export default function Sign_in() {
     const Swal = require('sweetalert2');
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    // const [validFlag, setValidFlag] = useState({ email: false, password: false }); // validFlag is used to change color of error
-    // const [error, setError] = useState({ emailError: "", passwordError: "" });
-
-    const [validFlag, setValidFlag] = useState({ email: false, password: false });
+    const [validFlag, setValidFlag] = useState({ email: false, password: false }); // validFlag is used to change color of error
     const [error, setError] = useState({ emailError: "", passError: "" })
 
     //REGEX
@@ -31,86 +24,41 @@ export default function Sign_in() {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-
-        if (name == "email") {
-            setEmail(value);
-            if (value == "") {
-                setValidFlag(prev => ({ ...prev, email: false }))
-                setError(prev => ({ ...prev, emailError: "" }))
-            }
-            else if (emailRegex.test(value)) {
-                setValidFlag(prev => ({ ...prev, email: true }))
-                setError(prev => ({ ...prev, emailError: "email is valid" }))
-            }
-            else {
-                setValidFlag(prev => ({ ...prev, email: false }))
-                setError(prev => ({ ...prev, emailError: "email is not valid" }))
-            }
-        }
-
-        if (name == "password") {
-            setPassword(value);
-
-            if (value === "") {
-                setValidFlag(prev => ({ ...prev, password: false }));
-                setError(prev => ({ ...prev, passwordError: "" }));
-            }
-            else if (mediumPassRegex.test(value)) {
-                setValidFlag(prev => ({ ...prev, password: true }));
-                setError(prev => ({ ...prev, passError: "password is medium" }))
-            }
-            else if (mediumPassRegex.test(value)) {
-                setValidFlag(prev => ({ ...prev, password: true }));
-                setError(prev => ({ ...prev, passwordError: "Password is valid" }));
+        const trimmedValue = value.trim();
+        if (name === "email") {
+            setEmail(trimmedValue);
+            if (trimmedValue === "") {
+                setValidFlag(prev => ({ ...prev, email: false }));
+                setError(prev => ({ ...prev, emailError: "" }));
+            } else if (emailRegex.test(trimmedValue)) {
+                setValidFlag(prev => ({ ...prev, email: true }));
+                setError(prev => ({ ...prev, emailError: "Email is valid" }));
             } else {
-                setValidFlag(prev => ({ ...prev, password: false }));
-                setError(prev => ({ ...prev, passwordError: "Password might have atleat 6 charactors" }));
+                setValidFlag(prev => ({ ...prev, email: false }));
+                setError(prev => ({ ...prev, emailError: "Email is not valid" }));
             }
         }
-
-
+        if (name === "password") {
+            setPassword(trimmedValue);
+            if (trimmedValue === "") {
+                setValidFlag(prev => ({ ...prev, password: false }));
+                setError(prev => ({ ...prev, passError: "" }));
+            } else if (strongPassRegex.test(trimmedValue)) {
+                setValidFlag(prev => ({ ...prev, password: true }));
+                setError(prev => ({ ...prev, passError: "Password is valid" }));
+            } else if (mediumPassRegex.test(trimmedValue)) {
+                setValidFlag(prev => ({ ...prev, password: true }));
+                setError(prev => ({ ...prev, passError: "Password is medium" }));
+            }
+            else if (trimmedValue.length < 6) {
+                setValidFlag(prev => ({ ...prev, password: false }));
+                setError(prev => ({ ...prev, passError: "Password must have at least 6 characters" }));
+            } else {
+                setValidFlag(prev => ({ ...prev, password: true }));
+                setError(prev => ({ ...prev, passError: "Password is strong" }));
+            }
+        }
     }
-
-
-
-
-
-    // const handleInputChange = (e) => {
-
-    // const { name, value } = e.target;
-
-    // if (name === 'email') {
-    //     setEmail(value);
-    //     if (value === "") {
-    //         setValidFlag(prev => ({ ...prev, email: false }));
-    //         setError(prev => ({ ...prev, emailError: "" }));
-    //     } else if (emailRegex.test(value)) {
-    //         setValidFlag(prev => ({ ...prev, email: true }));
-    //         setError(prev => ({ ...prev, emailError: "Your email is valid" }));
-    //         // console.log();
-    //     } else {
-    //         setValidFlag(prev => ({ ...prev, email: false }));
-    //         setError(prev => ({ ...prev, emailError: "Email is not valid" }));
-    //     }
-    // }
-
-    // if (name === 'password') {
-    //     setPassword(value);
-    //     if (value === "") {
-    //         setValidFlag(prev => ({ ...prev, password: false }));
-    //         setError(prev => ({ ...prev, passwordError: "" }));
-    //     } else if (strongPassRegex.test(value)) {
-    //         setValidFlag(prev => ({ ...prev, password: true }));
-    //         setError(prev => ({ ...prev, passwordError: "Password is strong" }));
-    //     } else if (mediumPassRegex.test(value)) {
-    //         setValidFlag(prev => ({ ...prev, password: true }));
-    //         setError(prev => ({ ...prev, passwordError: "Password is valid" }));
-    //     } else {
-    //         setValidFlag(prev => ({ ...prev, password: false }));
-    //         setError(prev => ({ ...prev, passwordError: "Password might have atleat 6 charactors" }));
-    //     }
-    // }
-    // };
 
     const registerData = (e) => {
         e.preventDefault();
@@ -133,9 +81,7 @@ export default function Sign_in() {
 
     };
 
-    const errorClasses = `flex items-center font-medium tracking-wide text-xs mt-1 ml-1 ${validFlag.email ? "text-green-500" : "text-red-700"}`;
     const errorClasses1 = `flex items-center font-medium tracking-wide text-xs mt-1 ml-1 ${validFlag.password ? "text-green-500" : "text-red-700"}`;
-
     const errorclass = `flex items-center font-medium tracking-wide text-xs mt-1 ml-1 ${validFlag.email ? "text-green-500" : "text-red-700"} `
 
     return (
@@ -190,7 +136,7 @@ export default function Sign_in() {
                                         />
                                     </div>
                                     {<span className={errorClasses1}>
-                                        {error.passwordError}
+                                        {error.passError}
                                     </span>}
                                 </div>
                                 <div className="flex mt-5 justify-between -ms-12 n-check">
