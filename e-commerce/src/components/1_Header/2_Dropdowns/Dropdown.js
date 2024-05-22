@@ -23,7 +23,7 @@ export default function Dropdown() {
                     <a href="#">Shop Details 2</a>
                     <Link to="/shop_details">Shop Location</Link>
                     <Link to="/cart">Cart</Link>
-                    <Link to="/signin">Sign In</Link>
+                    <Link to="/Sign_inandLog_in">Sign In</Link>
                     <Link to="/checkout">Checkout</Link>
                     <Link to="/wishlist">Wishlist</Link>
                     <Link to="/ProductTrack">Product Track</Link>
@@ -59,7 +59,7 @@ export default function Dropdown() {
                     </div>
                     <div className='flex justify-between'>
                         <Link to="/shop_details" className='w-36 h-1'> Shop List view</Link>
-                        <Link to="/signin" className='w-40'>Log In</Link>
+                        <Link to="/login" className='w-40'>Log In</Link>
                         <a href=""></a>
                     </div>
 

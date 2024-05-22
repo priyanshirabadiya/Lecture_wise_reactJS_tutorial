@@ -21,6 +21,8 @@ import FirstData from './components/Popular_contain/FirstData';
 import Cart from './components/N_shop/Cart/Cart';
 import ScrollToTop from './components/N_shop/Top_navigate/Top_navigate';
 import Checkout from './components/N_Pages/Checkout/Checkout';
+import Log_in from './components/N_Pages/Log_In/Log_in';
+import Sign_inandLog_in from './components/N_Pages/Sign_inLog_in/signandLog';
 function App() {
   return (
     <>
@@ -38,6 +40,8 @@ function App() {
                 <Route path="/shop" element={<Shop />} ></Route>
                 <Route path="/shop2" element={<Shop2 />} ></Route>
                 <Route path="/signin" element={<Sign_in />} ></Route>
+                <Route path="/login" element={<Log_in />} ></Route>
+                <Route path="/Sign_inandLog_in" element={<Sign_inandLog_in />} ></Route>
                 <Route path="/shop_details" element={<Shop_Location />} ></Route>
                 <Route path="/wishlist" element={<Wishlist />} ></Route>
                 <Route path="/ProductTrack" element={<ProductTrack />} ></Route>

@@ -42,21 +42,21 @@ export default function Contact() {
             <button className='p-4 f-change rounded  w-[30vw] justify-center border mt-4 flex font-bold'><Link href="" target='_blank' >Get Location</Link> <IoLocationOutline className='ms-5 mt-1 f-change2 ' /> </button>
           </div>
         </div>
-        <form action="https://formspree.io/f/mgegddld" method="POST"  >
-        <div className='mb-5 md:mt-10 lg:mt-0 ' >
-          <h2 className='text-[1.5rem] font-bold' >Make Custom Request</h2>
-          <p className='text-[0.9rem] text-gray-500 text-wrap' >Must-have pieces selected every month want style Ideas and Treats?</p>
-          <div className="flex flex-wrap mt-3">
-            <input type="text" name='text' id='text' className='border p-4 placeholder:text-[0.9rem] w-[28vw] placeholder:text-gray-500 me-8 rounded' placeholder='Full name' />
-            <input type="email" name='email' id='email' className='border p-4 placeholder:text-[0.9rem] w-[28vw] placeholder:text-gray-500 rounded' placeholder='Email address' />
+        <form action="https://formspree.io/f/mgegddld" method="POST">
+          <div className='mb-5 md:mt-10 lg:mt-0 ' >
+            <h2 className='text-[1.5rem] font-bold' >Make Custom Request</h2>
+            <p className='text-[0.9rem] text-gray-500 text-wrap' >Must-have pieces selected every month want style Ideas and Treats?</p>
+            <div className="flex flex-wrap mt-3">
+              <input type="text" required name='text' id='text' className='border p-4 placeholder:text-[0.9rem] w-[28vw] placeholder:text-gray-500 me-8 rounded' placeholder='Full name' />
+              <input type="email" required name='email' id='email' className='border p-4 placeholder:text-[0.9rem] w-[28vw] placeholder:text-gray-500 rounded' placeholder='Email address' />
+            </div>
+            <div className="flex flex-wrap mt-4">
+              <input type="text" required name='number' id='number' className='border p-4 placeholder:text-[0.9rem] w-[28vw] placeholder:text-gray-500 me-8 rounded' placeholder='Phone number' />
+              <input type="text" required name='subject' id='subject' className='border p-4 placeholder:text-[0.9rem] w-[28vw] placeholder:text-gray-500 rounded' placeholder='Subject' />
+            </div>
+            <input type="text" required name='message' id='message' className='w-[50vw] h-[16.5rem] mt-4 border placeholder:ps-3 rounded  placeholder:text-[0.9rem]  placeholder:text-gray-500' placeholder='Enter message' />
+            <button type='submit' className='p-4 rounded w-[12vw] justify-center bg-[#d5123d] text-white border ll-1 mt-4 flex font-bold'>Get a Quote<FaArrowRightLong className='ms-3 mt-1 right-animation ' /> </button>
           </div>
-          <div className="flex flex-wrap mt-4">
-            <input type="text" name='number' id='number' className='border p-4 placeholder:text-[0.9rem] w-[28vw] placeholder:text-gray-500 me-8 rounded' placeholder='Phone number' />
-            <input type="text" name='subject' id='subject' className='border p-4 placeholder:text-[0.9rem] w-[28vw] placeholder:text-gray-500 rounded' placeholder='Subject' />
-          </div> 
-          <input type="text" name='message' id='message' className='w-[50vw] h-[16.5rem] mt-4 border placeholder:ps-3 rounded  placeholder:text-[0.9rem]  placeholder:text-gray-500' placeholder='Enter message' />
-          <button  type='submit' className='p-4 rounded w-[12vw] justify-center bg-[#d5123d] text-white border ll-1 mt-4 flex font-bold'>Get a Quote<FaArrowRightLong className='ms-3 mt-1 right-animation ' /> </button>
-        </div>
         </form>
       </div>
       <div className=''>

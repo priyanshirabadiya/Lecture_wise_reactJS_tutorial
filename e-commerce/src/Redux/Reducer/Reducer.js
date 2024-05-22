@@ -28,7 +28,6 @@ export const cartreducer = (state = initial_state, action) => {
                 carts: data,
             };
 
-        //  
         case "UPDATE_QUANTITY":
             return {
                 ...state,
