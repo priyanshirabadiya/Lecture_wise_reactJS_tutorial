@@ -1,0 +1,14 @@
+
+{
+   "users" : [
+    { "id" : "1" , "name" : "Priyanshi" , "title" : "frounted developer" , "email" : "priyanshi@gmail.com" , "role" : "developer" , "img" : "https://t3.ftcdn.net/jpg/06/50/24/56/360_F_650245616_WUPkDzObkPLVyegasDCeNhQXvFVVJoKn.jpg" },
+
+    { "id" : "2" , "name" : "zeneliyad" , "title" : "backend developer" , "email" : "tisha@gmail.com" , "role" : "CTO" , "img" : "https://media.istockphoto.com/id/831902150/photo/ive-solidified-my-name-in-the-business-world.jpg?s=612x612&w=0&k=20&c=GCkoeN4GXE9W3EgNmwnInZpvGEepUSPd7N8NMKGBGFs=" },
+
+    { "id" : "3" , "name" : "rok" , "title" : "ui-ux designer" , "email" : "jatin@gmail.com" , "role" : "owner" , "img" : "https://www.shutterstock.com/image-photo/smiling-young-middle-eastern-man-600nw-2063524544.jpg" },
+
+    { "id" : "4" , "name" : "lizadubey" , "title" : "Ai-ML developer" , "email" : "lizadubey@gmail.com" , "role" : "CEO","img": "https://img.freepik.com/free-photo/smiley-businesswoman-posing-outdoors-with-arms-crossed-copy-space_23-2148767055.jpg" },
+
+    { "id" : "5" , "name" : "mkpithvala" , "title" : "Laravel developer" , "email" : "mkpithvala@gmail.com" , "role" : "developer" , "img" : "https://st3.depositphotos.com/9880800/18338/i/450/depositphotos_183380544-stock-photo-smiling-african-american-businessman-sitting.jpg" }
+   ]
+}
