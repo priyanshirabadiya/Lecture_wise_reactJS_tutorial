@@ -1,14 +1,31 @@
-
 {
-   "users" : [
-    { "id" : "1" , "name" : "Priyanshi" , "title" : "frounted developer" , "email" : "priyanshi@gmail.com" , "role" : "developer" , "img" : "https://t3.ftcdn.net/jpg/06/50/24/56/360_F_650245616_WUPkDzObkPLVyegasDCeNhQXvFVVJoKn.jpg" },
-
-    { "id" : "2" , "name" : "zeneliyad" , "title" : "backend developer" , "email" : "tisha@gmail.com" , "role" : "CTO" , "img" : "https://media.istockphoto.com/id/831902150/photo/ive-solidified-my-name-in-the-business-world.jpg?s=612x612&w=0&k=20&c=GCkoeN4GXE9W3EgNmwnInZpvGEepUSPd7N8NMKGBGFs=" },
-
-    { "id" : "3" , "name" : "rok" , "title" : "ui-ux designer" , "email" : "jatin@gmail.com" , "role" : "owner" , "img" : "https://www.shutterstock.com/image-photo/smiling-young-middle-eastern-man-600nw-2063524544.jpg" },
-
-    { "id" : "4" , "name" : "lizadubey" , "title" : "Ai-ML developer" , "email" : "lizadubey@gmail.com" , "role" : "CEO","img": "https://img.freepik.com/free-photo/smiley-businesswoman-posing-outdoors-with-arms-crossed-copy-space_23-2148767055.jpg" },
-
-    { "id" : "5" , "name" : "mkpithvala" , "title" : "Laravel developer" , "email" : "mkpithvala@gmail.com" , "role" : "developer" , "img" : "https://st3.depositphotos.com/9880800/18338/i/450/depositphotos_183380544-stock-photo-smiling-african-american-businessman-sitting.jpg" }
-   ]
+  "users": [
+    {
+      "id": "44f7",
+      "name": "liya",
+      "lastname": "zosef",
+      "role": "doer",
+      "email": "gh@gmail.com",
+      "title": "sdjkfhh",
+      "img": "https://as2.ftcdn.net/v2/jpg/02/98/22/81/1000_F_298228146_AY5du58S0j81lJlF2tNLwHeyTcBAfCHf.jpg"
+    },
+    {
+      "id": "aeda",
+      "name": "khena",
+      "lastname": "zaved",
+      "role": "engineer",
+      "email": "kk@gmail.com",
+      "title": "arcutecture",
+      "img": "https://t4.ftcdn.net/jpg/03/17/72/03/360_F_317720355_sn87YEwDHHGMMYYmxiS3o3Hinkt1T3sB.jpg"
+    },
+    {
+      "id": "95b0",
+      "name": "jiya",
+      "lastname": "desai",
+      "role": "ca",
+      "email": "jiya@gmail.com",
+      "title": "ca",
+      "img": "https://img.freepik.com/premium-photo/female-businesswoman-ceo-smiling-with-her-project-notebook-photograph-showing-exterior-c_713888-24610.jpg"
+    }
+  ]
 }
