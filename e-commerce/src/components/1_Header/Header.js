@@ -14,6 +14,7 @@ export default function Header() {
   const data2 = useSelector((state) => state.wishlistreducer1.wish)
   // console.log(data, "data");
 
+
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
