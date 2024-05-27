@@ -22,7 +22,7 @@ export const cartreducer = (state = initial_state, action) => {
             };
         // action.payload's id is that we click on remove button id 
         case "REMOVE_FROM_CART":
-            const data = state.carts.filter((item) => item.value.id !== action.payload);
+            const data = state.carts.filter((item) => item.value.id !== action.payload);    
             return {
                 ...state,
                 carts: data,

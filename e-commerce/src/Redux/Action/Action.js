@@ -1,3 +1,4 @@
+// item is one kind of product
 export const ADD = (item) => {
     return {
         type: "ADD_TO_CART",
