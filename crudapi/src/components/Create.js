@@ -15,8 +15,6 @@ export default function Create() {
     img : ""
   });
 
-
-
   const navigate = useNavigate(); 
   const senddatatoserver = (e) => {
     e.preventDefault();
