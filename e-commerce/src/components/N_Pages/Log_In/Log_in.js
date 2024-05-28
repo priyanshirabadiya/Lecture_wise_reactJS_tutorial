@@ -70,9 +70,11 @@ export default function Log_in() {
             });
             return;
         }
+        // -------------------
 
         const users = JSON.parse(localStorage.getItem("users")) || [];
         const user = users.find(user => user.email === email && user.password === password);
+        // -------------------
 
         if (!user) {
             Swal.fire({

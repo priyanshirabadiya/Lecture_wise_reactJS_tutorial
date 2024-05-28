@@ -69,10 +69,12 @@ export default function Sign_in() {
             });
 
         }
+        // -------------------
         const users = JSON.parse(localStorage.getItem("users")); //key name is users
         users.push({ email, password });
         console.log(users);
         localStorage.setItem("users", JSON.stringify(users));
+        // -------------------
 
         Swal.fire({
             title: "Successfully Registered",

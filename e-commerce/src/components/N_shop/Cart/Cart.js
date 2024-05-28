@@ -35,7 +35,6 @@ export default function Cart() {
 
     return (
         <>
-        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi officiis architecto, quos quaerat sint maxime in</div>
             <Header2 />
             <Pageheading pagename="Cart" />
             <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" />
