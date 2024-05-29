@@ -1,7 +1,5 @@
 import React from 'react'
 import Header2 from '../../Commancomponents/2_Header2/Header2'
-import i1 from '../../assets/i1.jpg'
-import i4 from '../../assets/i4.jpg'
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading'
 import { useSelector, useDispatch } from 'react-redux'
 import { ADD, Removewish } from '../../../Redux/Action/Action';
