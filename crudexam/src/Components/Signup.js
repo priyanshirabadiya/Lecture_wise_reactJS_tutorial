@@ -1,4 +1,3 @@
-// --------------------new
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -24,33 +23,7 @@ export default function Signin() {
   };
 
   return (
-    // <div>
-    //   <Navbar />
-    //   <div className='mx-[570px] mt-10 mb-10 ' >
-    //     <div id="signinDiv"></div>
-    //   </div>
-    //   <form onSubmit={submitData}>
-    //     <input
-    //       type="email"
-    //       placeholder="Email"
-    //       onChange={(e) => setEmail(e.target.value)}
-    //     />
-    //     <input
-    //       type="password"
-    //       placeholder="Password"
-    //       onChange={(e) => setPass(e.target.value)}
-    //     />
-    //     <input
-    //       type="password"
-    //       placeholder="Confirm Password"
-    //       onChange={(e) => setConfirmPass(e.target.value)}
-    //     />
-    //     <button type="submit">Register</button>
-    //   </form>
-    // </div>
-
     <>
-      <Navbar />
       <section>
         <div class="grid grid-cols-1 lg:grid-cols-2">
           <div class="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">

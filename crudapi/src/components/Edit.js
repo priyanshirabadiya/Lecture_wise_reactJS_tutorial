@@ -6,7 +6,7 @@ export default function Edit() {
   const {id} = useParams();
   const navigate = useNavigate();
   const [people , setpeople] = useState({
-    firstname : "" , 
+    name : "" , 
     lastname : "" , 
     role: "",
     email: "", 
@@ -57,8 +57,7 @@ export default function Edit() {
                 <div class="space-y-5">
                   <div>
                     <label for="name" class="text-base font-medium text-gray-900">
-                      {" "}
-                      Full Name{" "}
+                      name
                     </label>
                     <div class="mt-2">
                       <input
@@ -67,8 +66,8 @@ export default function Edit() {
                         placeholder="Full Name"
                         id="name"
                         name="name"
-                        value={people.firstname}
-                        onChange={(e) => setpeople({...people , firstname:e.target.value})}
+                        value={people.name}
+                        onChange={(e) => setpeople({...people , name:e.target.value})}
                       />
                     </div>
                   </div>

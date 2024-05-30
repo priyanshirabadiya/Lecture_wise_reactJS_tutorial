@@ -22,9 +22,6 @@ export default function Login() {
 
   return (
     <div>
-      <div>
-        <Navbar />
-      </div>
       <section className='mt-5 mx-10'>
         <div class="grid grid-cols-1 lg:grid-cols-2">
           <div class="relative flex items-end px-4 pb-10 pt-60 sm:px-6 sm:pb-16 md:justify-center lg:px-8 lg:pb-24">

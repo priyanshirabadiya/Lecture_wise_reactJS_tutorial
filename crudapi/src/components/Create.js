@@ -114,7 +114,7 @@ export default function Create() {
                       />
                     </div>
                   </div>
-                  <div>
+                  <div> 
                     <div class="flex items-center text-center justify-center">
                       <label for="text" class="text-base  font-medium text-gray-900">
                         title

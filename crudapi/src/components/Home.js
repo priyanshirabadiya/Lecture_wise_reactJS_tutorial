@@ -4,9 +4,10 @@ import axios from "axios";
 import { Link } from 'react-router-dom'
 
 export default function Home() {
-  const [data, setdata] = useState([]);
+  // --------------------------------
   const [dropdownVisible, setDropdownVisible] = useState(false);
-
+  // --------------------------------
+  const [data, setdata] = useState([]);
   const loaduser = async () => {
     const res = await axios.get("http://localhost:3001/users");
     setdata(res.data);
