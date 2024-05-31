@@ -1,29 +1,32 @@
+import React, { useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
+export default function Signup() {
+  const navigate = useNavigate();
+  const [email, setemail] = useState([]);
+  const [password, setpassword] = useState([]);
 
-export default function Signin() {
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
-
-  const submitData = (e) => {
+  const onsubmitdata = (e) => {
     e.preventDefault();
 
-    if (!email || !pass) {
-      alert("please fill all the details");
-    } 
-     else {
-      alert("successfully registered");
-      const crudUsers = JSON.parse(localStorage.getItem("crudUsers")) || [];
-      crudUsers.push({ email, pass });
-      localStorage.setItem("crudUsers", JSON.stringify(crudUsers));
-      console.log(crudUsers);
+    if (!email || !password) {
+      alert("fill the all details")
     }
-  };
+    else {
+      alert("Successfully register user");
+      const enteruser = JSON.parse(localStorage.getItem("enteruser")) || [];
+      enteruser.push({ email, password });
+      console.log(enteruser);
+      localStorage.setItem("enteruser", JSON.stringify(enteruser));
+      navigate("/home")
+    }
+
+  }
+
 
   return (
-    <>
+    <div className='m-10' >
       <section>
         <div class="grid grid-cols-1 lg:grid-cols-2">
           <div class="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
@@ -33,15 +36,15 @@ export default function Signin() {
               </h2>
               <p class="mt-2 text-base text-gray-600">
                 Already have an account?{" "}
-                <Link to="/login"
-                  href="#"
+                <Link
+                  to="/login"
                   title=""
                   class="font-medium text-black transition-all duration-200 hover:underline"
                 >
                   Sign In
                 </Link>
               </p>
-              <form action="#" method="POST" class="mt-8" onSubmit={submitData} >
+              <form action="#" method="POST" class="mt-8" onSubmit={onsubmitdata} >
                 <div class="space-y-5">
                   <div>
                     <label for="name" class="text-base font-medium text-gray-900">
@@ -54,7 +57,6 @@ export default function Signin() {
                         type="text"
                         placeholder="Full Name"
                         id="name"
-
                       />
                     </div>
                   </div>
@@ -69,7 +71,7 @@ export default function Signin() {
                         type="email"
                         placeholder="Email"
                         id="email"
-                        onChange={(e) => setEmail( e.target.value)}
+                        onChange={(e) => setemail(e.target.value)}
                       />
                     </div>
                   </div>
@@ -89,7 +91,7 @@ export default function Signin() {
                         type="password"
                         placeholder="Password"
                         id="password"
-                        onChange={(e) => setPass( e.target.value)}
+                        onChange={(e) => setpassword(e.target.value)}
                       />
                     </div>
                   </div>
@@ -120,7 +122,7 @@ export default function Signin() {
               </form>
             </div>
           </div>
-          <div class="h-[90%] w-[90%] mt-10">
+          <div class="h-[90%] w-[90%] mt-5">
             <img
               class="mx-auto h-full w-full rounded-md object-cover"
               src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1742&amp;q=80"
@@ -130,11 +132,7 @@ export default function Signin() {
         </div>
       </section>
 
-
-    </>
-
-  );
+    </div>
+  )
 }
-
-
 

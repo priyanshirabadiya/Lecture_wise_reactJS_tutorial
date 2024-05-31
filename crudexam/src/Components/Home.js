@@ -1,11 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 
 export default function Home() {
- 
+
+  const [category , setcategory] = useState([]);
+
+  const getdata = async() => {
+    let response = await axios.get("http://localhost:3001/users");
+    console.log(response); 
+    setcategory(response.data)
+  }
+
+  useEffect(() => {
+    getdata();
+  } )
+
   return (
     <div>
+      <Navbar />
       <div className='mt-10 ms-10 mb-0' >
         <Link to="/create" >
           <button
@@ -24,9 +38,9 @@ export default function Home() {
                 Product name
               </th>
               <th scope="col" class="px-6 py-3">
-              <Link to="/edit" >
-                Edit
-              </Link>
+                <Link to="/edit" >
+                  Edit
+                </Link>
               </th>
               <th scope="col" class="px-6 py-3">
                 Category
@@ -37,25 +51,31 @@ export default function Home() {
             </tr>
           </thead>
           <tbody>
-           
+            {category.map((value , index , arr) => {
+              console.log(value);
+              return(
+                <>
                   <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap dark:text-white">
-                      
+                      {value.name}
                     </th>
                     <td class="px-6 py-4">
-                    <Link to="/edit" >
-                      Edit
-                    </Link>
+                      <Link to="/edit" >
+                        Edit
+                      </Link>
                     </td>
                     <td class="px-6 py-4">
-                      
+                      {value.category}
                     </td>
                     <button  >
-                    <td class="px-6 py-4">
-                      Remove
-                    </td>
+                      <td class="px-6 py-4">
+                        Remove
+                      </td>
                     </button>
-                  </tr>             
+                  </tr>
+                  </>
+              )
+            } )}
           </tbody>
         </table>
       </div>

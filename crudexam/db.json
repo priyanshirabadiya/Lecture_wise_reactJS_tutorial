@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "name" : "Iphone",
+            "category" : "mobile"
+        },
+        {
+            "name" : "macbook",
+            "category" : "laptop"
+        },
+        {
+            "name" : "windows",
+            "category" : "laptop"
+        }
+    ]
+}
