@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import './App.css'
-import Formik from './Components/Formik'
-
+import Formikk from './Components/Formikk'
 function App() {
+
   return (
     <>
-      <Formik/>
+      <Formikk/>
     </>
   )
 }
