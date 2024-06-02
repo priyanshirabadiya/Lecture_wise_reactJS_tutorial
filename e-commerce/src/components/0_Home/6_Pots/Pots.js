@@ -52,11 +52,11 @@ export default function Pots() {
             <i className="fab fa-instagram"></i> ninico-shop</h4>
         </div>
         <div className="flex justify-between frapable mt-4  flex-wrap">
-          <a href="" className='pe-1' > <img className='rounded n-img ' src={l1} alt="" /></a>
-          <a href="" className='pe-1' > <img className='rounded n-img ' src={l2} alt="" /></a>
-          <a href="" className='pe-1' > <img className='rounded n-img ' src={l3} alt="" /></a>
-          <a href="" className='pe-1' > <img className='rounded n-img ' src={l4} alt="" /></a>
-          <a href="" className='pe-1' > <img className='rounded n-img ' src={l5} alt="" /></a>
+          <a href="" className='pe-1 mb-5' > <img className='rounded n-img ' src={l1} alt="" /></a>
+          <a href="" className='pe-1 mb-5' > <img className='rounded n-img ' src={l2} alt="" /></a>
+          <a href="" className='pe-1 mb-5' > <img className='rounded n-img ' src={l3} alt="" /></a>
+          <a href="" className='pe-1 mb-5' > <img className='rounded n-img ' src={l4} alt="" /></a>
+          <a href="" className='pe-1 mb-5' > <img className='rounded n-img ' src={l5} alt="" /></a>
           <a href="" className='' > <img className='rounded n-img ' src={l6} alt="" /></a>
         </div>
       </div>

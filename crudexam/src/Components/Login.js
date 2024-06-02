@@ -11,7 +11,7 @@ export default function Login() {
     if (!email || !password) {
       alert("Plz fillout all the details");
     }
-    
+                         
     let registeruser = JSON.parse(localStorage.getItem('enteruser'));
     let maindata = registeruser.find((registeruser) => registeruser.email === email && registeruser.password === password)
 

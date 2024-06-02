@@ -20,7 +20,7 @@ export default function Create() {
     e.preventDefault();
     const response = axios.post("http://localhost:3001/users" , people)
     console.log(response);
-    navigate("/edit");
+    navigate("/");
   }
 
   return (

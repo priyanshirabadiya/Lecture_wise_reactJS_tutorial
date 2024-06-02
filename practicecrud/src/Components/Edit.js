@@ -1,24 +1,24 @@
-import React , {useEffect, useState} from 'react';
-import { useNavigate , useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Edit() {
   const navigate = useNavigate();
-  const {id} = useParams(); // Retrieve ID from URL
-
-  const [category , setcategory] = useState({
-    name : "",
-    category : ""
+  const { id } = useParams(); // Retrieve ID from URL
+ 
+  const [category, setcategory] = useState({
+    name: "",
+    category: ""
   })
 
-  const loadserverwithid = async() => {
+  const loadserverwithid = async () => {
     const reaponese = await axios.get(`http://localhost:3001/users/${id}`);
     setcategory(reaponese.data);
   }
 
-  const onsubmitdata = async(e) => {
+  const onsubmitdata = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:3001/users/${id}` ,category)
+    await axios.put(`http://localhost:3001/users/${id}`, category);
     navigate("/")
   }
 
@@ -60,7 +60,7 @@ export default function Edit() {
                       placeholder="Name"
                       id="name"
                       name="name"
-                      onChange={(e) => setcategory({...category , name : e.target.value })}
+                      onChange={(e) => setcategory({ ...category, name: e.target.value })}
                     />
                   </div>
                 </div>
@@ -77,13 +77,12 @@ export default function Edit() {
                       placeholder="... title"
                       id="title"
                       name="title"
-                      onChange={(e) => setcategory({...category , category: e.target.value})}
+                      onChange={(e) => setcategory({ ...category, category: e.target.value })}
                     />
                   </div>
                 </div>
                 <div>
                 </div>
-
                 <div>
                   <button
                     type="submit"

@@ -1,24 +1,33 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import Navbar from './Navbar';
 import axios from 'axios';
-export default function Create() {
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+
+export default function Edit() {
   const navigate = useNavigate();
+  const { id } = useParams();
 
   const [category, setcategory] = useState({
     name: "",
     category: ""
   })
 
+  const getdataoldata = () => {
+    const response = axios.get(`http://localhost:3001/users/${id}`)
+    setcategory(response.data)
+  }
+
   const onsubmitdata = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3001/users", category);
+    axios.put(`http://localhost:3001/users/${id}`, category);
     navigate("/");
   }
 
+  useEffect(() => {
+    getdataoldata();
+  }, [])
+
   return (
     <div>
-
       <section>
         <div class="flex items-center justify-center px-4 py-10 ">
           <div class="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
@@ -28,7 +37,6 @@ export default function Create() {
 
             </h2>
             <p class="mt-2 text-center text-base text-gray-600">
-
               <a
                 href="#"
                 title=""
@@ -37,7 +45,7 @@ export default function Create() {
                 Add data
               </a>
             </p>
-            <form action="#" method="POST" onSubmit={onsubmitdata} class="mt-8" >
+            <form action="#" method="POST" class="mt-8" onSubmit={onsubmitdata} >
               <div class="space-y-5">
                 <div className='text-center'>
                   <label for="name" class="text-center font-medium text-gray-900">
@@ -50,7 +58,7 @@ export default function Create() {
                       placeholder="Name"
                       id="name"
                       name="name"
-                      onChange={(e) => setcategory({ ...category, name:e.target.value})}
+                      onChange={(e) => setcategory({...category , name: e.target.value })}
                     />
                   </div>
                 </div>
@@ -67,7 +75,7 @@ export default function Create() {
                       placeholder="... title"
                       id="title"
                       name="title"
-                      onChange={(e) => setcategory({ ...category, category: e.target.value })}
+                      onChange={(e) => setcategory({...category , category : e.target.value })}
                     />
                   </div>
                 </div>
