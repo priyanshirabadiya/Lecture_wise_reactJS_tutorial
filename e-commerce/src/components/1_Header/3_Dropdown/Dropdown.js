@@ -5,7 +5,7 @@ export default function Dropdown() {
     return (
         <div className='flex last-one absolute'>
             <div className="dropdown first  ms-4 rounded">
-                <button className="dropbtn h-14  rounded-md flex"><b>Home</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
+                <button className="dropbtn h-[4.6rem]  rounded-md flex"><b>Home</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
                 <div className='absolute' >
                     <div className="dropdown-content font-bold">
                         <div className='' >
@@ -19,7 +19,7 @@ export default function Dropdown() {
                 </div>
             </div>
             <div className="dropdown ms-9 rounded">
-                <button className="dropbtn rounded-md flex"><b>Shop</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
+                <button className="dropbtn h-[4.2rem] rounded-md flex"><b>Shop</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
                 <div>
                     <div className="dropdown-content font-bold mt-2 ">
                         <Link to="/shop">Shop</Link>
@@ -36,7 +36,7 @@ export default function Dropdown() {
                 </div>
             </div>
             <div className="dropdown ms-9 rounded">
-                <button className="dropbtn rounded-md flex"><b  >Pages</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
+                <button className="dropbtn  h-[4.2rem] rounded-md flex"><b  >Pages</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
                 <div>
                     <div className="dropdown-content mt-2 " style={{ width: "600px" }}>
                         <div className='flex justify-between'>
@@ -73,7 +73,7 @@ export default function Dropdown() {
                 </div>
             </div>
             <div className="dropdown ms-9 rounded">
-                <button className="dropbtn rounded-md flex"><b>Blog</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
+                <button className="dropbtn h-[4.2rem] rounded-md flex"><b>Blog</b><i className="fa-solid fa-angle-down fa-sm" style={{ color: "#D1D1D3" }}></i></button>
                 <div className="dropdown-content mt-2 font-bold">
                     <Link to="/about" >Blog</Link>
                     <Link to="/about">Blog Details</Link>
@@ -86,3 +86,4 @@ export default function Dropdown() {
         </div>
     )
 }
+

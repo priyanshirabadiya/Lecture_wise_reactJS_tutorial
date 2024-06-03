@@ -24,31 +24,6 @@ export default function Signin() {
   };
 
   return (
-    // <div>
-    //   <Navbar />
-    //   <div className='mx-[570px] mt-10 mb-10 ' >
-    //     <div id="signinDiv"></div>
-    //   </div>
-    //   <form onSubmit={submitData}>
-    //     <input
-    //       type="email"
-    //       placeholder="Email"
-    //       onChange={(e) => setEmail(e.target.value)}
-    //     />
-    //     <input
-    //       type="password"
-    //       placeholder="Password"
-    //       onChange={(e) => setPass(e.target.value)}
-    //     />
-    //     <input
-    //       type="password"
-    //       placeholder="Confirm Password"
-    //       onChange={(e) => setConfirmPass(e.target.value)}
-    //     />
-    //     <button type="submit">Register</button>
-    //   </form>
-    // </div>
-
     <>
       <Navbar />
       <section>

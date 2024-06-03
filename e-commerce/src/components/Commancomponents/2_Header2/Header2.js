@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Dropdown from './2_Dropdowns/Dropdown'
+import Dropdownsectime from './2_Dropdowns/Dropdownsectime'
 import Number from './2_Number/Number'
 import Cate from './2_Newcatagories/Cate'
 export default function Header2() {
@@ -11,7 +11,7 @@ export default function Header2() {
           <Cate />
         </div>
         <div className='mt-3 w-full relative flex justify-between'>
-            <div className='sec-nav'><Dropdown /></div>
+            <div className='sec-nav'><Dropdownsectime/></div>
             <div className='sec-nav'><Number /></div>
         </div>
       </div>

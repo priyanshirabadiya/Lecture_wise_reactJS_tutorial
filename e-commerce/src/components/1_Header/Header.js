@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/logo.png';
-import flag from '../assets/flag.png';  
+import flag from '../assets/flag.png';
 import './header.css';
 import './responsive.css';
-import Dropdown from '../1_Header/2_Dropdowns/Dropdown';
 import { Link } from 'react-router-dom';
-
 import { useSelector } from "react-redux";
+import Thirddropdown from './3_Dropdown/Dropdown';
 
 export default function Header() {
 
@@ -40,10 +39,18 @@ export default function Header() {
         <div className='mt-3 w-full nav-1 sticky'>
           <div className='flex w-full mx-10 justify-between'>
             <div className='flex'>
-              <div className='h-10 mt-2 me-20'>
+              <div className='side-icon mt-3'>
+                <i className="fa-solid fa-bars fa-lg"></i>
+              </div>
+              <div className='h-10 mt-2 me-20 with-dropdown '>
                 <img src={logo} alt="" />
               </div>
-              <div className=''><Dropdown /></div>
+              <div className=''><Thirddropdown /></div>
+            </div>
+            <div>
+              <div className='h-10 mt-2  center-logo'>
+                <img src={logo} alt="" />
+              </div>
             </div>
             <div className='flex '>
               <div className='mt-3 ms-3'>
@@ -75,7 +82,7 @@ export default function Header() {
           </div>
         </div>
       ) :
-        <div className='relative flex sec-nav justify-between mt-5 mx-10 nav-2'>
+        <div className='relative flex justify-between mt-5 mx-10 nav-2'>
           <div className='logo-div mt-5 flex'>
             <div className='side-icon'>
               <i className="fa-solid fa-bars fa-lg"></i>

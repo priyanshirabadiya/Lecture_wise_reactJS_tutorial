@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import './style.css';
-import Alert from '@mui/material/Alert';
-import Stack from '@mui/material/Stack';
-
 import Header2 from '../../Commancomponents/2_Header2/Header2';
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading';
 import signinI from '../../assets/signin.jpg';
@@ -18,152 +15,21 @@ import { LuUser2 } from "react-icons/lu";
 export default function Sign_in() {
 
     const Swal = require('sweetalert2');
+    //   if (!user) {
+    //     Swal.fire({
+    //         icon: "error",
+    //         title: "Wrong details",
+    //         text: "Please enter the correct details",
+    //     });
+    // } else {
+    //     Swal.fire({
+    //         title: "Successfully Logged In",
+    //         icon: "success"
+    //     });
+    // }
 
-    const [signUpData, setSignUpData] = useState({ email: "", password: "" });
-    const [loginData, setLoginData] = useState({ email: "", password: "" });
 
-    const [signUpError, setSignUpError] = useState({ emailError: "", passwordError: "" });
-    const [loginError, setLoginError] = useState({ emailError: "", passwordError: "" });
 
-    //REGEX
-    const emailRegex = /^[\w-]+@([\w-]+\.)+[\w-]{2,}$/;
-    const strongPassRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#%&])(?=.{8,})/;
-    const mediumPassRegex = /^[a-zA-Z0-9]{6,}$/;
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setSignUpData(prev => ({ ...prev, [name]: value }));
-        if (name === 'email') {
-            if (value === "") {
-                setSignUpError(prev => ({ ...prev, emailError: "" }));
-            } else if (emailRegex.test(value)) {
-                setSignUpError(prev => ({ ...prev, emailError: "Your email is valid" }));
-            } else {
-                setSignUpError(prev => ({ ...prev, emailError: "Email is not valid" }));
-            }
-        }
-        if (name === 'password') {
-            if (value === "") {
-                setSignUpError(prev => ({ ...prev, passwordError: "" }));
-            } else if (strongPassRegex.test(value)) {
-                setSignUpError(prev => ({ ...prev, passwordError: "Password is strong" }));
-            } else if (mediumPassRegex.test(value)) {
-                setSignUpError(prev => ({ ...prev, passwordError: "Password is valid" }));
-            } else if (value.length < 6) {
-                setSignUpError(prev => ({ ...prev, passwordError: "Password must have at least 6 characters" }));
-            } else {
-                setSignUpError(prev => ({ ...prev, passwordError: "Password is strong" }));
-            }
-        }
-    };
-
-    const handleInputChange2 = (e) => {
-        const { name, value } = e.target;
-        setLoginData(prev => ({ ...prev, [name]: value }));
-        const trimvalue = value.trim();
-        if (name === 'email') {
-            if (trimvalue === "") {
-                setLoginError(prev => ({ ...prev, passwordError: "" }))
-            } else if (emailRegex.test(trimvalue)) {
-                setLoginError(prev => ({ ...prev, emailError: "Your email is valid" }));
-            } else {
-                setLoginError(prev => ({ ...prev, emailError: "Email is not valid" }));
-            }
-        }
-
-        if (name === 'password') {
-            if (trimvalue === "") {
-                setLoginError(prev => ({ ...prev, passwordError: "" }));
-            } else if (strongPassRegex.test(trimvalue)) {
-                setLoginError(prev => ({ ...prev, passwordError: "Password is strong" }));
-            } else if (mediumPassRegex.test(trimvalue)) {
-                setLoginError(prev => ({ ...prev, passwordError: "Password is valid" }));
-            } else if (trimvalue.length < 6) {
-                setLoginError(prev => ({ ...prev, passwordError: "Password must have at least 6 characters" }));
-            } else {
-                setLoginError(prev => ({ ...prev, passwordError: "Password is strong" }));
-            }
-        }
-    }
-    const registerData = (e) => {
-        e.preventDefault();
-        const { email, password } = signUpData;
-        if (!email || !password) {
-            Swal.fire({
-                title: "Please fill all the details.",
-                icon: "warning"
-            });
-            return;
-        }
-        const users = JSON.parse(localStorage.getItem("users")) || [];
-        users.push({ email, password });
-        localStorage.setItem("users", JSON.stringify(users));
-
-        Swal.fire({
-            title: "Successfully Registered",
-            icon: "success"
-        });
-    };
-
-    const logindata = (e) => {
-        const { email, password } = loginData;
-        e.preventDefault();
-
-        if (!email || !password) {
-            Swal.fire({
-                title: "Please fill all the details.",
-                icon: "warning"
-            });
-            return;
-        }
-
-        const users = JSON.parse(localStorage.getItem("users")) || [];
-        const user = users.find(user => user.email === email && user.password === password);
-
-        if (!user) {
-            Swal.fire({
-                icon: "error",
-                title: "Wrong details",
-                text: "Please enter the correct details",
-            });
-        } else {
-            Swal.fire({
-                title: "Successfully Logged In",
-                icon: "success"
-            });
-        }
-    };
-    
-    const getSignUpEmailErrorClass = () => {
-        if (signUpError.emailError === "Email is not valid") return "text-red-500";
-        if (signUpError.emailError === "Your email is valid") return "text-green-500";
-        return "text-red-700";
-    };
-
-    const getSignUpPasswordErrorClass = () => {
-        if (signUpError.passwordError === "Password is strong") return "text-green-500";
-        if (signUpError.passwordError === "Password is valid") return "text-yellow-500";
-        if (signUpError.passwordError === "Password must have at least 6 characters" || signUpError.passwordError === "Password is not valid") return "text-red-500";
-        return "text-red-700";
-    };
-
-    const getLoginEmailErrorClass = () => {
-        if (loginError.emailError === "Email is not valid") return "text-red-500";
-        if (loginError.emailError === "Your email is valid") return "text-green-500";
-        return "text-red-700";
-    };
-
-    const getLoginPasswordErrorClass = () => {
-        if (loginError.passwordError === "Password is strong") return "text-green-500";
-        if (loginError.passwordError === "Password is valid") return "text-yellow-500";
-        if (loginError.passwordError === "Password must have at least 6 characters" || loginError.passwordError === "Password is not valid") return "text-red-500";
-        return "text-red-700";
-    };
-
-    const signUpEmailErrorClass = `flex items-center font-medium tracking-wide text-xs mt-1 ml-1 ${getSignUpEmailErrorClass()}`;
-    const signUpPasswordErrorClass = `flex items-center font-medium tracking-wide text-xs mt-1 ml-1 ${getSignUpPasswordErrorClass()}`;
-    const loginEmailErrorClass = `flex items-center font-medium tracking-wide text-xs mt-1 ml-1 ${getLoginEmailErrorClass()}`;
-    const loginPasswordErrorClass = `flex items-center font-medium tracking-wide text-xs mt-1 ml-1 ${getLoginPasswordErrorClass()}`;
 
     return (
         <>
@@ -174,7 +40,7 @@ export default function Sign_in() {
                 <Pageheading pagename="Sign In" />
             </div>
             <div className="flex xl:flex-nowrap justify-center xl:justify-between mb-10 flex-wrap mx-10 mt-20">
-                <form onSubmit={registerData}>
+                <form >
                     <div className="h-[750px] bg-[#F6F6F6] rounded md:mt-10 lg:mt-0 ">
                         <div className='rounded-t-lg relative'>
                             <img src={signinI2} className='rounded-t-lg' alt="" />
@@ -196,13 +62,11 @@ export default function Sign_in() {
                                         <input
                                             type="email"
                                             name="email"
-                                            onChange={handleInputChange}
                                             className='px-2 py-3 w-80 focus:border-none'
                                             placeholder='Username/email address'
                                         />
                                     </div>
-                                    <span className={signUpEmailErrorClass} >
-                                            {signUpError.emailError}
+                                    <span>
                                     </span>
                                 </div>
                                 <div>
@@ -211,13 +75,12 @@ export default function Sign_in() {
                                         <input
                                             type="password"
                                             name="password"
-                                            onChange={handleInputChange}
                                             className='px-2 py-3 w-80 focus:border-none focus:border-white focus:outline-none outline-white'
                                             placeholder='Password'
                                         />
                                     </div>
-                                    <span className={signUpPasswordErrorClass}>
-                                        {signUpError.passwordError}
+                                    <span>
+
                                     </span>
                                 </div>
                                 <div className="flex mt-5 justify-between -ms-12 n-check">
@@ -252,13 +115,12 @@ export default function Sign_in() {
                                     <input
                                         type="email"
                                         name="email"
-                                        onChange={handleInputChange2}
+
                                         className='px-2 py-3 focus:border-none'
                                         placeholder='Username/email address'
                                     />
                                 </div>
-                                <span className={loginEmailErrorClass}>
-                                    {loginError.emailError}
+                                <span>
                                 </span>
 
                                 <div className='bg-white py-1 mt-3 rounded flex -ms-12'>
@@ -266,13 +128,12 @@ export default function Sign_in() {
                                     <input
                                         type="password"
                                         name="password"
-                                        onChange={handleInputChange2}
+
                                         className='px-2 py-3 focus:border-none focus:border-white focus:outline-none outline-white'
                                         placeholder='Password'
                                     />
                                 </div>
-                                <span className={loginPasswordErrorClass}>
-                                    {loginError.passwordError}
+                                <span>
                                 </span>
                                 <div className="flex mt-5 justify-between -ms-12 n-check">
                                     <div>

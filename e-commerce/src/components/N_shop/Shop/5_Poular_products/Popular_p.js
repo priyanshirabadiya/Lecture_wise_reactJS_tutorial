@@ -24,16 +24,16 @@ const Popular_p = () => {
                     <h1 className="text-gray-500">{value.name}</h1>
                     <p className="font-semibold">{value.price}</p>
                   </div>
-                  <div className="mt-4 opacity-0 dots">
-                    <div className="tpproduct__thumb-bg">
-                      <div className="tpproductactionbg">
+                  <div className="opacity-0 dots">
+                    <div className="tpproduct__thumb-bg  ">
+                      <div className="tpproductactionbg ">
                         <a href='#' className="add-to-cart"><i className="fa-solid fa-basket-shopping" style={{ color: "#c2c2c2" }}></i></a>
                         <a href="#"><i className="fa-solid fa-arrow-right-arrow-left" style={{ color: "#c2c2c2" }}></i></a>
                         <a href="#"><i className="fa-regular fa-eye" style={{ color: "#c2c2c2" }}></i></a>
                         <a href='#' className="wishlist"><i className="fa-regular fa-heart" style={{ color: "#c2c2c2" }}></i></a>
                       </div>
                     </div>
-                    <div className="flex justify-between ">
+                    <div className="flex justify-between">
                       <div className="flex">
                         <a href="" className="blue"></a>
                         <a href="" className="red"></a>

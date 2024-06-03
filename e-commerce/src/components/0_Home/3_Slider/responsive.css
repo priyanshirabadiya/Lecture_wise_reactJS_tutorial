@@ -1,27 +1,31 @@
 @media (max-width:1490px) {
-    .swiper-div{
-        max-width: 660px;   
+    .swiper-div {
+        max-width: 660px;
         width: 100%;
     }
 }
+
 @media (max-width:1390px) {
-    .swiper-div{
-        max-width: 625px;   
+    .swiper-div {
+        max-width: 625px;
         width: 100%;
     }
 }
+
 @media (max-width:1320px) {
-    .swiper-div{
-        max-width: 625px;   
+    .swiper-div {
+        max-width: 625px;
         width: 100%;
     }
-  
+
 }
+
 @media (max-width:1280px) {
     .slider {
         top: 70px !important;
     }
-    .swiper-div{
+
+    .swiper-div {
         max-width: calc(80vw - 200px);
         object-fit: contain !important;
         width: 100%;
@@ -30,45 +34,65 @@
 }
 
 @media (max-width: 992px) {
-    .swiper-div{
+    .swiper-div {
         max-width: calc(90vw);
         object-fit: contain !important;
         width: 100%;
     }
-    .swiper-div img{
+
+    .swiper-div img {
         max-width: 100%;
         height: auto;
     }
 }
 
 @media screen and (max-width:768px) {
-    .res-font{
+    .res-font {
         font-size: 26px !important;
         line-height: 30px;
     }
 }
 
 @media screen and (max-width:630px) {
-    .texts{
+    .texts {
         top: calc(15vh);
     }
-    .shop{
+
+    .shop {
+
         margin-top: 10px;
     }
 }
-@media screen and (max-width:530px) {
-    .texts{
-        top: calc(8vh);
+
+@media screen and (max-width:544px) {
+    .texts {
+        top: 40px !important;
     }
-    .shop{
-        margin-top: 10px;
-    }
+
 }
 
 
 @media screen and (max-width:450px) {
-    .texts{
-        top: 10px !important;
-        left: 10px !important;
+    .shop {
+        padding: 8px 10px 5px 10px !important;
+        font-size: 10px;
+        margin-top: 15px;
     }
+    .texts {
+        top: 22px !important;
+        left: 22px !important;
+    }
+    .res-font {
+        font-size: 18px !important;
+        line-height: 22px;
+    }
+}
+
+@media screen and (max-width:365px) {
+    .texts {
+        top: 15px !important;
+        left: 22px !important;
+    }
+
+    
 }
