@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './style.css';
 import Header2 from '../../Commancomponents/2_Header2/Header2';
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading';
@@ -11,25 +11,79 @@ import { CiMail } from "react-icons/ci";
 import { TbShoppingBagMinus } from "react-icons/tb";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { LuUser2 } from "react-icons/lu";
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 export default function Sign_in() {
 
     const Swal = require('sweetalert2');
-    //   if (!user) {
-    //     Swal.fire({
-    //         icon: "error",
-    //         title: "Wrong details",
-    //         text: "Please enter the correct details",
-    //     });
-    // } else {
-    //     Swal.fire({
-    //         title: "Successfully Logged In",
-    //         icon: "success"
-    //     });
-    // }
 
+    const signupschema = Yup.object({
+        email: Yup.string().email('Invalid email').required('Email required'),
+        password: Yup.string()
+            .min(3, 'Too short')
+            .max(6, 'Password is strong')
+            .required('Password required')
+    });
 
+    const loginschema = Yup.object({
+        email: Yup.string().email('Invalid email').required('Email required'),
+        password: Yup.string()
+            .min(3, 'Too short')
+            .max(6, 'Password is strong')
+            .required('Password required')
+    });
 
+    const signupForm = useFormik({
+        initialValues: {
+            email: "",
+            password: "",
+        },
+        validationSchema: signupschema,
+        onSubmit: (values) => {
+            const setuser = JSON.parse(localStorage.getItem('setuser')) || []
+            setuser.push({ email: values.email, password: values.password });
+            localStorage.setItem('e-comusers', JSON.stringify(setuser));
+            alert("Successfully registered");
+        }
+    });
+
+    const loginForm = useFormik({
+        initialValues: {
+            email: "",
+            password: "",
+        },
+        validationSchema: loginschema,
+        onSubmit: (values) => {
+            const setuser = JSON.parse(localStorage.getItem('setuser')) || [];
+            const user = setuser.find(user => user.email === values.email && user.password === values.password);
+
+            if (user) {
+                // alert("Successfully logged in");
+                Swal.fire({
+                    title: "Successfully Registered",
+                    icon: "success"
+                });
+
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Wrong details",
+                    text: "Please enter the correct details",
+                });
+            }
+        }
+    });
+
+    const onchangecolor = (form) => {
+        if (form.touched.password && form.errors.password) {
+            if (form.values.password.length > 6) {
+                return { color: "green", fontSize: "14px" }
+            } else {
+                return { color: "red", fontSize: "14px" }
+            }
+        }
+    };
 
     return (
         <>
@@ -40,14 +94,14 @@ export default function Sign_in() {
                 <Pageheading pagename="Sign In" />
             </div>
             <div className="flex xl:flex-nowrap justify-center xl:justify-between mb-10 flex-wrap mx-10 mt-20">
-                <form >
-                    <div className="h-[750px] bg-[#F6F6F6] rounded md:mt-10 lg:mt-0 ">
+                <form onSubmit={signupForm.handleSubmit}>
+                    <div className="h-[750px] bg-[#F6F6F6] rounded md:mt-10 lg:mt-0">
                         <div className='rounded-t-lg relative'>
                             <img src={signinI2} className='rounded-t-lg' alt="" />
                         </div>
                         <div className='pt-10 ps-10 flex'>
                             <div>
-                                <button className='p-4 rounded bg-white'><TbShoppingBagMinus className='text-[#d12531]' /></button>
+                                <button type="button" className='p-4 rounded bg-white'><TbShoppingBagMinus className='text-[#d12531]' /></button>
                             </div>
                             <div>
                                 <div className='ms-2'>
@@ -64,9 +118,14 @@ export default function Sign_in() {
                                             name="email"
                                             className='px-2 py-3 w-80 focus:border-none'
                                             placeholder='Username/email address'
+                                            id="email"
+                                            onBlur={signupForm.handleBlur}
+                                            onChange={signupForm.handleChange}
+                                            value={signupForm.values.email}
                                         />
                                     </div>
                                     <span>
+                                        {signupForm.touched.email && signupForm.errors.email ? <p style={{ color: "red", fontSize: "14px" }} >{signupForm.errors.email}</p> : null}
                                     </span>
                                 </div>
                                 <div>
@@ -77,10 +136,14 @@ export default function Sign_in() {
                                             name="password"
                                             className='px-2 py-3 w-80 focus:border-none focus:border-white focus:outline-none outline-white'
                                             placeholder='Password'
+                                            id="password"
+                                            onChange={signupForm.handleChange}
+                                            value={signupForm.values.password}
+                                            onBlur={signupForm.handleBlur}
                                         />
                                     </div>
                                     <span>
-
+                                        {signupForm.touched.password && signupForm.errors.password ? <p style={onchangecolor(signupForm)} >{signupForm.errors.password}</p> : null}
                                     </span>
                                 </div>
                                 <div className="flex mt-5 justify-between -ms-12 n-check">
@@ -94,14 +157,14 @@ export default function Sign_in() {
                     </div>
                 </form>
                 {/* login data */}
-                <form onSubmit={logindata}>
+                <form onSubmit={loginForm.handleSubmit}>
                     <div className="h-[750px] bg-[#F6F6F6] rounded">
                         <div className='rounded-t-lg relative'>
                             <img src={signinI} className='rounded-t-lg' alt="" />
                         </div>
                         <div className='pt-10 ps-10 flex'>
                             <div>
-                                <button className='p-4 rounded bg-white'><FiLock className='text-[#d12531]' /></button>
+                                <button type="button" className='p-4 rounded bg-white'><FiLock className='text-[#d12531]' /></button>
                             </div>
                             <div>
                                 <div className='ms-2'>
@@ -115,25 +178,32 @@ export default function Sign_in() {
                                     <input
                                         type="email"
                                         name="email"
-
                                         className='px-2 py-3 focus:border-none'
                                         placeholder='Username/email address'
+                                        onChange={loginForm.handleChange}
+                                        onBlur={loginForm.handleBlur}
+                                        value={loginForm.values.email}
+                                        id="email"
                                     />
                                 </div>
                                 <span>
+                                    {loginForm.touched.email && loginForm.errors.email ? <p style={{ color: "red", fontSize: "14px" }} >{loginForm.errors.email}</p> : null}
                                 </span>
-
                                 <div className='bg-white py-1 mt-3 rounded flex -ms-12'>
                                     <GoKey className='m-4 me-0 text-gray-500' />
                                     <input
                                         type="password"
                                         name="password"
-
                                         className='px-2 py-3 focus:border-none focus:border-white focus:outline-none outline-white'
                                         placeholder='Password'
+                                        onChange={loginForm.handleChange}
+                                        onBlur={loginForm.handleBlur}
+                                        value={loginForm.values.password}
+                                        id="password"
                                     />
                                 </div>
                                 <span>
+                                    {loginForm.touched.password && loginForm.errors.password ? <p style={onchangecolor(loginForm)} >{loginForm.errors.password}</p> : null}
                                 </span>
                                 <div className="flex mt-5 justify-between -ms-12 n-check">
                                     <div>
@@ -151,6 +221,7 @@ export default function Sign_in() {
                 </form>
             </div>
         </>
-    )
+    );
 }
+
 

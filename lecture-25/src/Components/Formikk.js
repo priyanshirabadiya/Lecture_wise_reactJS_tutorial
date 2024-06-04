@@ -12,13 +12,13 @@ const Signupschema = Yup.object({
 
 export default function Formikk() {
 
-    const { values, handleSubmit, handleChange, errors, touched } = useFormik({
+    const { values, handleSubmit, handleChange, errors, touched , handleBlur } = useFormik({
         initialValues: {
             name: "",
             email: "",
             password: ""
         },
-        validationSchema: Signupschema,
+        validationSchema: Signupschema, 
         onSubmit: (value) => {
             // pass data to localstorage
         }
@@ -88,6 +88,7 @@ export default function Formikk() {
                                                 name="email"
                                                 value={values.email}
                                                 onChange={handleChange}
+                                                onBlur={handleBlur}
                                             />
                                             <div className='text-start' >
                                                 {touched.email && errors.email ? <p style={{ color: "red", fontSize: "14px" }} >{errors.email}</p> : null}
@@ -113,9 +114,10 @@ export default function Formikk() {
                                                 name="password"
                                                 value={values.password}
                                                 onChange={handleChange}
+                                                onBlur={handleBlur}
                                             />
                                             <div className="text-start">
-                                                {touched.password && errors.password ? <p style={onchangecolor()} >{errors.password}</p> : null}
+                                                <p style={onchangecolor()} >{errors.password}</p>
                                             </div>
                                         </div>
                                     </div>
