@@ -3,6 +3,7 @@ import Header2 from '../../Commancomponents/2_Header2/Header2'
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading'
 import { useSelector, useDispatch } from 'react-redux'
 import { ADD, Removewish } from '../../../Redux/Action/Action';
+import { Link } from 'react-router-dom';
 const Wishlist = () => {
     const data = useSelector((state) => state.wishlistreducer1.wish)
     const dispatch = useDispatch();
@@ -72,11 +73,11 @@ const Wishlist = () => {
                                     <td colSpan="7" className="text-center ">
                                         <div className='flex justify-center mt-5 align-middle w-full'>
                                             <h1 className='mt-3 text-[1.2rem] me-5'>Wishlist is empty</h1>
-                                            <a href="/">
+                                            <Link href="/">
                                                 <button className='p-0 px-10 bg-[#D51243] h-[3rem] items-center w-[15rem] text-white rounded'>
                                                     Go to home
                                                 </button>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </td>
                                 </tr>

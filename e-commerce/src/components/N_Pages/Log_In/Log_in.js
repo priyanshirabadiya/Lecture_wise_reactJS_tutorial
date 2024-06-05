@@ -34,7 +34,7 @@ export default function Log_in() {
                 setError(prev => ({ ...prev, emailError: "Email is valid" }));
             } else {
                 setValidFlag(prev => ({ ...prev, email: false }));
-                setError(prev => ({ ...prev, emailError: "Email is not valid" }));
+                setError(prev => ({ ...prev, emailError: "Envalid email" }));
             }
         }
         if (name === "password") {

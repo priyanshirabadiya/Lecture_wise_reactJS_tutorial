@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './style.css';
 import Header2 from '../../Commancomponents/2_Header2/Header2';
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading';
@@ -7,84 +7,49 @@ import { GoKey } from "react-icons/go";
 import { CiMail } from "react-icons/ci";
 import { TbShoppingBagMinus } from "react-icons/tb";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { Link, json } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
 export default function Sign_in() {
     const Swal = require('sweetalert2');
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [validFlag, setValidFlag] = useState({ email: false, password: false }); // validFlag is used to change color of error
-    const [error, setError] = useState({ emailError: "", passError: "" })
+    const signupschema = Yup.object({
+        email: Yup.string().email('Invalid email').required('email required'),
+        password: Yup.string()
+            .min(3, 'Too short')
+            .max(6, 'Password is strong')
+            .required('password required')
+    })
 
-    //REGEX
-    const emailRegex = /^[\w-]+@([\w-]+\.)+[\w-]{2,}$/;
-    const strongPassRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#%&])(?=.{8,})/;
-    const mediumPassRegex = /^[a-zA-Z0-9]{6,}$/;
+    const { values, handleBlur, handleSubmit, handleChange, errors, touched } = useFormik({
+        initialValues: {
+            email: "",
+            password: ""
+        },
+        validationSchema: signupschema,
+        onSubmit: (values) => {
+            const users = JSON.parse(localStorage.getItem('users'));
+            users.push({ email: values.email, password: values.password })
+            localStorage.setItem('users', JSON.stringify(users))
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        const trimmedValue = value.trim();
-        if (name === "email") {
-            setEmail(trimmedValue);
-            if (trimmedValue === "") {
-                setValidFlag(prev => ({ ...prev, email: false }));
-                setError(prev => ({ ...prev, emailError: "" }));
-            } else if (emailRegex.test(trimmedValue)) {
-                setValidFlag(prev => ({ ...prev, email: true }));
-                setError(prev => ({ ...prev, emailError: "Email is valid" }));
-            } else {
-                setValidFlag(prev => ({ ...prev, email: false }));
-                setError(prev => ({ ...prev, emailError: "Email is not valid" }));
-            }
-        }
-        if (name === "password") {
-            setPassword(trimmedValue);
-            if (trimmedValue === "") {
-                setValidFlag(prev => ({ ...prev, password: false }));
-                setError(prev => ({ ...prev, passError: "" }));
-            } else if (strongPassRegex.test(trimmedValue)) {
-                setValidFlag(prev => ({ ...prev, password: true }));
-                setError(prev => ({ ...prev, passError: "Password is valid" }));
-            } else if (mediumPassRegex.test(trimmedValue)) {
-                setValidFlag(prev => ({ ...prev, password: true }));
-                setError(prev => ({ ...prev, passError: "Password is medium" }));
-            }
-            else if (trimmedValue.length < 6) {
-                setValidFlag(prev => ({ ...prev, password: false }));
-                setError(prev => ({ ...prev, passError: "Password must have at least 6 characters" }));
-            } else {
-                setValidFlag(prev => ({ ...prev, password: true }));
-                setError(prev => ({ ...prev, passError: "Password is strong" }));
-            }
-        }
-    }
-
-    const registerData = (e) => {
-        e.preventDefault();
-        if (!email || !password) {
             Swal.fire({
-                title: "Please fill all the details.",
-                icon: "warning"
+                title: "successfully register",
+                icon: "success"
             });
-
         }
-        // -------------------
-        const users = JSON.parse(localStorage.getItem("users")); //key name is users
-        users.push({ email, password });
-        console.log(users);
-        localStorage.setItem("users", JSON.stringify(users));
-        // -------------------
+    })
 
-        Swal.fire({
-            title: "Successfully Registered",
-            icon: "success"
-        });
+    // console.log(values,"it is values");
 
+    const getPasswordErrorStyle = () => {
+        if (touched.password && errors.password) {
+            if (values.password.length > 6) {
+                return { color: "green", fontSize: "14px" };
+            } else {
+                return { color: "#E71F21", fontSize: "14px" };
+            }
+        }
     };
-
-    const errorClasses1 = `flex items-center font-medium tracking-wide text-xs mt-1 ml-1 ${validFlag.password ? "text-green-500" : "text-red-700"}`;
-    const errorclass = `flex items-center font-medium tracking-wide text-xs mt-1 ml-1 ${validFlag.email ? "text-green-500" : "text-red-700"} `
 
     return (
         <>
@@ -95,7 +60,7 @@ export default function Sign_in() {
                 <Pageheading pagename="Sign In" />
             </div>
             <div className="flex  justify-center  mb-10 flex-wrap mx-10 mt-20">
-                <form onSubmit={registerData}>
+                <form onSubmit={handleSubmit}  >
                     <div className="h-[750px] bg-[#F6F6F6] rounded md:mt-10 lg:mt-0 ">
                         <div className='rounded-t-lg relative'>
                             <img src={signinI2} className='rounded-t-lg' alt="" />
@@ -117,14 +82,19 @@ export default function Sign_in() {
                                         <input
                                             type="email"
                                             name="email"
-                                            onChange={handleInputChange}
+                                            id="email"
                                             className='px-2 py-3 w-80 focus:border-none'
-                                            placeholder='Username/email address'
+                                            placeholder='Email address'
+                                            value={values.email}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
                                         />
                                     </div>
-                                    <span className={errorclass} >
-                                        {error.emailError}
-                                    </span>
+                                    {touched.email && errors.email ? (
+                                        <p style={{ color: "#E71F21", fontSize: "14px" }}>
+                                            {errors.email}
+                                        </p>
+                                    ) : null}
                                 </div>
                                 <div>
                                     <div className='bg-white py-1 mt-3 rounded flex -ms-12'>
@@ -132,14 +102,21 @@ export default function Sign_in() {
                                         <input
                                             type="password"
                                             name="password"
-                                            onChange={handleInputChange}
+                                            id="password"
                                             className='px-2 py-3 w-80 focus:border-none focus:border-white focus:outline-none outline-white'
                                             placeholder='Password'
+                                            value={values.password}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
                                         />
                                     </div>
-                                    {<span className={errorClasses1}>
-                                        {error.passError}
-                                    </span>}
+
+                                    {touched.password && errors.password ? (
+                                        <p style={getPasswordErrorStyle()}>
+                                            {errors.password}
+                                        </p>
+                                    ) : null}
+
                                 </div>
                                 <div className="flex mt-5 justify-between -ms-12 n-check">
                                     <Link to='/login' className='underline text-[0.75rem] mt-2'>Already Have Account?</Link>
@@ -151,7 +128,6 @@ export default function Sign_in() {
                         </div>
                     </div>
                 </form>
-
             </div>
         </>
     );

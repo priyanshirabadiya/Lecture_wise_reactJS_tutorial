@@ -41,9 +41,9 @@ export default function Sign_in() {
         },
         validationSchema: signupschema,
         onSubmit: (values) => {
-            const setuser = JSON.parse(localStorage.getItem('setuser')) || []
+            const setuser = JSON.parse(localStorage.getItem('e-commerce')) || [];
             setuser.push({ email: values.email, password: values.password });
-            localStorage.setItem('e-comusers', JSON.stringify(setuser));
+            localStorage.setItem('e-commerce', JSON.stringify(setuser));
             alert("Successfully registered");
         }
     });
@@ -55,7 +55,7 @@ export default function Sign_in() {
         },
         validationSchema: loginschema,
         onSubmit: (values) => {
-            const setuser = JSON.parse(localStorage.getItem('setuser')) || [];
+            const setuser = JSON.parse(localStorage.getItem('e-commerce')) || [];
             const user = setuser.find(user => user.email === values.email && user.password === values.password);
 
             if (user) {
@@ -64,8 +64,9 @@ export default function Sign_in() {
                     title: "Successfully Registered",
                     icon: "success"
                 });
+            }
 
-            } else {
+            if (!user) {
                 Swal.fire({
                     icon: "error",
                     title: "Wrong details",

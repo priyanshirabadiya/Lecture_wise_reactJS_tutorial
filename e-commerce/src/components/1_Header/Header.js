@@ -6,6 +6,9 @@ import './responsive.css';
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import Thirddropdown from './3_Dropdown/Dropdown';
+import { PiShoppingCartThin } from "react-icons/pi";
+import { CiUser } from "react-icons/ci";
+import { BsSuitHeart } from "react-icons/bs";
 
 export default function Header() {
 
@@ -55,20 +58,20 @@ export default function Header() {
             <div className='flex '>
               <div className='mt-3 ms-3'>
                 <Link to="/cart">
-                  <span className="material-symbols-outlined relative">shopping_cart</span>
+                  <PiShoppingCartThin style={{ height: "23px", width: "23px" }} />
                 </Link>
-                <span className="tp-product-count">{data.length}</span>
+                <span className="tp-product-count-2">{data.length}</span>
               </div>
               <div className='ms-3 mt-3 fa-lg' >
                 <Link to="/signin" >
-                  <i className="fa-regular fa-user"></i>
+                  <CiUser />
                 </Link>
               </div>
               <div className='mt-3 ms-3'>
                 <Link to="/wishlist" >
-                  <i className="fa-regular fa-heart fa-lg"></i>
+                  <BsSuitHeart style={{ height: "20px", width: "20px" , color:"gray" }}  />
                 </Link>
-                <span className="tp-product-count">{data2.length}</span>
+                <span className="tp-product-count-2">{data2.length}</span>
               </div>
               <div>
                 <div className="search-info-1 p-relative rounded border">
@@ -122,20 +125,22 @@ export default function Header() {
               </div>
               <div className='mt-3 ms-3'>
                 <Link to="/cart">
-                  <span className="material-symbols-outlined relative">shopping_cart</span>
+                  <span className='relative new-cart ' >
+                    <PiShoppingCartThin style={{ height: "23px", width: "23px" }} />
+                  </span>
                 </Link>
-                <span className="tp-product-count">{data.length}</span>
+                <span className="tp-product-count-1">{data.length}</span>
               </div>
               <div className='ms-3 mt-3 fa-lg' >
                 <Link to="/signin" >
-                  <i className="fa-regular fa-user"></i>
+                  <CiUser />
                 </Link>
               </div>
-              <div className='mt-3 ms-3'>
+              <div className='mt-[0.8rem] ms-3'>
                 <Link to="/wishlist" >
-                  <i className="fa-regular fa-heart fa-lg"></i>
+                  <BsSuitHeart style={{ height: "20px", width: "20px" , color:"gray" }} />
                 </Link>
-                <span className="tp-product-count">{data2.length}</span>
+                <span className="tp-product-count-1">{data2.length}</span>
               </div>
             </div>
           </div>

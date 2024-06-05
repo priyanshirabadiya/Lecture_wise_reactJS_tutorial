@@ -5,13 +5,13 @@ import * as Yup from 'yup';
 const signupschema = Yup.object({
     email: Yup.string().email('Invalid email').required('Email is required'),
     password: Yup.string()
-        .min(3, 'Too short')
+        .min(4, 'Too short')
         .max(6, 'Password is strong')
         .required('Password is required'),
 });
 
 export default function Formikk() {
-    const { values, handleChange, handleSubmit, errors, touched } = useFormik({
+    const { values, handleChange, handleSubmit, errors, touched , handleBlur } = useFormik({
         initialValues: {
             email: "",
             password: "",
@@ -19,6 +19,7 @@ export default function Formikk() {
         validationSchema: signupschema,
         onSubmit: (value) => {
             // console.log(value, "value");
+            alert('rrrrrrrrrrrrr')
         }
     });
 
@@ -30,7 +31,6 @@ export default function Formikk() {
                 return { color: "#E71F21", fontSize: "14px" };
             }
         }
-        return {};
     };
 
     return (
@@ -65,6 +65,7 @@ export default function Formikk() {
                                             name="email"
                                             onChange={handleChange}
                                             value={values.email}
+                                            onBlur={handleBlur}
                                         />
                                         {touched.email && errors.email ? (
                                             <p style={{ color: "#E71F21", fontSize: "14px" }}>
@@ -94,6 +95,7 @@ export default function Formikk() {
                                             onChange={handleChange}
                                             name="password"
                                             value={values.password}
+                                            onBlur={handleBlur}
                                         />
                                         {touched.password && errors.password ? (
                                             <p style={getPasswordErrorStyle()}>
