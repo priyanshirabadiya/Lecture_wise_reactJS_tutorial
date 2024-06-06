@@ -4,10 +4,11 @@ import { IoListOutline } from "react-icons/io5";
 import { LiaTableSolid } from "react-icons/lia";
 import './style.css'
 import Header2 from '../../Commancomponents/2_Header2/Header2'
-import Popular_p from './5_Poular_products/Popular_p';
+import Shop2_pp from './Shop2_PProducts/Shop2_pp'
+// import Popular_p from '../Shop/5_Poular_products/Popular_p'
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading';
 
-export default function Shop() {
+export default function Shop2() {
   return (
     <>
       <div>
@@ -40,7 +41,7 @@ export default function Shop() {
               <div className='icon-div'> <a href=""><LiaTableSolid className='h-6 mt-[12px] -ms-2 w-10 text-[#3f3e3e] ' /></a></div>
             </div>
           </div>
-          <Popular_p />
+          <Shop2_pp />
         </div>
         {/* sidebar catagories */}
 
@@ -95,13 +96,9 @@ export default function Shop() {
             <div className='mt-1'>
               <input type='checkbox' name='f-select' id="f-select15" /><label className=' text-[0.9rem] text-[gray] ms-4 cursor-pointer ' for='f-select15' >Chloe</label>
             </div>
-
-
-
           </div>
         </div>
       </div>
-
     </>
   )
 }

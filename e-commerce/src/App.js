@@ -10,7 +10,7 @@ import Errorpage from './components/N_Pages/404_Error/Errorpage'
 import Home from './components/0_Home/Home';
 import Contact from './components/N_contact/Contact'
 import Shop from './components/N_shop/Shop/Shop'
-import Shop2 from './components/N_shop/Shop2/Shop'
+import Shop2 from './components/N_shop/Shop2/Shop2'
 import Sign_in from './components/N_Pages/Sign_In/Sign_in';
 import Shop_Location from './components/N_shop/ShopLocation/Shop_details';
 import Wishlist from './components/N_shop/Wishlist/Wishlist';

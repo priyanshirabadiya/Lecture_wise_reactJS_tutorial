@@ -79,14 +79,41 @@
 }
 /* -----------------------hover div--------------- */
 
-.tpproduct__thumb-bg{
-    position: absolute !important ;
+.tpproduct__thumb-bg-2{
+    position: absolute ;
     align-items: center;    
     justify-content: center;
     text-align: center;
+    left: 28%;
+    top: 35%;
 }
 
 
+.tpproductactionbg {
+    background-color: white;
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .04);
+    transform: translateY(20px);
+    transition: transform .5s ease 0s, background-color .5s ease 0s, opacity .4s ease 0s;
+}
+
+.tpproduct__thumb-bg-2 a {
+    margin: 0 10px;
+    font-size: 16px;
+    padding: 14px 0;
+    display: inline-block;
+    line-height: 1;
+    color: #999;
+}
+
+.tpproduct__thumb-bg-2 a:hover i{
+    /* background-color: black; */
+    color: black !important;
+    transition: all 0.3s linear;
+
+}
 
 .n-div ul li a i {
     font-size: 10px;

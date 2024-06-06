@@ -7,7 +7,7 @@ export default function Errorpage() {
   return (
     <div>
       <div className='' >
-        <div className=" flex relative">
+        <div>
           <Header2/>
         </div>
         <Pageheading pagename="Error" />

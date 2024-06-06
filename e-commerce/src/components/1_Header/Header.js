@@ -16,7 +16,6 @@ export default function Header() {
   const data2 = useSelector((state) => state.wishlistreducer1.wish)
   // console.log(data, "data");
 
-
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
@@ -51,7 +50,7 @@ export default function Header() {
               <div className=''><Thirddropdown /></div>
             </div>
             <div>
-              <div className='h-10 mt-2  center-logo'>
+              <div className='h-10 mt-2 center-logo'>
                 <img src={logo} alt="" />
               </div>
             </div>

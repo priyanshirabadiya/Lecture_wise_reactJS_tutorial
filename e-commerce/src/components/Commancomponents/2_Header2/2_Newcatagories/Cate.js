@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import './style.css'
+import './style.css';
+import { Link } from 'react-router-dom';
 export default function Cate() {
     const [menuVisible, setMenuVisible] = useState(false);
 
@@ -34,34 +35,34 @@ export default function Cate() {
                                 </div>
                             </button>
                             <div className="dropdown-content z-50 side-dropdown-content">
-                                <a href="#">Chair</a>
-                                <a href="#">Table</a>
-                                <a href="#">Wooden</a>
-                                <a href="#">Furniture</a>
-                                <a href="#">Clock</a>
-                                <a href="#">Gifts</a>
-                                <a href="#">Crafts</a>
+                                <Link to="/shop2" >Chair</Link>
+                                <Link to="/shop2">Table</Link>
+                                <Link to="/shop">Wooden</Link>
+                                <Link to="/shop">Furniture</Link>
+                                <Link to="/shop">Clock</Link>
+                                <Link to="/shop">Gifts</Link>
+                                <Link to="/shop">Crafts</Link>
                             </div>
                         </li>
                         <li className='list-none ps-5 pt-3 cursor-pointer'>
                             <i className="fa-regular fa-face-smile " style={{ color: "#d51243" }}></i>
-                            <span className='text-sm ps-4'>Gift Sets</span>
+                            <Link to="/shop2"> <span className='text-sm ps-2'>Gift Sets</span></Link>
                         </li>
                         <li className='list-none ps-4 pt-5 cursor-pointer'>
                             <span className="material-symbols-outlined icon">footprint</span>
-                            <span className='text-sm ps-2 leading-6 mb-10 absolute'>Plastic Gifts</span>
+                            <Link to="/shop2"> <span className='text-sm ps-3 leading-6 mb-10 absolute'>Plastic Gifts</span></Link>
                         </li>
                         <li className='list-none ps-5 pt-4 cursor-pointer'>
                             <i className="fa-solid fa-futbol" style={{ color: "#d03966" }}></i>
-                            <span className='text-sm ps-4'>Handy Cream</span>
+                            <Link to="/shop2"><span className='text-sm ps-4'>Handy Cream</span></Link>
                         </li>
                         <li className='list-none ps-5 pt-4 cursor-pointer'>
                             <i className="fa-solid fa-crown" style={{ color: "#d03966" }}></i>
-                            <span className='text-sm ps-3'>Cosmetics</span>
+                            <Link to="/shop2"><span className='text-sm ps-3'>Cosmetics</span></Link>
                         </li>
                         <li className='list-none ps-5 pt-4 cursor-pointer'>
                             <i className="fa-solid fa-gift" style={{ color: "#d03966" }}></i>
-                            <span className='text-sm ps-3'>Silk Accessories</span>
+                            <Link to="/shop2"> <span className='text-sm ps-3'>Silk Accessories</span></Link>
                         </li>
                     </ul>
                     <div className='links'>

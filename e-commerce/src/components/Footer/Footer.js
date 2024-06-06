@@ -9,7 +9,7 @@ import './style.css'
 function Footer() {
     return (
         <footer className="footer-wrapper m-auto bg-[#F8F8F8] mt-14">
-            <div className="sm:container py-10 mx-auto">
+            <div className="sm:container py-10 ">
                 <div className="mb-8 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 justify-stretch gap-[3rem]">
                     <div className="lg:col-span-2 ms-3">
                         <a href="#" className="footer-logo mb-8">
@@ -20,7 +20,7 @@ function Footer() {
                             co-exist. Great for adding a decorative touch to any room's decor.
                         </p>
                     </div>
-                    <div className="columns">
+                    <div className="columns ms-2  ">
                         <h3 className="">Information</h3>
                         <ul className="foot-list">
                             <li><a href="#">Custom Service</a></li>
@@ -30,7 +30,7 @@ function Footer() {
                             <li><a href="#">Events</a></li>
                         </ul>
                     </div>
-                    <div className="columns">
+                    <div className="columns ms-2   ">
                         <h3>My Account</h3>
                         <ul className="foot-list">
                             <li><a href="#">Delivery Information</a></li>
@@ -40,7 +40,7 @@ function Footer() {
                             <li><a href="#">Terms Condition</a> </li>
                         </ul>
                     </div>
-                    <div className="columns">
+                    <div className="columns ms-2   ">
                         <h3>Social Network</h3>
                         <ul className="foot-list">
                             <li><a href="#"><i className="fa-brands fa-facebook-f"></i>Facebook</a></li>
@@ -50,7 +50,7 @@ function Footer() {
                             <li><a href="#"><i className="fa-brands fa-youtube"></i>Youtube</a></li>
                         </ul>
                     </div>
-                    <div className="lg:col-span-2">
+                    <div className="lg:col-span-2 ms-2 ">
                         <h3 className="text-[1.1rem] font-semibold underline mb-[2.5rem]">Get Newsletter</h3>
                         <p className="poppins-regular text-[#8e8e8e] text-[1.2rem] text-left mb-8">
                             Get on the list and get 10% off your first order!

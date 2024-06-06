@@ -15,6 +15,7 @@ export const cartreducer = (state = initial_state, action) => {
                 return state;  // Return the unchanged state if item is already in the cart
             } else {
                 toast.success("Item added to cart!");
+                console.log(existingItem,"item is in cart");
             }
             return {
                 ...state,

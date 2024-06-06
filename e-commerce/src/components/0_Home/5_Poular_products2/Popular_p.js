@@ -42,15 +42,15 @@ const Popular_p = () => {
           const product = { value }
 
           const send = (addeditem) => {
-            console.log(addeditem, "sendaddeditem");
+            // console.log(addeditem, "sendaddeditem");
             // trriger the function
             dispatch(ADD(addeditem))
           }
 
           const send1 = (wisheditem) => {
-            console.log(wisheditem, "wisheditem");
+            // console.log(wisheditem, "wisheditem");
             // trriger the function
-            dispatch(Wish(wisheditem))
+            dispatch(Wish(wisheditem));
           }
 
           return (

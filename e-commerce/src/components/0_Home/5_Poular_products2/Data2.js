@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'react-router-dom'
 import i1 from '../../assets/i1.jpg'
 import i2 from '../../assets/i2.jpg'
 import i3 from '../../assets/i3.jpg'
@@ -20,8 +19,6 @@ import s2 from '../../assets/s2jpg.jpg'
 import s3 from '../../assets/s3.jpg'
 import s4 from '../../assets/s4.jpg'
 import s5 from '../../assets/s5.jpg'
-import FirstData from '../../Popular_contain/FirstData'
-
 
 const data2 = [
     {

@@ -38,50 +38,6 @@ export default function Cart() {
             <Header2 />
             <Pageheading pagename="Cart" />
             <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" />
-            {/* <table className="table-auto mt-[3rem] mb-[3rem] overflow-x-scroll w-full">
-                <thead>
-                    <tr className='border'>
-                        <th className='border py-3'>Image</th>
-                        <th className='border py-3'>Courses</th>
-                        <th className='border py-3'>Unit Price</th>
-                        <th className='border py-3'>Quantity</th>
-                        <th className='border py-3'>Total</th>
-                        <th className='border py-3'>Remove</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.map((cvalue) => {
-                        const { name, price, img, id } = cvalue.value;
-                        const quantity = quantities[id] || 1;
-                        const totalPrice = quantity * price;
-                        return (
-                            <tr key={id} className='border overflow-x-scroll'>
-                                <td className='flex justify-center'>
-                                    <img src={img} alt={name} height={130} width={130} className='py-3' />
-                                </td>
-                                <td className='border w-[10rem] text-center mx-[25rem]'>{name}</td>
-                                <td className='border text-center'>${price}.00</td>
-                                <td className='border items-center w-[12rem]'>
-                                    <div className='border py-4 mx-[4rem] flex justify-center rounded'>
-                                        <input
-                                            onChange={(event) => changeQuantity(event, id)}
-                                            type="number"
-                                            name="number"
-                                            defaultValue={1}
-                                            className='outline-none input-number border-none focus:border-none mx-2'
-                                            min="1"
-                                        />
-                                    </div>
-                                </td>
-                                <td className='border text-center t-price'>${totalPrice.toFixed(2)}</td>
-                                <td className='text-center'>
-                                    <button onClick={() => remove(id)}>Remove</button>
-                                </td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table> */}
             <div className="overflow-x-auto w-full mt-12 mb-12">
                 <table className="table-auto w-full min-w-[800px]">
                     <thead>
@@ -133,6 +89,8 @@ export default function Cart() {
                     <Link className="banner-animation p-4 px-10 bg-[#D51243] items-center font-bold w-[10rem] text-white rounded text-[0.8rem]" to="/">Go to home</Link>
                 </div>
             )}
+
+            {/* Cupon and total part */}
             <form action="">
                 <div className="flex justify-between flex-wrap mt-[2rem] mx-10">
                     <div className="flex flex-wrap ">
