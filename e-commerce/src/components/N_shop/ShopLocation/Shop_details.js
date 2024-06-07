@@ -18,8 +18,8 @@ export default function Shop_Location() {
 
         <Pageheading pagename="shop Location" />
 
-        <div className="flex justify-center hide mt-5 ">
-          <div className="long-box  w-[40vw] flex-wrap border rounded flex justify-between ">
+        <div className="flex justify-center class-of-hidden hide mt-5 ">
+          <div className="long-box  w-[40vw] focus:border-none flex-wrap border rounded flex justify-between ">
             <input type="text" className='ms-5 placeholder:text-sm  ' placeholder='search here' />
             <button className=' right-0 bg-[#d51243] h-[3.5rem]  flex lg:visible text-white px-14 font-bold items-center' >
               Find nearby store <FaArrowRightLong className='ms-3' />
@@ -29,7 +29,7 @@ export default function Shop_Location() {
         <div className='mx-14 flex md:justify-center  flex-wrap justify-between ' >
           {Data.map((cvalue, ind) => {
             return (
-              <div className="flex justify-center flex-wrap lg:flex-nowrap mt-10 border rounded h-auto lg:w-[45vw] md:w-[90vw] " key={ind}>
+              <div className="flex justify-center me-3 flex-wrap lg:flex-nowrap mt-10 border rounded h-auto lg:w-[45vw] md:w-[90vw] " key={ind}>
                 <div className=" mb-0  p-10 pb-0 h-[19rem] md:pe-20 lg:pe-5 xl:pe-8 rounded">
                   <h2 className='text-[1.1rem] font-bold '>{cvalue.heading}</h2>
                   <div className="flex mt-4">

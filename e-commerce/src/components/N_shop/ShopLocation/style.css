@@ -1,5 +1,5 @@
-input[type="text"]:focus{
-    border: none !important;
+.class-of-hidden input[type="text"]:focus{
+    border: none !important ;
     outline: 0 !important;
 }
 

@@ -21,13 +21,13 @@ function Lastpart() {
                 <Pageheading pagename="About Us" />
             </div>
             <div className='flexable'>
-                <div className='absolute  flex justify-center items-center mx-10 h-[0rem] -bottom-[6rem] left-0 right-0'>
-                    <div>
+                <div className='absolute flex justify-center items-center mx-10 h-[0rem] -bottom-[6rem] left-0 right-0'>
+                    <div className='for-display' >
                         <img src={about} alt="" />
                     </div>
                 </div>
-                <div className='flex justify-between mx-10 mt-10 flex-wrap '>
-                    <div className='' >
+                <div className='flex response mx-10 mt-10 flex-wrap '>
+                    <div className='mb-10' >
                         <img src={about1} alt="" />
                     </div>
                     <div className='' >

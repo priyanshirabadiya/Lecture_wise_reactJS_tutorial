@@ -108,22 +108,22 @@ export default function Cart() {
                     </div>
                 </div>
             </form>
-            <div className='mx-10 mt-10 flex justify-center sm:justify-end'>
+            <div className='mx-10 mt-10 flex relative justify-center h-60 sm:justify-end'>
                 <div className='w-[30vw]'>
                     <h2 className='text-[1.3rem]'>Cart Totals</h2>
-                    <div className='border ps-2 pt-2 pe-2 absolute flex justify-between sm:px-5 sm:py-3 '>
+                    <div className='border ps-2 pt-2 w-[30vw] pe-2 absolute flex justify-between sm:px-5 sm:py-3 '>
                         <div className='text-[0.9rem] text-gray-500'>SubTotal</div>
                         <div className='text-[0.9rem] text-gray-500'>${Subtotal.toFixed(2)}</div>
                     </div>
-                    <div className='border ps-2 pt-2 pe-2 mt-10 absolute border-t-0 flex justify-between sm:px-5 sm:py-3 '>
+                    <div className='border ps-2 pt-2 w-[30vw] pe-2 mt-12 absolute border-t-0 flex justify-between sm:px-5 sm:py-3 '>
                         <div className='text-[0.9rem] text-gray-500'>Taxes</div>
                         <div className='text-[0.9rem] text-gray-500'>${(Subtotal * Taxes / 100).toFixed(2)}</div>
                     </div>
-                    <div className='border ps-2 pt-2 pe-2 mt-20 absolute border-t-0 flex justify-between sm:px-5 sm:py-3 '>
+                    <div className='border ps-2 pt-2 w-[30vw] pe-2 mt-24 absolute border-t-0 flex justify-between sm:px-5 sm:py-3 '>
                         <div className='text-[0.9rem] text-gray-500'>Total</div>
                         <div className='text-[0.9rem] text-gray-500'>${(Subtotal + (Subtotal * Taxes / 100)).toFixed(2)}</div>
                     </div>
-                    <div className='mt-52 absolute me-20'>
+                    <div className='mt-48 absolute me-20'>
                         <Link className="tp-btn tp-color-btn banner-animation p-5  bg-[#D51243] h-[3rem] items-center font-bold w-[10rem] text-white rounded text-[0.8rem]" to="/checkout">Proceed to Checkout</Link>
                     </div>
                 </div>

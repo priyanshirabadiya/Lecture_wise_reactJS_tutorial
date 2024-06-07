@@ -2,7 +2,8 @@ import React from 'react'
 import './style.css'
 import Header2 from '../../Commancomponents/2_Header2/Header2'
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading'
-import e from '../../assets/e-logo.png'
+import e from '../../assets/e-logo.png';
+import {Link} from 'react-router-dom'
 export default function Errorpage() {
   return (
     <div>
@@ -22,7 +23,7 @@ export default function Errorpage() {
         <div className="flex justify-center mb-20">
           <button className='btn bg-[#d51243] text-sm text-white font-bold ps-9 pt-4 pe-11 pb-4 mt-20 rounded' >
             <i className="fa-solid fa-arrow-left me-4" style={{ color: "#ffffff" }}></i>
-            Back to Home
+            <Link to="/">Back to Home</Link>
           </button>
         </div>
       </div>

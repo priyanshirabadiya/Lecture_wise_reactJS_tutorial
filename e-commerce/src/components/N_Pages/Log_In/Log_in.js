@@ -122,9 +122,9 @@ export default function Log_in() {
                                     <LuUser2 className='m-4 me-0 text-gray-500' />
                                     <input
                                         type="email"
-                                        name="email"
+                                        name=""
                                         onChange={handleInputChange}
-                                        className='px-2 py-3 focus:border-none'
+                                        className='px-2 py-3'
                                         placeholder='Username/email address'
                                     />
                                 </div>
@@ -140,7 +140,7 @@ export default function Log_in() {
                                             type="password"
                                             name="password"
                                             onChange={handleInputChange}
-                                            className='px-2 py-3 w-80 focus:border-none focus:border-white focus:outline-none outline-white'
+                                            className='px-2 py-3 focus:border-none focus:border-white focus:outline-none outline-white'
                                             placeholder='Password'
                                         />
                                     </div>

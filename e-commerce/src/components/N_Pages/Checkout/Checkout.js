@@ -2,7 +2,6 @@ import React from 'react';
 import Pageheading from '../../Commancomponents/Pageheading/Pageheading';
 import Header2 from '../../Commancomponents/2_Header2/Header2';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import './style.css';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
@@ -10,6 +9,10 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
+import { useFormik } from 'formik'
+import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -47,8 +50,57 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
     borderTop: '0px solid rgba(0, 0, 0, .125)',
 }));
 
+const placeorder = Yup.object({
+    email: Yup.string().required('Enter an email'),
+    fname: Yup.string().required('Enter firstname'),
+    lname: Yup.string().required('Enter Lastname'),
+    address: Yup.string().required('Enter Address'),
+    city: Yup.string().required('Enter City/Town'),
+    state: Yup.string().required('Enter State/County'),
+    zip: Yup.string().required('Enter Postcode/Zip'),
+    number: Yup.string().required('Enter Contact-number'),
+})
 
 export default function Checkout() {
+    const navigate = useNavigate();
+
+    const { values, errors, handleChange, handleSubmit, handleBlur, touched } = useFormik({
+        initialValues: {
+            email: "",
+            fname: "",
+            lname: "",
+            address: "",
+            city: "",
+            state: "",
+            zip: "",
+            number: "",
+            cartdata: "",
+            cartdatasec: "",
+            cartdatathir: ""
+        },
+        validationSchema: placeorder,
+        onSubmit: (values) => {
+            fetch('https://formspree.io/f/mzbnlokz', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json', // is the header value, which specifies that the client expects JSON data in the response.
+                    //headername 
+                    'Content-Type': 'application/json' // is the header value, which indicates that the data being sent is JSON.
+                    //headername 
+                },
+                body: JSON.stringify(values)
+            }).then(response => {
+                if (response) {
+                    Swal.fire({
+                        title: "Congratulations!",
+                        text: "Your order is Placed",
+                        icon: "success"
+                    });
+                }
+            });
+        }
+    });
+
     const cartData = useSelector((state) => state.cartreducer.carts);
     const quantities = useSelector((state) => state.cartreducer.quantities);
 
@@ -60,21 +112,19 @@ export default function Checkout() {
 
     let Taxes = 9.00;
 
-
     const [expanded, setExpanded] = React.useState('panel1');
 
-    const handleChange = (panel) => (event, newExpanded) => {
+    const handleAccordionchange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
     };
-
 
     return (
         <>
             <Header2 />
             <Pageheading pagename="Checkout" />
-            <form className='border mt-4 mx-2' action='https://formspree.io/f/mnqeyqab' method="POST">
-                <div className='flex mx-14 ' >
-                    <div className='w-[50%] mt-10 mx-5' >
+            <form className='border mt-4 mx-2' onSubmit={handleSubmit}>
+                <div className='flex flex-wrap lg:flex-nowrap justify-center sm:mx-2 md:mx-14 ' >
+                    <div className=' w-full md:w-[50%] mt-10 mx-5' >
                         <div>
                             <div className="grid grid-cols-12 gap-x-6 gap-y-6">
                                 {/* First Row  */}
@@ -106,12 +156,16 @@ export default function Checkout() {
                                     </label>
                                     <input
                                         type="text"
-                                        name="text"
+                                        name="fname"
                                         id="first_name"
                                         className="border border-gray-300 text-gray-900 text-base block w-full p-2.5 focus:ring-1 focus:ring-[#D51243]"
-                                        required
+                                        onBlur={handleBlur}
+                                        onChange={handleChange}
+                                        value={values.fname}
                                     />
-
+                                    {touched.fname && errors.fname ? (
+                                        <p style={{ color: "#D51243", fontSize: "14px" }} >{errors.fname}</p>
+                                    ) : null}
                                 </div>
                                 <div className="col-span-6 ">
                                     <label
@@ -122,13 +176,17 @@ export default function Checkout() {
                                     </label>
                                     <input
                                         type="text"
-                                        name="text"
+                                        name="lname"
                                         id="last_name"
                                         className="border border-gray-300 text-gray-900 text-base  block w-full p-2.5 focus:ring-1 focus:ring-[#D51243]"
-                                        required
+                                        onBlur={handleBlur}
+                                        onChange={handleChange}
+                                        value={values.lname}
                                     />
+                                    {touched.lname && errors.lname ? (
+                                        <p style={{ color: "#D51243", fontSize: "14px" }} >{errors.lname}</p>
+                                    ) : null}
                                 </div>
-
                                 {/* Third Row */}
                                 <div className="col-span-12">
                                     <label
@@ -142,7 +200,6 @@ export default function Checkout() {
                                         name="text"
                                         id="Company_Name"
                                         className=" focus:ring-1 focus:ring-[#D51243] border border-gray-300 text-gray-900 text-base  block w-full p-2.5"
-                                        required
                                     />
                                 </div>
 
@@ -155,22 +212,19 @@ export default function Checkout() {
                                     >
                                         Address
                                     </label>
-                                    <input
+                                    <textarea
                                         type="text"
-                                        name="text"
-                                        id="Address2"
-                                        className=" focus:ring-1 focus:ring-[#D51243] border border-gray-300 text-gray-900 text-base  block w-full p-2.5 mb-5"
-                                        required
-                                        placeholder="Street address"
-                                    />
-                                    <input
-                                        type="text"
-                                        name="text"
+                                        name="address"
                                         id="Address"
                                         className=" focus:ring-1 focus:ring-[#D51243] border border-gray-300 text-gray-900 text-base  block w-full p-2.5"
-                                        required
                                         placeholder="Apartment,suite,unit,etc.(optional)"
+                                        onBlur={handleBlur}
+                                        onChange={handleChange}
+                                        value={values.address}
                                     />
+                                    {touched.address && errors.address ? (
+                                        <p style={{ color: "#D51243", fontSize: "14px" }} >{errors.address}</p>
+                                    ) : null}
                                 </div>
 
                                 {/* Fifth  Row */}
@@ -184,12 +238,18 @@ export default function Checkout() {
                                     </label>
                                     <input
                                         type="text"
-                                        name="text"
+                                        name="city"
                                         id="Town"
                                         className=" focus:ring-1 focus:ring-[#D51243] border border-gray-300 text-gray-900 text-base  block w-full p-2.5"
-                                        required
                                         placeholder="Town / City"
+                                        onBlur={handleBlur}
+                                        onChange={handleChange}
+                                        value={values.city}
                                     />
+                                    {touched.city && errors.city ? (
+                                        <p style={{ color: "#D51243", fontSize: "14px" }} >{errors.city}</p>
+                                    ) :
+                                        null}
                                 </div>
 
                                 {/* Sixth Row  */}
@@ -203,11 +263,17 @@ export default function Checkout() {
                                     </label>
                                     <input
                                         type="text"
-                                        name="text"
+                                        name="state"
                                         id="State_name"
                                         className=" focus:ring-1 focus:ring-[#D51243] border border-gray-300 text-gray-900 text-base  block w-full p-2.5"
-                                        required
+                                        onBlur={handleBlur}
+                                        onChange={handleChange}
+                                        value={values.state}
                                     />
+                                    {touched.state && errors.state ? (
+                                        <p style={{ color: "#D51243", fontSize: "14px" }} >{errors.state}</p>
+                                    ) :
+                                        null}
                                 </div>
                                 <div className="col-span-6 ">
                                     <label
@@ -218,12 +284,18 @@ export default function Checkout() {
                                     </label>
                                     <input
                                         type="text"
-                                        name="text"
+                                        name="zip"
                                         id="Zip_code"
                                         className=" focus:ring-1 focus:ring-[#D51243] border border-gray-300 text-gray-900 text-base  block w-full p-2.5"
                                         placeholder="Postcode / Zip"
-                                        required
+                                        onBlur={handleBlur}
+                                        onChange={handleChange}
+                                        value={values.zip}
                                     />
+                                    {touched.zip && errors.zip ? (
+                                        <p style={{ color: "#D51243", fontSize: "14px" }} >{errors.zip}</p>
+                                    ) :
+                                        null}
                                 </div>
                                 {/* Seventh Row */}
                                 <div className="col-span-6 ">
@@ -234,12 +306,18 @@ export default function Checkout() {
                                         Email Address
                                     </label>
                                     <input
-                                        type="text"
-                                        name="text"
+                                        type="email"
+                                        name="email"
                                         id="email"
                                         className=" focus:ring-1 focus:ring-[#D51243] border border-gray-300 text-gray-900 text-base  block w-full p-2.5"
-                                        required
+                                        onBlur={handleBlur}
+                                        onChange={handleChange}
+                                        value={values.email}
                                     />
+                                    {touched.email && errors.email ? (
+                                        <p style={{ color: "#D51243", fontSize: "14px" }} >{errors.email}</p>
+                                    ) :
+                                        null}
                                 </div>
                                 <div className="col-span-6 ">
                                     <label
@@ -249,17 +327,23 @@ export default function Checkout() {
                                     </label>
                                     <input
                                         type="text"
-
+                                        name="number"
                                         id="Phone_num"
                                         className=" focus:ring-1 focus:ring-[#D51243] border border-gray-300 text-gray-900 text-base  block w-full p-2.5"
                                         placeholder="Phone Number"
-                                        required
+                                        onBlur={handleBlur}
+                                        onChange={handleChange}
+                                        value={values.number}
                                     />
+                                    {touched.number && errors.number ? (
+                                        <p style={{ color: "#D51243", fontSize: "14px" }} >{errors.number}</p>
+                                    ) :
+                                        null}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="border-4 border-[#F5C9D4] ms-5 mt-10 w-[50%]">
+                    <div className="border-4 border-[#F5C9D4] ms-5 mt-10 w-full md:w-[50%]">
                         <div className='p-5 px-10 '>
                             <h1 className='text-[2rem] text-[#D51243] '>Your Order</h1>
                             <hr className='mt-2' />
@@ -271,18 +355,18 @@ export default function Checkout() {
                             {cartData.map((item, index) => (
                                 <div key={index}>
                                     <div className='flex mt-3'>
-                                        <div className='text-[1rem] text-gray-500 w-[50%]'>{item.value.name}</div>
-                                        <div className='text-[1rem] text-gray-500 w-[50%]'>${(item.value.price * (quantities[item.value.id] || 1)).toFixed(2)}</div>
+                                        <div className='text-[1rem] text-gray-500 w-[50%]' name="cartdata" >{item.value.name}</div>
+                                        <div className='text-[1rem] text-gray-500 w-[50%]' name="cartdatasec" >${(item.value.price * (quantities[item.value.id] || 1)).toFixed(2)}</div>
                                     </div>
                                     <hr className='mt-3' />
                                 </div>
                             ))}
                             <div className='flex mt-3'>
                                 <div className='text-[1rem] text-gray-500 w-[50%] font-bold '>Order Total price with Tax</div>
-                                <div className='text-[1rem] text-gray-500 w-[50%] font-bold '>${(Subtotal + (Subtotal * Taxes / 100)).toFixed(2)}</div>
+                                <div className='text-[1rem] text-gray-500 w-[50%] font-bold ' name="cartdatathir">${(Subtotal + (Subtotal * Taxes / 100)).toFixed(2)}</div>
                             </div>
                             <div className='mt-5' >
-                                <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} className="bg-white">
+                                <Accordion expanded={expanded === 'panel1'} onChange={handleAccordionchange('panel1')} className="bg-white">
                                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" className="bg-white" >
                                         <Typography className=''>
                                             <div className='font-bold text-[0.95rem]' >Direct Bank Transfer</div>
@@ -294,7 +378,7 @@ export default function Checkout() {
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>
-                                <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                                <Accordion expanded={expanded === 'panel2'} onChange={handleAccordionchange('panel2')}>
                                     <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
                                         <Typography>
                                             <div className='font-bold text-[0.95rem]' > Cheque Payment</div>
@@ -306,7 +390,7 @@ export default function Checkout() {
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>
-                                <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                                <Accordion expanded={expanded === 'panel3'} onChange={handleAccordionchange('panel3')}>
                                     <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
                                         <Typography>
                                             <div className='font-bold text-[0.95rem]' >PayPal</div></Typography>
@@ -328,3 +412,4 @@ export default function Checkout() {
         </>
     );
 }
+

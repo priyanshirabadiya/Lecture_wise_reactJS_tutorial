@@ -18,3 +18,16 @@
   height: 100%;
   object-fit: cover;
 }
+.response{
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width:1498px) {
+  .for-display {
+    display: none;
+  }
+  .response{
+    display: flex;
+    justify-content: center;
+  }
+}

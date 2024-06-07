@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Shop2_pp = () => {
   const dispatch = useDispatch();
+  const filtereddata = data.filter(item => item.shop2 == 'two')
   return (
     <div className="my-10 mx-1">
       <ToastContainer
@@ -35,7 +36,10 @@ const Shop2_pp = () => {
         </ul>
       </div>
       <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-4 top-class mt-10 w-full px-4">
-        {data.map((value, ind, array) => {
+
+
+
+        {filtereddata.map((value, ind, array) => {
 
           const { name, price, img, img2 } = value;
           const products = { value }

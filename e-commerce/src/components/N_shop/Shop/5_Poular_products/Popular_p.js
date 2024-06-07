@@ -9,6 +9,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Popular_p = () => {
   const dispatch = useDispatch();
+
+  const shopfilter = data.filter(item => item.dataf === 'toy')
+
   return (
     <div className="my-10 mx-1">
       <ToastContainer
@@ -24,7 +27,7 @@ const Popular_p = () => {
         theme="colored"
       />
       <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-4 top-class mt-10 w-full px-4">
-        {data.map((value, ind, array) => {
+        {shopfilter.map((value, ind, array) => {
 
           const { img2, img, name, price } = value;
           const products = { value };
