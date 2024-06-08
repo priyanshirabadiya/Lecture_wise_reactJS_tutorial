@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import pot from '../../assets/lpot.png'
 import l1 from '../../assets/l1.jpg'
 import l2 from '../../assets/l2.jpg'
@@ -8,10 +8,47 @@ import l5 from '../../assets/l5.jpg'
 import l6 from '../../assets/l6.jpg'
 import './style.css'
 export default function Pots() {
+
+  const [count, setcounttime] = useState({
+    days: 0,
+    months: 0,
+    minitues: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const targetDate = new Date('May 4, 2024 00:00:00');
+
+    const countlefttime = () => {
+      const currentdate = new Date();
+      const differenceseconds = (currentdate - targetDate) / 1000;
+
+      const seconds = parseInt((differenceseconds) % 60);
+      const minitues = parseInt((differenceseconds / 60) % 60);
+      const hours = parseInt((differenceseconds / 3600) % 24);
+      const days = parseInt((differenceseconds / 3600) / 24);
+
+      setcounttime({ seconds, minitues, hours, days })
+    }
+
+    setInterval(countlefttime, 1000)
+    // return () => clearInterval(interval);  
+  }, []);
+
   return (
     <div className=' mx-9' >
       <div className="size-2 flex justify-center items-center flex-wrap ">
-        <div className='nw-img'><img src={pot} alt="image not show" /></div>
+        <div className='nw-img'>
+          <div className='relative' >
+            <img src={pot} alt="image not show" className='md:mt-10 sm:mt-0 ' />
+            <div className='absolute parent-component ' >
+              <h5 class="tpdealproduct__offer-price text-center ">
+                <p className='textforfrom text-center ' >From</p>
+                $49</h5>
+            </div>
+          </div>
+        </div>
+
         <div className='lg:ms-14 para' >
           <div className="tpdealcontact__price mb-5 ">
             <span className='rd'>$49.00</span>
@@ -24,23 +61,23 @@ export default function Pots() {
           </div>
           <div className="for-flex flex-wrap  flex  justify-center lg:justify-start w-full mt-5">
             <div className="box-1 sm:me-4 md:me-5">
-              <h1 className='tpdealcontact__title-2' >-131</h1>
-              <h6 className='mt-2 ms-4 absolute' >Days</h6>
+              <h1 className='tpdealcontact__title-2 text-center' >{count.days}</h1>
+              <h6 className='mt-3 text-center ' >Days</h6>
             </div>
             <div className="box-1 sm:me-4 md:me-5 ">
-              <h1 className='tpdealcontact__title-2 ms-2' >- 22</h1>
-              <h6 className='mt-2 ms-3 absolute' >Hours</h6>
+              <h1 className='tpdealcontact__title-2 text-center' >{count.hours}</h1>
+              <h6 className='mt-3 text-center ' >Hours</h6>
             </div>
             <div className="box-1 sm:me-4 md:me-5">
-              <h1 className='tpdealcontact__title-2 ms-2' >- 50</h1>
-              <h6 className='mt-2 ms-4 absolute' >Minute</h6>
+              <h1 className='tpdealcontact__title-2 text-center' >{count.minitues}</h1>
+              <h6 className='mt-3 text-center ' >Minute</h6>
             </div>
             <div className="box-1">
-              <h1 className='tpdealcontact__title-2 ms-2' >- 41</h1>
-              <h6 className='mt-2 ms-2 absolute' >Second</h6>
+              <h1 className='tpdealcontact__title-2 text-center'>{count.seconds}</h1>
+              <h6 className='mt-3 text-center' >Second</h6>
             </div>
             <div>
-              <p className='l-n-text' >Remains until the <br /> end of the offer</p>
+              <p className='l-n-text' >The offer has been <br />  in effect since this time. </p>
             </div>
           </div>
         </div>
@@ -64,3 +101,4 @@ export default function Pots() {
     </div>
   )
 }
+

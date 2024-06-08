@@ -144,12 +144,10 @@
     width: 210px;
 }
 
-
-
-
-
-
-
+.parent-component{
+    top: 5rem;
+    right: 3rem;
+}
 
 
 @media (max-width:768px) {
@@ -164,4 +162,54 @@
         justify-content: center;
     }
 
+}
+
+@media (max-width:576px) {
+    .parent-component{
+        top: 5rem;
+        right: 2rem;
+    }    
+}
+
+@media (max-width:380px) {
+    .parent-component{
+        top: 2.5rem;
+        right: 2rem;
+    }    
+}
+
+
+.textforfrom{
+    margin-top: 5px;
+    font-size: calc(0.7rem);
+    line-height: 10px;
+}
+
+.tpdealproduct__offer-price {
+    font-size: calc(1.5rem);
+    font-weight: 600;
+    color: white;
+    background-color:#D51243;
+    padding: 10px 16px;
+    animation: hotdeal 2s linear infinite;
+    border-radius: 100%;
+}
+
+
+@keyframes hotdeal {
+    0% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: .6
+    }
+
+    75% {
+        opacity: .8
+    }
+
+    to {
+        opacity: 1
+    }
 }

@@ -11,24 +11,22 @@ import './style.css';
 export default function Cart() {
     const data = useSelector((state) => state.cartreducer.carts);
     const quantities = useSelector((state) => state.cartreducer.quantities);
-    console.log(quantities, "quntittiessssssss");
     const dispatch = useDispatch();
 
     const remove = (id) => {
         dispatch(REMOVE(id));
         toast.error("Removed from cart!");
     };
-    // 1st step
+
     const changeQuantity = (event, id) => {
         const quantity = parseInt(event.target.value);
         dispatch(UPDATE_QUANTITY(id, quantity));
     };
 
-    // 2nd step
     let Subtotal = 0;
     data.forEach((item) => {
-        const quantity = quantities[item.value.id] || 1;
-        Subtotal += item.value.price * quantity;
+        const quantity = quantities[item.id] || 1;
+        Subtotal += item.price * quantity;
     });
 
     const Taxes = 9.00;
@@ -51,8 +49,8 @@ export default function Cart() {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((cvalue) => {
-                            const { name, price, img, id } = cvalue.value;
+                        {data.map((product) => {
+                            const { name, price, img, id } = product;
                             const quantity = quantities[id] || 1;
                             const totalPrice = quantity * price;
                             return (
@@ -67,7 +65,7 @@ export default function Cart() {
                                             onChange={(event) => changeQuantity(event, id)}
                                             type="number"
                                             name="number"
-                                            defaultValue={1}
+                                            defaultValue={quantity}
                                             className="outline-none input-number w-full text-center"
                                             min="1"
                                         />
@@ -132,3 +130,4 @@ export default function Cart() {
         </>
     );
 }
+

@@ -14,7 +14,8 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Shop2() {
   const dispatch = useDispatch();
 
-  const [filteredData, setfilterdata] = useState(data)
+  const newdata = data.filter(item => item.wear === 'kids')
+  const [filteredData, setfilterdata] = useState(newdata)
   // 2 step = set value true or false
   const [filter, setfilter] = useState({
     women: false,
@@ -24,11 +25,11 @@ export default function Shop2() {
 
   // 3 step = filterdata
   function filterdata() {
-    let filtersdata = data;
+    let filtersdata = newdata;
 
     let activefilter = Object.keys(filter).filter(key => filter[key])
-      // console.log(filter[key]);  //filter only those value whose value is true
-      
+    
+    // console.log(filter[key]);  //filter only those value whose value is true
     // console.log(filter);
     // Object kids: false
     // men: false
@@ -118,7 +119,7 @@ export default function Shop2() {
             </div>
             <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-4 top-class mt-10 w-full px-4">
               {filteredData.map((value, ind) => {
-                const { name, price, img, img2 } = value;
+                const { name, price, img, img2 , id } = value;
                 const products = { value };
 
                 const send = (products) => {
@@ -133,10 +134,12 @@ export default function Shop2() {
                   <div className="sm:h-[25rem] md:h-[24rem] lg:h-[26rem] w-[18.5rem] main-data relative" key={ind}>
                     <div className="img-data p-4 absolute bg-white rounded-lg">
                       <div className="hover:rounded-lg">
+                      <Link to={`/product/${id}`} >
                         <img src={img} alt="Image1" className="rounded-lg" />
                         <div className="sec-img p-4">
                           <img src={img2} alt="Image1" className="rounded-lg" />
                         </div>
+                        </Link>
                         <div className="text-left mt-4">
                           <h1 className="text-gray-500">{name}</h1>
                           <p className="font-semibold">${price}.00</p>

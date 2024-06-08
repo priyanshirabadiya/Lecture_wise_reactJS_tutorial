@@ -92,11 +92,12 @@ export default function Checkout() {
             }).then(response => {
                 if (response) {
                     Swal.fire({
-                        title: "Congratulations!",
+                        title: "Done!",
                         text: "Your order is Placed",
                         icon: "success"
                     });
-                }
+                    }
+                navigate('/');
             });
         }
     });
@@ -106,8 +107,8 @@ export default function Checkout() {
 
     let Subtotal = 0;
     cartData.forEach((item) => {
-        const quantity = quantities[item.value.id] || 1;
-        Subtotal += item.value.price * quantity;
+        const quantity = quantities[item.id] || 1;
+        Subtotal += item.price * quantity;
     });
 
     let Taxes = 9.00;
@@ -249,7 +250,7 @@ export default function Checkout() {
                                     {touched.city && errors.city ? (
                                         <p style={{ color: "#D51243", fontSize: "14px" }} >{errors.city}</p>
                                     ) :
-                                        null}
+                                    null}
                                 </div>
 
                                 {/* Sixth Row  */}
@@ -355,8 +356,8 @@ export default function Checkout() {
                             {cartData.map((item, index) => (
                                 <div key={index}>
                                     <div className='flex mt-3'>
-                                        <div className='text-[1rem] text-gray-500 w-[50%]' name="cartdata" >{item.value.name}</div>
-                                        <div className='text-[1rem] text-gray-500 w-[50%]' name="cartdatasec" >${(item.value.price * (quantities[item.value.id] || 1)).toFixed(2)}</div>
+                                        <div className='text-[1rem] text-gray-500 w-[50%]' name="cartdata" >{item.name}</div>
+                                        <div className='text-[1rem] text-gray-500 w-[50%]' name="cartdatasec" >${(item.price * (quantities[item.id] || 1)).toFixed(2)}</div>
                                     </div>
                                     <hr className='mt-3' />
                                 </div>
@@ -412,4 +413,5 @@ export default function Checkout() {
         </>
     );
 }
+
 

@@ -25,7 +25,16 @@ const Wishlist = () => {
         <div>
             <Header2 />
             <Pageheading pagename="Wishlist" />
-            <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" />
+            <ToastContainer 
+             position="bottom-right"
+              autoClose={5000} 
+              hideProgressBar={false} 
+              newestOnTop={false} 
+              closeOnClick rtl={false} 
+              pauseOnFocusLoss 
+              draggable 
+              pauseOnHover 
+              theme="colored" />
             <div className="overflow-x-auto w-full mt-12 mb-12">
                 <table className="table-auto w-full min-w-[800px]">
                     <thead>
@@ -42,7 +51,7 @@ const Wishlist = () => {
 
                     <tbody>
                         {data.map((cvalue) => {
-                            const { name, price, img, id } = cvalue.value;
+                            const { name, price, img, id } = cvalue;
                             return (
                                 <tr key={id} className='border'>
                                     <td className='flex justify-center'>
@@ -72,7 +81,7 @@ const Wishlist = () => {
 
             {data.length === 0 && (
                 <div className='flex justify-center mt-5 align-middle w-full'>
-                    <h1 className='mt-3 text-[1.2rem] me-5'>Cart is empty</h1>
+                    <h1 className='mt-3 text-[1.2rem] me-5'>Wishlist is empty</h1>
                     <Link className="banner-animation p-4 px-10 bg-[#D51243] items-center font-bold w-[10rem] text-white rounded text-[0.8rem]" to="/">Go to home</Link>
                 </div>
             )}

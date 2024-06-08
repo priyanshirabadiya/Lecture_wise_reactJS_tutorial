@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import data from "./Data2";
 import { Link } from 'react-router-dom'
 import "./style.css";
@@ -9,6 +9,30 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Popular_p = () => {
   const dispatch = useDispatch();
+
+  const newdata = data.filter(item => item.wear === 'kids')
+  const [filterdata, setfiltereddata] = useState(newdata)
+
+  const changefilter = (item) => {
+
+    // console.log(item , "item");  
+
+    if (item === 'All') {
+      setfiltereddata(data.filter(item => item.wear === 'kids'));
+    }
+    else if (item === 'Popular') {
+      setfiltereddata(data.filter(item => item.wear === 'women'))
+    }
+    else if (item === 'Onsale') {
+      setfiltereddata(data.filter(item => item.sale === 'onsale'))
+    }
+    else if (item === 'rated') {
+      setfiltereddata(data.filter(item => item.rate === 'best'))
+    }
+    else {
+      setfiltereddata(newdata);
+    }
+  }
 
   return (
     <div className="my-10 mx-1">
@@ -28,18 +52,17 @@ const Popular_p = () => {
         <h1 className="text-2xl font-semibold">
           Popular <span className="font-normal text-red-600">Product</span>
         </h1>
-        <ul className="flex font-semibold  justify-between flex-wrap max-w-[500px] w-full ">
-          <li><a href="#" className="text-red-600 underline">All</a></li>
-          <li><a href="#">Popular</a></li>
-          <li><a href="#">On Sale</a></li>
-          <li><a href="#">Best Rated</a></li>
+        <ul className="flex font-semibold justify-between flex-wrap max-w-[500px] w-full ">
+          <li><button onClick={() => changefilter('All')} defaultChecked className="text-red-600 underline">All</button></li>
+          <li><button onClick={() => changefilter('Popular')} >Popular</button></li>
+          <li><button onClick={() => changefilter('Onsale')} >On Sale</button></li>
+          <li><button onClick={() => changefilter('rated')} >Best Rated</button></li>
         </ul>
       </div>
       <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-5 top-class mt-10 w-full px-4">
-        {data.map((value, ind, array) => {
+        {filterdata.map((product, ind, array) => {
 
-          const { id, img, img2, name, price } = value;
-          const product = { value }
+          const { id, img, img2, name, price } = product;
 
           const send = (addeditem) => {
             // console.log(addeditem, "sendaddeditem");

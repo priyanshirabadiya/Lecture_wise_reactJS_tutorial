@@ -4,12 +4,12 @@ const initial_state = {
     carts: [],
     wish: [],
     quantities: [],
-};
-
-export const cartreducer = (state = initial_state, action) => {
+    };
+    export const cartreducer = (state = initial_state, action) => {
     switch (action.type) {
         case "ADD_TO_CART":
-            const existingItem = state.carts.find(item => item.value.id === action.payload.value.id);
+            const existingItem = state.carts.find(item => item.id === action.payload.id); 
+        
             if (existingItem) {
                 toast.warn("Item is already in the cart!");
                 return state;  // Return the unchanged state if item is already in the cart
@@ -23,7 +23,7 @@ export const cartreducer = (state = initial_state, action) => {
             };
         // action.payload's id is that we click on remove button id 
         case "REMOVE_FROM_CART":
-            const data = state.carts.filter((item) => item.value.id !== action.payload);    
+            const data = state.carts.filter((item) => item.id !== action.payload);    
             return {
                 ...state,
                 carts: data,
@@ -45,7 +45,7 @@ export const cartreducer = (state = initial_state, action) => {
 export const wishlistreducer1 = (state = initial_state, action) => {
     switch (action.type) {
         case "wish_list":
-            const exist = state.wish.find((item) => item.value.id === action.payload.value.id);
+            const exist = state.wish.find((item) => item.id === action.payload);
             if (exist) {
                 toast.warn('item is already in wishlist');
                 return state;
@@ -57,7 +57,7 @@ export const wishlistreducer1 = (state = initial_state, action) => {
                 };
             }
         case "Remove_wish":
-            const updatedWish = state.wish.filter((item) => item.value.id !== action.payload);
+            const updatedWish = state.wish.filter((item) => item.id !== action.payload);
             return {
                 ...state,
                 wish: updatedWish
@@ -67,3 +67,5 @@ export const wishlistreducer1 = (state = initial_state, action) => {
     }
 };
 
+
+// main carts
