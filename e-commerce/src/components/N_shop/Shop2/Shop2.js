@@ -25,7 +25,7 @@ export default function Shop2() {
 
   // 3 step = filterdata
   function filterdata() {
-    let filtersdata = newdata;
+    let filtersdata = data;
 
     let activefilter = Object.keys(filter).filter(key => filter[key])
     
@@ -34,7 +34,10 @@ export default function Shop2() {
     // Object kids: false
     // men: false
     // women: false
-
+    
+    if (activefilter.length == 0) {
+      filtersdata = newdata;
+    }
     if (activefilter.length > 0) {
       filtersdata = filtersdata.filter(item => activefilter.includes(item.wear));
 
@@ -106,21 +109,10 @@ export default function Shop2() {
               pauseOnHover
               theme="colored"
             />
-            <div className="flex justify-between flex-wrap mx-5">
-              <h1 className="text-2xl font-semibold">
-                Popular <span className="font-normal text-red-600">Product</span>
-              </h1>
-              <ul className="flex font-semibold justify-between flex-wrap max-w-[500px] w-full">
-                <li><a href="#" className="text-red-600 underline">All</a></li>
-                <li><a href="#">Popular</a></li>
-                <li><a href="#">On Sale</a></li>
-                <li><a href="#">Best Rated</a></li>
-              </ul>
-            </div>
+            
             <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-4 top-class mt-10 w-full px-4">
               {filteredData.map((value, ind) => {
                 const { name, price, img, img2 , id } = value;
-                const products = { value };
 
                 const send = (products) => {
                   dispatch(ADD(products));
@@ -147,10 +139,10 @@ export default function Shop2() {
                         <div className="mt-4 opacity-0 dots">
                           <div className="tpproduct__thumb-bg">
                             <div className="tpproductactionbg">
-                              <Link to="" onClick={() => send(products)} className="add-to-cart"><i className="fa-solid fa-basket-shopping" style={{ color: "#c2c2c2" }}></i></Link>
+                              <Link to="" onClick={() => send(value)} className="add-to-cart"><i className="fa-solid fa-basket-shopping" style={{ color: "#c2c2c2" }}></i></Link>
                               <a href="#"><i className="fa-solid fa-arrow-right-arrow-left" style={{ color: "#c2c2c2" }}></i></a>
                               <a href="#"><i className="fa-regular fa-eye" style={{ color: "#c2c2c2" }}></i></a>
-                              <Link to="" onClick={() => send1(products)} className="wishlist"><i className="fa-regular fa-heart" style={{ color: "#c2c2c2" }}></i></Link>
+                              <Link to="" onClick={() => send1(value)} className="wishlist"><i className="fa-regular fa-heart" style={{ color: "#c2c2c2" }}></i></Link>
                             </div>
                           </div>
                           <div className="flex justify-between">

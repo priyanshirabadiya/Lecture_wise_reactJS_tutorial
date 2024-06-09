@@ -23,6 +23,8 @@ import ScrollToTop from './components/N_shop/Top_navigate/Top_navigate';
 import Checkout from './components/N_Pages/Checkout/Checkout';
 import Log_in from './components/N_Pages/Log_In/Log_in';
 import Sign_inandLog_in from './components/N_Pages/Sign_inLog_in/signandLog';
+import Shopofside from './components/N_shop/Shop/Shopofside/Shopofside';
+import Cate from './components/1_Header/2_Catagories/Cate';
 function App() {
   return (
     <>
@@ -49,7 +51,8 @@ function App() {
                 <Route path="/product/:id" element={<FirstData />} ></Route>
                 <Route path="/cart" element={<Cart />} ></Route>
                 <Route path="/checkout" element={<Checkout />} ></Route>
-                
+                <Route path="/shopofside" element={<Shopofside />} ></Route>
+                <Route path="/cate" element={<Cate />} ></Route>
               </Routes>
             </BrowserRouter>
           </Provider>

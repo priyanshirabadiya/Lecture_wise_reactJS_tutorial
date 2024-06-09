@@ -24,6 +24,14 @@
     .search-info {
         width: 680px;
     }
+  
+}
+
+@media (max-width:1281px) {
+    .side-icon {
+        display: block !important;
+        margin-right: 25px;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -54,10 +62,7 @@
         border: none !important;
     }
 
-    .side-icon {
-        display: block !important;
-        margin-right: 25px;
-    }
+   
 
     .center-logo {
         display: none;

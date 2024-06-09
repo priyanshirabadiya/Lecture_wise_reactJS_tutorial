@@ -41,10 +41,10 @@ export default function Cart() {
                     <thead>
                         <tr className="border">
                             <th className="border py-3">Image</th>
-                            <th className="border py-3">Courses</th>
-                            <th className="border py-3">Unit Price</th>
+                            <th className="border py-3">Name</th>
+                            <th className="border py-3">Price</th>
                             <th className="border py-3">Quantity</th>
-                            <th className="border py-3">Total</th>
+                            <th className="border py-3">Total Price</th>
                             <th className="border py-3">Remove</th>
                         </tr>
                     </thead>

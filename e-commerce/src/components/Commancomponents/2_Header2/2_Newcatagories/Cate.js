@@ -9,7 +9,7 @@ export default function Cate() {
     };
     return (
         <>
-            <div className='container ps-7 mt-5'>
+            <div className='container ps-7 mt-5 z-[10000] '>
                 <div className="main-catagorie" tabIndex="0" onClick={toggleMenu}>
                     <div className="flex ps-5 pt-3 cursor-pointer">
                         <i className="fa-solid fa-bars pe-3 pt-1" style={{ color: "#ffffff" }}></i>

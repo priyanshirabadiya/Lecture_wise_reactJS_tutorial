@@ -3,3 +3,13 @@
     background-size: 100% 100%;
     object-fit: cover;
 }
+
+.page-heading {
+    margin-top: -30px;
+}
+
+@media (max-width:1280px) {
+    .page-heading {
+        margin-top: 0px;
+    }
+}

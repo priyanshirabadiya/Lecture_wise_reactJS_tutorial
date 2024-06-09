@@ -30,7 +30,7 @@ const Popular_p = () => {
         {shopfilter.map((value, ind, array) => {
 
           const { img2, img, name, price } = value;
-          const products = { value };
+          // const products = { value };
 
           const send = (addeditem) => {
             console.log(addeditem, "sendaddeditem");
@@ -62,14 +62,14 @@ const Popular_p = () => {
                   <div className="opacity-0 dots">
                     <div className="tpproduct__thumb-bg-2">
                       <div className="tpproductactionbg ">
-                        <Link to="" onClick={() => send(products)} className="add-to-cart">
+                        <Link to="" onClick={() => send(value)} className="add-to-cart">
                           <i className="fa-solid fa-basket-shopping" style={{ color: "#c2c2c2" }}></i>
                         </Link>
                         <a href="">
                           <i className="fa-solid fa-arrow-right-arrow-left" style={{ color: "#c2c2c2" }}></i>
                         </a>
                         <a href=""><i className="fa-regular fa-eye" style={{ color: "#c2c2c2" }}></i></a>
-                        <Link to="" onClick={() => send1(products)} className="wishlist"><i className="fa-regular fa-heart" style={{ color: "#c2c2c2" }}></i></Link>
+                        <Link to="" onClick={() => send1(value)} className="wishlist"><i className="fa-regular fa-heart" style={{ color: "#c2c2c2" }}></i></Link>
                       </div>
                     </div>
                     <div className="flex justify-between">

@@ -151,3 +151,86 @@ input[type=text]:focus {
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* ------------------------------------- */
+
+.navbar{
+  border-radius: 5px;
+}
+.sidebarfnew{
+    width: 280px;
+    min-height: 100vh;
+    background-color: rgb(30, 30, 30);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 1;
+    transition: 0.5s;
+}
+.sidebarfnew.active{
+    left: 0;
+}
+.sd-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+.sidebarfnew-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.sidebarfnew-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+.sd-body{
+    padding: 15px;
+    max-height: calc(100vh - 67px);
+    overflow-x: hidden;
+}
+.sd-body ul{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 0;
+}
+.sd-body ul li{
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.cates{
+  z-index: 5000 !important;
+}
+
+.css-1f773le-MuiButtonBase-root-MuiAccordionSummary-root{
+  background-color: rgb(30, 30, 30) !important;
+  color: white;
+}
+.css-eqpfi5-MuiAccordionSummary-content.Mui-expanded {
+  color: white;
+}
+.css-15v22id-MuiAccordionDetails-root {
+  background-color: rgb(30, 30, 30) !important;
+  color: white;
+}
+.css-ahj2mt-MuiTypography-root {
+  color: white;
+}
+.css-i4bv87-MuiSvgIcon-root {
+  color: white;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+
