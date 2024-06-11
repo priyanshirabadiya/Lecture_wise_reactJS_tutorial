@@ -1,7 +1,40 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-export default function Navbar() {
-    return (    
+import React, { useState } from 'react'
+import { Link, json } from 'react-router-dom'
+export default function Navbar({onSearch}) {
+
+    const [input, setinput] = useState('');
+    const [result, setresult] = useState([]);
+        const fetchdata = (value) => {
+        fetch("http://localhost:3001/users")
+            .then((response) => response.json())
+            .then((json) => {
+                // console.log(json);
+                // const results = json.filter(user => user.name.toLowerCase().includes(value))
+                const results = json.filter((user) => {
+                    return (
+
+                        value &&
+                        user &&
+                        user.name &&
+                        user.name.toLowerCase().includes(value)
+                    )
+                })
+                setresult(results);
+            })
+    }
+    // console.log(result);
+    const handleonchange = (value) => {
+        setinput(value);
+        fetchdata(value)
+        onSearch(value)
+    }
+
+    const handleSuggestionClick = (name) => {
+        setinput(name);
+        setresult([]);
+    }
+
+    return (
         <>
             <nav class="bg-black border-gray-200 dark:bg-black dark:border-gray-400">
                 <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -15,8 +48,8 @@ export default function Navbar() {
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
                         </svg>
                     </button>
-                    <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
-                        <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border bg-black md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0   dark:border-gray-700">
+                    <div class="flex mt-3 " id="navbar-multi-level">
+                        <ul class="flex flex-col font-medium p-4 md:p-0  border bg-black md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0   dark:border-gray-700">
                             <li>
                                 <Link to="/" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:hover:text-blue-700 md:dark:bg-transparent" aria-current="page">Home</Link>
                             </li>
@@ -37,144 +70,23 @@ export default function Navbar() {
                                 <Link to="/login" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Log in</Link>
                             </li>
                         </ul>
+                        <div>
+                            <div className=' p-3 pt-0 -mt-2 ' >
+                                <input type="search" value={input} onChange={(e) => handleonchange(e.target.value)} className='bg-gray-100 h-10 rounded w-auto' />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </nav>
+            <div className='search-result bg-white w-52 z-[5000]  right-[8rem] absolute '>
+                {result.map((result, id) => (
+                    <div key={id} onClick={() => handleSuggestionClick(result.name)} style={{ cursor: "pointer" }} className='h-10 bg-gray-200 border-2 border-white  flex items-center justify-center'>
+                        {result.name}
+                    </div>
+                ))}
+            </div>
         </>
     )
 }
 
-
-
-// import React from 'react'
-// import { Link } from 'react-router-dom';
-// import bg from './backg.png';
-
-// export default function Navbar() {
-//     return (
-//         <div>
-//             <div class="relative w-full bg-gray-600 p-3">
-//                 <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
-//                     <div class="inline-flex items-center space-x-2">
-//                         <span className='' >
-//                             <img src={bg} height={50} width={30} alt="" />
-//                         </span>
-//                         <span class="font-bold">DevUI</span>
-//                     </div>
-//                     <div class="hidden grow items-start lg:flex">
-//                         <ul class="ml-12 inline-flex space-x-8">
-//                             <li>
-//                                 <Link
-//                                     to="/"
-//                                     class="inline-flex items-center text-sm font-semibold text-white hover:text-gray-900"
-//                                 >
-//                                 Home
-//                                     <span>
-//                                         <svg
-//                                             xmlns="http://www.w3.org/2000/svg"
-//                                             width="24"
-//                                             height="24"
-//                                             viewBox="0 0 24 24"
-//                                             fill="none"
-//                                             stroke="currentColor"
-//                                             stroke-width="2"
-//                                             stroke-linecap="round"
-//                                             stroke-linejoin="round"
-//                                             class="ml-2 h-4 w-4"
-//                                         >
-//                                             <polyline points="6 9 12 15 18 9"></polyline>
-//                                         </svg>
-//                                     </span>
-//                                 </Link>
-//                             </li>
-//                             <li>
-//                                 <a
-//                                     href="#"
-//                                     class="inline-flex items-center text-sm font-semibold text-white hover:text-gray-900"
-//                                 >
-//                                     About
-//                                     <span>
-//                                         <svg
-//                                             xmlns="http://www.w3.org/2000/svg"
-//                                             width="24"
-//                                             height="24"
-//                                             viewBox="0 0 24 24"
-//                                             fill="none"
-//                                             stroke="currentColor"
-//                                             stroke-width="2"
-//                                             stroke-linecap="round"
-//                                             stroke-linejoin="round"
-//                                             class="ml-2 h-4 w-4"
-//                                         >
-//                                             <polyline points="6 9 12 15 18 9"></polyline>
-//                                         </svg>
-//                                     </span>
-//                                 </a>
-//                             </li>
-//                             <li>
-//                                 <a
-//                                     href="#"
-//                                     class="inline-flex items-center text-sm font-semibold text-white hover:text-gray-900"
-//                                 >
-//                                     Contact
-//                                     <span>
-//                                         <svg
-//                                             xmlns="http://www.w3.org/2000/svg"
-//                                             width="24"
-//                                             height="24"
-//                                             viewBox="0 0 24 24"
-//                                             fill="none"
-//                                             stroke="currentColor"
-//                                             stroke-width="2"
-//                                             stroke-linecap="round"
-//                                             stroke-linejoin="round"
-//                                             class="ml-2 h-4 w-4"
-//                                         >
-//                                             <polyline points="6 9 12 15 18 9"></polyline>
-//                                         </svg>
-//                                     </span>
-//                                 </a>
-//                             </li>
-//                         </ul>
-//                     </div>
-//                     <div class="hidden space-x-2 lg:block">
-//                         <Link to="/signin">
-//                         <button
-//                             type="button"
-//                             class="rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-black hover:bg-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-//                         >
-//                             Sign In
-//                         </button>
-//                         </Link>
-//                         <button
-//                             type="button"
-//                             class="rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-//                         >
-//                             Log In
-//                         </button>
-//                     </div>
-//                     <div class="lg:hidden">
-//                         <svg
-//                             xmlns="http://www.w3.org/2000/svg"
-//                             width="24"
-//                             height="24"
-//                             viewBox="0 0 24 24"
-//                             fill="none"
-//                             stroke="currentColor"
-//                             stroke-width="2"
-//                             stroke-linecap="round"
-//                             stroke-linejoin="round"
-//                             class="h-6 w-6 cursor-pointer"
-//                         >
-//                             <line x1="4" y1="12" x2="20" y2="12"></line>
-//                             <line x1="4" y1="6" x2="20" y2="6"></line>
-//                             <line x1="4" y1="18" x2="20" y2="18"></line>
-//                         </svg>
-//                     </div>
-//                 </div>
-//             </div>
-
-//         </div>
-//     )
-// }
 

@@ -53,10 +53,10 @@ const Popular_p = () => {
           Popular <span className="font-normal text-red-600">Product</span>
         </h1>
         <ul className="flex font-semibold justify-between flex-wrap max-w-[500px] w-full ">
-          <li><button onClick={() => changefilter('All')} defaultChecked className="text-red-600 underline">All</button></li>
-          <li><button onClick={() => changefilter('Popular')} >Popular</button></li>
-          <li><button onClick={() => changefilter('Onsale')} >On Sale</button></li>
-          <li><button onClick={() => changefilter('rated')} >Best Rated</button></li>
+          <li><button onClick={() => changefilter('All')} defaultChecked className="focus:text-red-600 focus:underline">All</button></li>
+          <li><button onClick={() => changefilter('Popular')} className="focus:text-red-600 focus:underline" >Popular</button></li>
+          <li><button onClick={() => changefilter('Onsale')} className="focus:text-red-600 focus:underline" >On Sale</button></li>
+          <li><button onClick={() => changefilter('rated')} className="focus:text-red-600 focus:underline" >Best Rated</button></li>
         </ul>
       </div>
       <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-5 top-class mt-10 w-full px-4">

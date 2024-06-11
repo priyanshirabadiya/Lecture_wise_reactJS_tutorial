@@ -49,12 +49,12 @@ export default function Shop() {
             </select>
           </div>
           <div className='icon-div'>
-            <button onClick={onclickshopdata}>
+            <button onClick={onclickshopdata2}>
               <IoListOutline className='h-6 mt-[12px] w-10 hover:text-[#d12321]' />
             </button>
           </div>
           <div className='icon-div'>
-            <button onClick={onclickshopdata2}>
+            <button onClick={onclickshopdata}>
               <LiaTableSolid className='h-6 mt-[12px] -ms-2 w-10 hover:text-[#d12321]' />
             </button>
           </div>

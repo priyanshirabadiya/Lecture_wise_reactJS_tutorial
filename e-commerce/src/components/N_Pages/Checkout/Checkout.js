@@ -370,35 +370,41 @@ export default function Checkout() {
                                 <Accordion expanded={expanded === 'panel1'} onChange={handleAccordionchange('panel1')} className="bg-white">
                                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" className="bg-white" >
                                         <Typography className=''>
-                                            <div className='font-bold text-[0.95rem]' >Direct Bank Transfer</div>
+                                            <div className='font-bold text-[0.95rem] text-black ' >Direct Bank Transfer</div>
                                         </Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
-                                        <Typography>
+                                        <Typography  >
+                                            <p className=' text-black' >
                                             Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.
+                                            </p>
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>
                                 <Accordion expanded={expanded === 'panel2'} onChange={handleAccordionchange('panel2')}>
                                     <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
                                         <Typography>
-                                            <div className='font-bold text-[0.95rem]' > Cheque Payment</div>
+                                            <div className='font-bold text-[0.95rem] text-black ' > Cheque Payment</div>
                                         </Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>
+                                        <p className=' text-black' >
                                             Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.
+                                            </p>
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>
                                 <Accordion expanded={expanded === 'panel3'} onChange={handleAccordionchange('panel3')}>
                                     <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
                                         <Typography>
-                                            <div className='font-bold text-[0.95rem]' >PayPal</div></Typography>
+                                            <div className='font-bold text-[0.95rem] text-black' >PayPal</div></Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>
+                                            <p className='text-black' >
                                             Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.
+                                            </p>
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>

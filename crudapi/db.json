@@ -10,15 +10,6 @@
       "img": "https://as2.ftcdn.net/v2/jpg/02/98/22/81/1000_F_298228146_AY5du58S0j81lJlF2tNLwHeyTcBAfCHf.jpg"
     },
     {
-      "id": "aeda",
-      "name": "khena",
-      "lastname": "zaved",
-      "role": "engineer",
-      "email": "kk@gmail.com",
-      "title": "arcutecture",
-      "img": "https://t4.ftcdn.net/jpg/03/17/72/03/360_F_317720355_sn87YEwDHHGMMYYmxiS3o3Hinkt1T3sB.jpg"
-    },
-    {
       "id": "3ef1",
       "name": "neha",
       "lastname": "tiwari",
@@ -35,6 +26,51 @@
       "email": "zdfdrgdfb@gmail.com",
       "title": "scfsdf",
       "img": "https://img.freepik.com/free-photo/portrait-happy-woman-with-digital-tablet_329181-11681.jpg?size=626&ext=jpg&ga=GA1.1.44546679.1716681600&semt=sph"
+    },
+    {
+      "id": "46bc",
+      "name": "sdfh",
+      "lastname": "sdfhu",
+      "role": "sdf",
+      "email": "rabadiyapriyansi@gmail.com",
+      "title": "sdf",
+      "img": "https://t4.ftcdn.net/jpg/03/17/72/03/360_F_317720355_sn87YEwDHHGMMYYmxiS3o3Hinkt1T3sB.jpg"
+    },
+    {
+      "id": "dde5",
+      "name": "sdf",
+      "lastname": "werwer",
+      "role": "qwe",
+      "email": "rabadiyapriyansi@gmail.com",
+      "title": "diwfuioer",
+      "img": "https://img.freepik.com/premium-photo/female-businesswoman-ceo-smiling-with-her-project-notebook-photograph-showing-exterior-c_713888-24610.jpg"
+    },
+    {
+      "id": "edd7",
+      "name": "rtwert",
+      "lastname": "ert",
+      "role": "wer",
+      "email": "rabadiyapriyansi@gmail.com",
+      "title": "qwerewer",
+      "img": "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+    },
+    {
+      "id": "f15f",
+      "name": "asdasd",
+      "lastname": "asd",
+      "role": "asd",
+      "email": "rabadiyapriyansi@gmail.com",
+      "title": "sdf",
+      "img": "https://img.freepik.com/free-photo/portrait-happy-woman-with-digital-tablet_329181-11681.jpg?size=626&ext=jpg&ga=GA1.1.44546679.1716681600&semt=sph"
+    },
+    {
+      "id": "5183",
+      "name": "asd",
+      "lastname": "asf",
+      "role": "wer",
+      "email": "rabadiyapriyansi@gmail.com",
+      "title": "werwer",
+      "img": "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
     }
   ]
 }
