@@ -20,7 +20,7 @@ export default function Home() {
       loaduser();
     })
     .catch((error) => {
-      console.log(error, "error");
+      // console.log(error, "error");
     })
   }
 

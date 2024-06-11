@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
 import { Link, json } from 'react-router-dom'
-export default function Navbar({onSearch}) {
+// import 
+export default function Navbar({ onSearch }) {
 
     const [input, setinput] = useState('');
     const [result, setresult] = useState([]);
-        const fetchdata = (value) => {
+    const fetchdata = (value) => {
         fetch("http://localhost:3001/users")
             .then((response) => response.json())
             .then((json) => {
                 // console.log(json);
-                // const results = json.filter(user => user.name.toLowerCase().includes(value))
+                // const results = json.filter(user => user.name.toLowerCase().includes(value))  //not work well
                 const results = json.filter((user) => {
                     return (
-
                         value &&
                         user &&
                         user.name &&
