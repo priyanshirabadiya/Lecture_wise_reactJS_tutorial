@@ -4,12 +4,20 @@ export default function App() {
 
   let slides = [
     {
-      title : "New turn",
+      title : "Today is ypur first workout plan",
       test : "Its first turn"
     },
     {
-      title : "It's your turn",
+      title : "It's your first 10push-ups",
       test : "Turn for you"
+    },
+    {
+      title : "Next 20!!",
+      test : "Next turn"
+    },
+    {
+      title : "Finally 15 hit by you",
+      test : "Next turn"
     },
     {
       title : "Good luck!!",
