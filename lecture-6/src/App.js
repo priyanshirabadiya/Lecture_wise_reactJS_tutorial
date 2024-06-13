@@ -6,8 +6,6 @@ import img2 from '../src/logo.svg'
 import img3 from '../src/logo.svg'
 import Props from './components/Task1'
 
-
-
 function App() {
   return (
     <div className="App">

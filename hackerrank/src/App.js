@@ -1,64 +1,34 @@
 import React, { useState } from 'react'
-import './styles.css'
-export default function App() {
+import Article from './Components/Article'
+export default function App({articles}) {
+  const alldata = articles;
 
-  let slides = [
-    {
-      title : "Today is ypur first workout plan",
-      test : "Its first turn"
-    },
-    {
-      title : "It's your first 10push-ups",
-      test : "Turn for you"
-    },
-    {
-      title : "Next 20!!",
-      test : "Next turn"
-    },
-    {
-      title : "Finally 15 hit by you",
-      test : "Next turn"
-    },
-    {
-      title : "Good luck!!",
-      test : "Next turn"
-    }
-  ]
+  const [data , setdata] = useState(alldata);
 
-
-  const [currectpage , setpages ] = useState(0);
-  const [ prevpage , setprevpage] = useState(true);
-  const [ lastpage , setlastpage] = useState(false);
-  // console.log(slides[currectpage].title);
-  const changedataonclick = (nextpage) => {
-    nextpage === 0 ? setprevpage(true) : setprevpage(false);
-    nextpage === slides.length - 1 ? setlastpage(true) : setlastpage(false)
-    setpages(nextpage);
+  const upvoted = () => {
+    const filter = [...data].sort((a,b) => a.vote - b.vote)
+    setdata(filter);
   }
+  
+  // const datest = () => {
+  //   const update = [...data].sort((a,b) => (a.data) - (b.data))
+  //   setdata(update);
+  // }
 
+    
+  const datest = () => {
+    const sortedData = [...data].sort((a, b) => a.date - b.date);
+    setdata(sortedData);
+  };
+  
   return (
+    <>
     <div>
-      <div className="center">
-        <button 
-        disabled={currectpage === 0}
-        onClick={() => changedataonclick(0)} >Restart</button>
-        <button 
-        disabled={prevpage}
-        onClick={() => changedataonclick(currectpage - 1)}
-        >Prev</button>
-        <button
-          disabled={lastpage}
-          onClick={() => changedataonclick(currectpage + 1)}
-        >Next</button>
-      </div>
-
-      <div className="center">
-        <div className='decor' >
-          {slides[currectpage].title}
-          {slides[currectpage].test}
-        </div>
-      </div>
-
+        <button>Name</button>
+        <button onClick={upvoted} >Most upvoted</button>
+        <button onClick={datest} >resentdata</button>
     </div>
+    <Article articles={data} />
+    </>
   )
 }
