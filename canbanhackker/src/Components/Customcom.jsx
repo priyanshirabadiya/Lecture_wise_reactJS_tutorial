@@ -44,7 +44,7 @@ const Board = () => {
         cards={cards}
         setCards={setCards}
       />
-      <BurnBarrel setCards={setCards} />
+      <Delete setCards={setCards} />
     </div>
   );
 };
@@ -153,8 +153,8 @@ const Column = ({ title, headingColor, cards, column, setCards }) => {
 
   return (
     <div className="w-56 shrink-0">
-      <div className="mb-3 flex items-center justify-between">
-        <h3 className={`font-medium ${headingColor}`}>{title}</h3>
+      <div className="mb-3 flex items-center ">
+        <h3 className={`font-medium ${headingColor}`}>{title} </h3> :
         <span className="rounded text-sm text-neutral-400">
           {filteredCards.length}
         </span>
@@ -204,7 +204,7 @@ const DropIndicator = ({ beforeId, column }) => {
   );
 };
 
-const BurnBarrel = ({ setCards }) => {
+const Delete = ({ setCards }) => {
   const [active, setActive] = useState(false);
 
   const handleDragOver = (e) => {
@@ -307,11 +307,7 @@ const DEFAULT_CARDS = [
   { title: "[SPIKE] Migrate to Azure", id: "3", column: "backlog" },
   { title: "Document Notifications service", id: "4", column: "backlog" },
   // TODO
-  {
-    title: "Research DB options for new microservice",
-    id: "5",
-    column: "todo",
-  },
+  { title: "Research DB options for new microservice",id: "5",column: "todo",},
   { title: "Postmortem for outage", id: "6", column: "todo" },
   { title: "Sync with product on Q3 roadmap", id: "7", column: "todo" },
 
@@ -322,6 +318,7 @@ const DEFAULT_CARDS = [
     column: "doing",
   },
   { title: "Add logging to daily CRON", id: "9", column: "doing" },
+  
   // DONE
   {
     title: "Set up DD dashboards for Lambda listener",
