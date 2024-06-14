@@ -41,10 +41,14 @@ export default function Sign_in() {
         },
         validationSchema: signupschema,
         onSubmit: (values) => {
-            const setuser = JSON.parse(localStorage.getItem('e-commerce')) || [];
+            const setuser = JSON.parse(localStorage.getItem('users')) || [];
             setuser.push({ email: values.email, password: values.password });
-            localStorage.setItem('e-commerce', JSON.stringify(setuser));
-            alert("Successfully registered");
+            localStorage.setItem('users', JSON.stringify(setuser));
+            // alert("Successfully registered");
+            Swal.fire({
+                title: "successfully register",
+                icon: "success"
+            });
         }
     });
 
@@ -55,13 +59,12 @@ export default function Sign_in() {
         },
         validationSchema: loginschema,
         onSubmit: (values) => {
-            const setuser = JSON.parse(localStorage.getItem('e-commerce')) || [];
+            const setuser = JSON.parse(localStorage.getItem('users')) || [];
             const user = setuser.find(user => user.email === values.email && user.password === values.password);
 
             if (user) {
-                // alert("Successfully logged in");
                 Swal.fire({
-                    title: "Successfully Registered",
+                    title: "Successfully logged in",
                     icon: "success"
                 });
             }
