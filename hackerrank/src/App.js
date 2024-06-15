@@ -1,34 +1,19 @@
-import React, { useState } from 'react'
-import Article from './Components/Article'
-export default function App({articles}) {
-  const alldata = articles;
+import React, { Component } from 'react';
+import './App.css';
+import KanbanBoard from './Components/index';
+// import 'h8k-components';
 
-  const [data , setdata] = useState(alldata);
+const title = "Kanban Board";
 
-  const upvoted = () => {
-    const filter = [...data].sort((a,b) => a.vote - b.vote)
-    setdata(filter);
+class App extends Component {
+  render() {
+    return (
+      <div>
+        {/* <h8k-navbar header={title}></h8k-navbar> */}
+        <KanbanBoard tasks={this.props.tasks}/>
+      </div>
+    );
   }
-  
-  // const datest = () => {
-  //   const update = [...data].sort((a,b) => (a.data) - (b.data))
-  //   setdata(update);
-  // }
-
-    
-  const datest = () => {
-    const sortedData = [...data].sort((a, b) => a.date - b.date);
-    setdata(sortedData);
-  };
-  
-  return (
-    <>
-    <div>
-        <button>Name</button>
-        <button onClick={upvoted} >Most upvoted</button>
-        <button onClick={datest} >resentdata</button>
-    </div>
-    <Article articles={data} />
-    </>
-  )
 }
+
+export default App;
