@@ -6,7 +6,6 @@ function App() {
 
   const [text1 , settext1] = useState('')
   const [text2 , settext2] = useState('')
-
   const handleTextChange1 = (e) => {
     settext1(e.target.value)
   }
