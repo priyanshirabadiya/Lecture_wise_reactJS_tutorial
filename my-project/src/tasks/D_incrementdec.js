@@ -10,7 +10,6 @@ export default function Textform() {
         let count = text + 1;
         setText(count);
     }
-
     const countdecre = () => {
         let count = text - 1;
         setText(count);
