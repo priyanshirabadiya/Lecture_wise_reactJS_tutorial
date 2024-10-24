@@ -1,16 +1,16 @@
-import React, { createContext } from 'react'
-import ComA from './components/ComA'
-const context1 = createContext();
-export default function App() {
-  return (
-    <div>
-      <context1.Provider value="abc">
-        <ComA />
-      </context1.Provider>
-    </div>
-  )
-}
-export {context1};
+// import React, { createContext } from 'react'
+// import ComA from './components/ComA'
+// const context1 = createContext();
+// export default function App() {
+//   return (
+//     <div>
+//       <context1.Provider value="priyanshi"  >
+//         <ComA />
+//       </context1.Provider>
+//     </div>
+//   )
+// }
+// export {context1};
 
 
 
@@ -40,3 +40,20 @@ export {context1};
 // export { context1 }
 // export default App;
 
+
+
+
+import React, { createContext } from 'react';
+import ComA from './components/ComA';
+const context1 = createContext();
+export default function App() {
+  return (
+    <>
+      <context1.Provider value="priyanshi" >
+        <ComA />
+      </context1.Provider>
+    </>
+  )
+}
+
+export { context1 };

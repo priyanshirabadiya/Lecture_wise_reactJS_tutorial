@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Paragrapg, { Para2, Para3, Para4 } from "./componets/CreateCom";
 function App() {

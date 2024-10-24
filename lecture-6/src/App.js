@@ -5,11 +5,14 @@ import img from '../src/logo.svg'
 import img2 from '../src/logo.svg'
 import img3 from '../src/logo.svg'
 import Props from './components/Task1'
+import Task from './components/Props';
 
 function App() {
   return (
     <div className="App">
       {/* <Props name = "priyanshi" age = {18} sname = "rabadiya" img = {img} ></Props>  */}
+
+      {/* <Task name="priyanshi"  age={18} sname = "rb" /> */}
 
       {/* 3 cards project Task */}
       <h1 className='text-center mt-4 text-4xl font-bold' >New three components</h1>

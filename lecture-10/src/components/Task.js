@@ -4,16 +4,16 @@ import React, { useState } from 'react'
 export default function Textform() {
 
     const [text, setText] = useState(0);
-    console.log(text);
+    // console.log(text);
 
     const countincre = () => {
-        let count = text + 1;
-        setText(count);
+        // let count = text + 1;
+        setText(text + 1);
     }
 
     const countdecre = () => {
-        let count = text - 1;
-        setText(count);
+        // let count = text - 1;
+        setText(text - 1);
     }
     return (
         <div className="container w-1/3  border-4 mt-40 ">

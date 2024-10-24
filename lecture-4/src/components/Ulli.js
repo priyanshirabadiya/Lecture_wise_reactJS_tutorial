@@ -1,7 +1,8 @@
 import React from "react";
 
-function Ulli(){
-    return <>   <ol start={10}>
+function Ulli() {
+    return <>   
+    <ol start={10}>
         <li>first</li>
         <li>Second</li>
         <li>Third</li>
@@ -11,15 +12,14 @@ function Ulli(){
     </>
 }
 
-function Olli()
-{
+function Olli() {
     return <>
         <ul >
             <li>olF</li>
             <li>olSEC</li>
             <li>olTHIRD</li>
-            </ul>
+        </ul>
     </>
 }
 export default Ulli;
-export {Olli};
+export { Olli };

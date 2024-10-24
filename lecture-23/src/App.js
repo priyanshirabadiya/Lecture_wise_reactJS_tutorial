@@ -1,16 +1,16 @@
 import React from 'react'
 import './App.css'
-import { useSelector , useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Increment } from './Redux/Action/action';
 import { decrement } from './Redux/Action/action';
 
 const App = () => {
-  const mystate = useSelector((state) => state.changethenumber )
+  const mystate = useSelector((state) => state.changethenumber)
   console.log(mystate);
   const dispatch = useDispatch();
   return (
     <div>
-      
+
       <div className='center' >
         Increment and decrement
       </div>

@@ -27,6 +27,7 @@
 
 // export default App;
 
+
 import React, { useReducer } from 'react'
 let intialstate = 0;
 
@@ -38,6 +39,7 @@ const reducer = (fstate, action) => {
     return fstate - 1;
   }
 }
+
 export default function App() {
 
   const [state, dispatch] = useReducer(reducer, intialstate);
@@ -53,8 +55,26 @@ export default function App() {
 
 
 
+// import React, { useState } from 'react';
+// export default function App() {
+//   let [state, setState] = useState(0);
 
+//   const incre = () => {
+//     setState(state + 1);
+//   }
 
+//   const decre = () => {
+//     setState(state - 1);
+//   }
+
+//   return (
+//     <>
+//       <button onClick={incre} >increment button</button>
+//       <p>{state}</p>
+//       <button onClick={decre} >decrement button</button>
+//     </>
+//   )
+// }
 
 
 

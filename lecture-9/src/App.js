@@ -5,7 +5,7 @@ import Mynew from "./components/Mynew";
 import TernaryOp from './components/Task';
 
 function App() {
-  let a = 2;
+  let a = 1;
   return (
     <div className="App">
        {/* {(a==1) ? <ComC/> : <Mynew/>} */}

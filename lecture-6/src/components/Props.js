@@ -1,5 +1,5 @@
 import React from "react";
-export default function Props(props) {
+export default function Task(props) {
   console.log(props, "===");
   return (
     <div>

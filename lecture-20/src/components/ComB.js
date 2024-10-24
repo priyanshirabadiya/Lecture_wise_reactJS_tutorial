@@ -1,10 +1,41 @@
-import React from 'react'
-import ComC from './ComC'
+// import React from 'react'
+// import ComC from './ComC'
 
-export default function ComB() {
+// export default function ComB() {
+//   return (
+//     <div>
+//       <ComC/>
+//     </div>
+//   )
+// }
+
+
+
+
+
+
+
+import React from "react";
+import ComC from "./ComC";
+export default function ComB(){
   return (
-    <div>
+    <>
       <ComC/>
-    </div>
+    </>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
