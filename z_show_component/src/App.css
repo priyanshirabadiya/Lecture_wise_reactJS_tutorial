@@ -1,0 +1,11 @@
+body{
+  background-color: antiquewhite;
+}
+.mt-11{
+  top: 50%;
+  right: 55%;  
+}
+
+.mt-11 p{
+  opacity: 1!important;
+}
